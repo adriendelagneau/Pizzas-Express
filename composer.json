@@ -1,0 +1,15 @@
+{
+    "name": "kercode/baby-web",
+    "authors": [
+        {
+            "name": "adrien",
+            "email": "delagneauadrien@yahoo.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4" : {
+            "Project\\" : "./app"
+        }
+    },
+    "require": {}
+}

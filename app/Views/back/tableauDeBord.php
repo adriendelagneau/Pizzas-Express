@@ -1,0 +1,11 @@
+<?php ob_start(); ?>
+<h1>Tableau de bord :</h1>
+<div id="tdb">
+    <div><a href="indexAdmin.php?action=listSlides">gestion image slider</a></div>
+    <div><a href="indexAdmin.php?action=listALaUne">gestion mise en avant</a></div>
+    <div><a href="indexAdmin.php?action=tdbProducts">gestion des produits</a></div>
+    <div><a href="indexAdmin.php?action=listReducs">gestion reducs</a></div>
+    <div><a href="indexAdmin.php?action=listEmails">gestion Emails</a></div>
+</div>
+<?php $content = ob_get_clean(); ?>
+<?php require 'templates/template.php'; ?>
