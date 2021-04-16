@@ -1,6 +1,6 @@
 <?php ob_start();?>
 <section>
-    <div class="newPizzas">
+    <div class="newOne">
         <h4>update bergers</h4>
         <?php $burger = $selectedBurger->fetch() ?>
         <div class="article_about">

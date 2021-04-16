@@ -1,60 +1,45 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="vente de pizzas & autres en livraison sur vannes">
-    <meta name="viewport" content="width=device-width, initial scale=1.0">
-    <title> Pizzas Express</title>
-    <script src="https://kit.fontawesome.com/f964f4d052.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="shortcut icon" type="image/png" href="app/Public/front/img/favicon.png">
-    <link rel="stylesheet" href="app/Public/front/css/style.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <div id="logo"><a href='index.php'><img src="app/Public/front/img/PizzasExpress.jpg"
-                        alt="logo pizzas express"></a>
-            </div>
-            <ul id="menu_list">
-                <li><a href="index.php"> Accueil</a></li>
-                <li><a href="index.php?action=pizzas"> Pizzas</a></li>
-                <li><a href="index.php?action=burger">burger </a></li>
-                <li><a href="index.php?action=boissons"> Boissons</a></li>
-                <li><a href="index.php?action=contact"> Contact</a></li>
-            </ul>
-            <div id="icons">
-                <p> <img src="app/Public/front/img/PizzasExpress.jpg" alt="logo pizzas express"></p>
-                <div id="burger"><i class="fa fa-bars"></i></div>
-            </div>
-        </nav>
-    </header>
-    
-    <div class="container"><?= $content?></div>
+<?php ob_start(); ?>
 
-    <footer>
-        <div id="socials-links">
-            <h3>reseaux sociaux</h3>
-            <div>
-                <a href=""><i class="fab fa-discord"></i></a>
-                <a href=""><i class="fab fa-twitter"></i></a>
-                <a href=""><i class="fas fa-at"></i></a>
-                <a href=""><i class="fab fa-github"></i></a>
-            </div>
-        </div>
-        <div id="mentions">
-            <p id="icon_connexion"><img class="bordure" src="app/Public/front/img/bender.png"
-                    alt="connexion administrateur"></p>
-            <div id="blabla">
-                <p><a href="#">Mentions Legales</a></p>
-                <p>Creation du site : <a href="#">B166ER</a> </p>
-                <p>Copyright 2021 reproduction interdite</p>
-            </div>
-        </div>
-    </footer>
-    <script src="app/Public/front/js/app.js"></script>
-    <script src="app/Public/front/js/api.js"></script>
-    <script src="app/Public/front/js/ajax.js"></script>
-</body>
+<h1>gestion a la une</h1>
 
-</html>
+<section class="slider">
+            <?php foreach($allALaUne as $aLaUne){ ?>
+
+                <div class="card_articles">
+
+                    <p><?= $aLaUne["title"] ?></p>                   
+                    <img src="<?= $aLaUne["imgAdress"] ?>" alt="<?= $aLaUne['title'] ?>"> 
+                    <button class="btn_gestion">
+                        <a class="btn_delete" href="indexAdmin.php?action=deleteALaUne&id=<?= $aLaUne['id'] ?>"> supprimer cette image</a>
+                </button><br>                
+                </div>    
+                          
+            <?php   } ?>          
+</section>
+
+<section>
+    <div class="newImg">
+        <h2>Creer une image</h2>
+        <p>taille : 254px * 154px</p>
+        <form action="indexAdmin.php?action=creatALaUne" method="post" enctype="multipart/form-data" class="formImg">
+
+        <div class="images_tiltle">
+            <label for="title">Titre SEO de votre image</label>
+            <input type="text" id="title" name="title">
+           
+        </div>
+        <div class="images_tiltle">
+        <input type="file" name="fileToUpload" class="filesImg">
+        <br><br>
+           
+        </div>
+        <div class="sub_btn">
+            <input type="submit" value="ENVOYER"  id="upload" class="submit">
+        </div>
+        </form>
+    </div>
+</section>
+
+<?php $content = ob_get_clean(); ?>
+<!--ob_get_clean — Lit le contenu courant du tampon de sortie puis l'efface-->
+<?php require 'templates/template.php'; ?>

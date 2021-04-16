@@ -106,27 +106,36 @@ class BackController{
           require "app/Views/back/aLaUne.php";
         }
       function creatALaUne($title){    
-          $target_dir = "app/Public/back/img/aLaUne/"; 
-          $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-          $uploadOk = 1; 
-          $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION)); 
-          $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);  
-          if ($check !== false) {
-              if ($_FILES["fileToUpload"]["size"] > 50000000) {
-                  echo "Désolé, votre fichier est trop volumineux. ";
-                  $uploadOk = 0;
-              }
-              if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-                  && $imageFileType != "gif") {
-                  echo "Seuls les formats JPG, JPEG, PNG & GIF files sont authorisés. ";
-                  $uploadOk = 0;
-              }
-              if ($uploadOk == 0) {
-                  echo "Désolé, votre avatar n'a pu être envoyé.";
-              } else {
-                    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+        $target_dir = "app/Public/back/img/aLaUne/"; //spécifie le répertoire où le fichier va être placé
+        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);// spécifie le chemin du fichier à télécharger
+        $uploadOk = 1; // n'est pas encore utilisé (sera utilisé plus tard)
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION)); //contient l'extension du fichier (en minuscules)
+          // on vérifie que le fichier image est une image réelle
+        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    
+            if ($check !== false) {
+                  // verifie la taille du fichier
+                if ($_FILES["fileToUpload"]["size"] > 50000000) {
+                    echo "Désolé, votre fichier est trop volumineux. ";
+                    $uploadOk = 0;
+                  }
+                  // Format autorisé
+                if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+                    && $imageFileType != "gif") {
+                    echo "Seuls les formats JPG, JPEG, PNG & GIF files sont authorisés. ";
+                    $uploadOk = 0;
+                  }
+                  // verifie la valeur de la variable, si 0 erreur
+                if ($uploadOk == 0) {
+                    echo "Désolé, votre avatar n'a pu être envoyé.";
+                      // si tout est ok on upload
+                  } else {
+    
+                if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
                         $imgManager = new \Project\Models\ImagesManager();
                         $uploadALaUne = $imgManager->uploadALaUne($title, $target_file);
+    
+    
                         header('Location: indexAdmin.php?action=listALaUne');                    
                     } else {
                         echo "Désolé, une erreur est survenue dans l'envoi de votre fichier. ";
@@ -142,6 +151,8 @@ class BackController{
           $allALaUne = $aLaUne->deleteALaUne($id); 
           header("Location: indexAdmin.php?action=listALaUne");   
       }
+
+  
 /******************* reduc *********************************** */
       function listReducs(){
           $reducs = new \Project\Models\ReducManager();
@@ -180,26 +191,26 @@ class BackController{
           header("Location: indexAdmin.php?action=listSlides");   
       }
       function creatSlide($title){  
-          $target_dir = "app/Public/back/img/slides/";
-          $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-          $uploadOk = 1;
-          $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION)); 
-          $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+          $target_dir = "app/Public/back/img/slides/";//spécifie le répertoire où le fichier va être placé
+          $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);// spécifie le chemin du fichier à télécharger
+          $uploadOk = 1; // n'est pas encore utilisé (sera utilisé plus tard)
+          $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));  //contient l'extension du fichier (en minuscules)
+          $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]); // on vérifie que le fichier image est une image réelle
           if ($check !== false) {
-              if ($_FILES["fileToUpload"]["size"] > 50000000) {
+              if ($_FILES["fileToUpload"]["size"] > 50000000) {// verifie la taille du fichier
                     echo "Désolé, votre fichier est trop volumineux. ";
                     $uploadOk = 0;
               }
-              if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+              if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" // Format autorisé
                   && $imageFileType != "gif") {
                   echo "Seuls les formats JPG, JPEG, PNG & GIF files sont authorisés. ";
                   $uploadOk = 0;
               }
-              if ($uploadOk == 0) {
+              if ($uploadOk == 0) {// verifie la valeur de la variable, si 0 erreur
                   echo "Désolé, votre avatar n'a pu être envoyé.";
-              } else {
+              } else {  // si tout est ok on upload
                     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                        $imgManager = new \Project\Models\imagesManager();
+                        $imgManager = new \Project\Models\ImagesManager();
                         $uploadImg = $imgManager->uploadSlide($title, $target_file);
                         header('Location: indexAdmin.php?action=listSlides');                    
                     } else {
@@ -211,6 +222,7 @@ class BackController{
                     $uploadOk = 0;
           }      
         }
+       
 /************************** mail ******************************* */
         function listEmails(){
             $mails = new \Project\Models\ContactManager();

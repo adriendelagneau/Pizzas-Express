@@ -2,14 +2,14 @@
 
 namespace Project\Models;
 
-class imagesManager extends Manager{
+class ImagesManager extends Manager{
 
 /********* slides********* */
     public function getSlides(){
         $bdd = $this->dbConnect();
         $req = $bdd->query("SELECT * FROM slider");         
         return $req;
-        }       
+    }       
     public function uploadSlide( $title, $imgAdress){
         $bdd = $this->dbConnect();
         $img = $bdd->prepare("INSERT INTO slider (title, imgAdress) VALUES (?,?)");
@@ -26,7 +26,7 @@ class imagesManager extends Manager{
         return $req;
     }
     
-    /******* a la une ************* */
+    /******* à la une ************* */
     public function getALaUne(){
         $bdd = $this->dbConnect();
         $req = $bdd->query("SELECT * FROM alaune");         

@@ -9,8 +9,7 @@ class FrontController{
         $slides = new \Project\Models\ImagesManager();
         $allSlides = $slides->getSlides(); 
         $aLaUne = new \Project\Models\ImagesManager();
-        $allALaUne = $aLaUne->getALaUne(); 
-        
+        $allALaUne = $aLaUne->getALaUne();         
         $reducs = new \Project\Models\ReducManager();
         $allReducs = $reducs->allReducs();
         require "app/Views/front/accueil.php";
@@ -67,7 +66,7 @@ class FrontController{
     function contactMail($lastname, $firstname,$adress, $mail, $sujet, $content){
         $contactManager = new \Project\Models\ContactManager;
         
-        if(filter_var($mail, FILTER_VALIDATE_EMAIL)){
+        if(filter_var($mail, FILTER_VALIDATE_EMAIL)){ /* filtre en fonction de la validité de l'Email */
             $contactUserMail = $contactManager->mail($lastname, $firstname,$adress, $mail, $sujet, $content);       
             require "app/Views/front/confirmMail.php";
         }else{
@@ -78,7 +77,7 @@ class FrontController{
         $userManager = new \Project\Models\UserManager();
         $connexAdmin = $userManager->recupMdp($pseudo, $mdp);
         $result = $connexAdmin->fetch();
-        $isPasswordCorrect = password_verify( $mdp, $result["pwd"]);
+        $isPasswordCorrect = password_verify( $mdp, $result["pwd"]); /* Vérifie que le hachage fourni correspond bien au mot de passe fourni. */
         $_SESSION["pseudo"] = $result["pseudo"];
         $_SESSION["pwd"] = $result["pwd"];
 

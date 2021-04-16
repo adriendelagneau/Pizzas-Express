@@ -155,21 +155,21 @@ width:90%;
     width:90%;
     margin: 20px auto;
     }
-.newPizzas{
+.newOne{
     width:90%;
     margin: 20px auto;
     padding-bottom: 20px;
 }
-.newPizzas form{
+.newOne form{
     
    display: flex;
    flex-direction: column;
   
    
 }
-.newPizzas label,
-.newPizzas textarea,
-.newPizzas input{
+.newOne label,
+.newOne textarea,
+.newOne input{
  width:80%;
  max-width:550px;
  margin-bottom: 10px;
