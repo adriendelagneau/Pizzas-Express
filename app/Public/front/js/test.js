@@ -15,3 +15,22 @@
     }
 }
 window.onresize =  aside*/
+
+
+
+
+/*validation du formulaire*/ 
+
+let formbutton = document.getElementById("cguAccept");
+let accept = document.getElementById("submit"); 
+accept.addEventListener('click', function() {
+
+    if(accept.checked==true) {
+        formbutton.disabled=false;
+    }
+    else  {
+        formbutton.disabled=true;
+    }
+
+
+});

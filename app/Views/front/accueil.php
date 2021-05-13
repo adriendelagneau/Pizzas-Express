@@ -10,10 +10,8 @@
     </ul>
     <div>
         <h3>Bienvenue</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae blanditiis obcaecati
-            impedit cupiditate
-            nulla perferendis repudiandae optio dolore voluptates consectetur suscipit dolorem, dicta officia.
-            Repudiandae! bla bla bla bla</p>
+        <p>Toutes nos pizzas et burger sont fait avec les meilleurs ingrédients, vente à emporter et livraison toute la semaine de 11h à 14h et de 19h à 23h.</p>
+        <p>Commander au 02 97 27 12 **<p>
     </div>
     <h3> offres spéciale</h3>
     <section id="reductions">
@@ -48,3 +46,9 @@
 </aside>
 <?php $content = ob_get_clean(); ?>
 <?php require "templates/template.php"; ?>
+
+<section>
+        <article>
+
+        
+</section>

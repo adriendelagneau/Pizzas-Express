@@ -27,3 +27,5 @@ document.querySelector("#adress").addEventListener("input", function () {
             });
     }
 });
+
+

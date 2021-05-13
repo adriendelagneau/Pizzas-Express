@@ -19,8 +19,3 @@ function cross(){       /* fermeture de la pop up */
     p.remove() 
 }
 
-
-
-
-
-

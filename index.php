@@ -33,7 +33,10 @@ try{
         }
         else if($_GET["action"] == "contact"){
             $frontController->contact();
-        }        
+        } 
+        
+        
+        
         else if($_GET["action"] == "contactMail"){
             $lastname = htmlspecialchars($_POST["name"]);
             $firstname = htmlspecialchars($_POST["firstname"]);
@@ -42,13 +45,16 @@ try{
             $sujet = htmlspecialchars($_POST["sujet"]);
             $content = htmlspecialchars($_POST["content"]);
 
-            if(!empty($lastname) && (!empty($firstname) && (!empty($mail) && (!empty($sujet) && (!empty($content)))))) {
+           
                 $frontController->contactMail($lastname, $firstname,$adress, $mail, $sujet, $content);
-            }
-            else{
-                    throw new Exception("Tous les champs ne sont pas remplis");
-                }
+            
+          
         }
+
+
+
+
+
         else if($_GET["action"] == 'connexion'){
             $pseudo = $_POST["pseudo"];        
             $mdp = $_POST["pwd"];

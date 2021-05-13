@@ -2,6 +2,8 @@
 
 namespace Project\Models;
 
+
+
 class Manager
 {
     protected function dbConnect()

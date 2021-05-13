@@ -49,8 +49,8 @@
             <p id="icon_connexion"><img class="bordure" src="app/Public/front/img/bender.png"
                     alt="connexion administrateur"></p>
             <div id="blabla">
-                <p><a href="#">Mentions Legales</a></p>
-                <p>Creation du site : <a href="#">B166ER</a> </p>
+                <p><a href="app/Views/front/mentions.html" target="_blank">Mentions Legales</a></p>
+                <p>Creation du site : <a href="">B166ER</a> </p>
                 <p>Copyright 2021 reproduction interdite</p>
             </div>
         </div>

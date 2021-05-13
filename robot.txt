@@ -1,0 +1,46 @@
+User-Agent: *  
+
+Disallow: /indexAdmin.php?action="tableauDeBord"
+Disallow: /indexAdmin.php?action="tdbProducts"
+Disallow: /indexAdmin.php?action="deconnexion"
+Disallow: /indexAdmin.php?action="listSlides"
+Disallow: /indexAdmin.php?action="listPizzas"
+Disallow: /indexAdmin.php?action="listALaUne"
+Disallow: /indexAdmin.php?action="listBurgers"
+Disallow: /indexAdmin.php?action="listBoissons"
+Disallow: /indexAdmin.php?action="listReducs"
+Disallow: /indexAdmin.php?action="listEmails"
+Disallow: /indexAdmin.php?action="addPizzas"
+Disallow: /indexAdmin.php?action="deletePizzas"
+Disallow: /indexAdmin.php?action="selectPizza"
+Disallow: /indexAdmin.php?action="updatePizza"
+Disallow: /indexAdmin.php?action="addBurger"
+Disallow: /indexAdmin.php?action="deleteBurger"
+Disallow: /indexAdmin.php?action="selectBurger"
+Disallow: /indexAdmin.php?action="updateBurger"
+Disallow: /indexAdmin.php?action="addBoisson"
+Disallow: /indexAdmin.php?action="deleteBoisson"
+Disallow: /indexAdmin.php?action="updateBoisson"
+Disallow: /indexAdmin.php?action="selectBoisson"
+Disallow: /indexAdmin.php?action="creatALaUne"
+Disallow: /indexAdmin.php?action="deleteALaUne"
+Disallow: /indexAdmin.php?action="'addReduc"
+Disallow: /indexAdmin.php?action="deleteReduc"
+Disallow: /indexAdmin.php?action="selectReduc"
+Disallow: /indexAdmin.php?action="updateReduc"
+Disallow: /indexAdmin.php?action="creatALaUne"
+Disallow: /indexAdmin.php?action="deleteALaUne"
+Disallow: /indexAdmin.php?action="'creatSlide"
+Disallow: /indexAdmin.php?action="deleteSlide"
+Disallow: /indexAdmin.php?action="'deleteEmail"
+
+
+
+
+
+
+       
+    
+   
+
+  

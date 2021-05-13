@@ -1,9 +1,10 @@
 <?php ob_start(); ?>
 <main class="burger">
     <h1>burger</h1>
+    <section>
     <?php foreach($allBurgers as $burgers) { ?>
-
-    <diV class="menu_name">
+<article >
+    <diV class="menu_name" >
         <p class="card_title"><?= $burgers["productName"] ?></p>
         <div class="menu_price">
             <p><?= $burgers["prix"] ?> €</p>
@@ -11,7 +12,7 @@
     </diV>
     <p class="card_content"><?= $burgers["productDescription"] ?></p>
     <div id="line"></div>
-
+    </article>
     <?php   } ?>
 </main>
 <aside>
@@ -22,6 +23,7 @@
         <p> <img src="<?= $aLaUne["imgAdress"] ?>" alt="<?= $aLaUne['title'] ?>"> </p>
     </div>
     <?php   } ?>
+    </section>
 </aside>
 <?php $content = ob_get_clean(); ?>
 <?php require "templates/template.php"; ?>

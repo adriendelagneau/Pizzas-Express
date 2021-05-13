@@ -28,3 +28,5 @@ function nextSlide(){ /* enleve l' id et le remet sur la slide suivante */
 setInterval(() => { /* gestion de l'interval */
     nextSlide();
 },6000);
+
+

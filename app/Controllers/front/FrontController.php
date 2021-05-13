@@ -58,21 +58,8 @@ class FrontController{
         $allALaUne = $aLaUne->getALaUne();
         require "app/Views/front/boissons.php";
     }
-    function contact(){
-        $aLaUne = new \Project\Models\ImagesManager();
-        $allALaUne = $aLaUne->getALaUne(); 
-        require "app/Views/front/contact.php";
-    }
-    function contactMail($lastname, $firstname,$adress, $mail, $sujet, $content){
-        $contactManager = new \Project\Models\ContactManager;
-        
-        if(filter_var($mail, FILTER_VALIDATE_EMAIL)){ /* filtre en fonction de la validité de l'Email */
-            $contactUserMail = $contactManager->mail($lastname, $firstname,$adress, $mail, $sujet, $content);       
-            require "app/Views/front/confirmMail.php";
-        }else{
-            header("Location: app/Views/front/error.php");
-        }
-    }
+  
+    
     function connexion($pseudo, $mdp){
         $userManager = new \Project\Models\UserManager();
         $connexAdmin = $userManager->recupMdp($pseudo, $mdp);
@@ -88,6 +75,58 @@ class FrontController{
             echo "vos identifiants sont incorectes";
         }
     }  
+   
+    function contact($errors=array()){
+        $aLaUne = new \Project\Models\ImagesManager();
+        $allALaUne = $aLaUne->getALaUne(); 
+        require "app/Views/front/contact.php";
+    }
+
+     function contactMail($lastname, $firstname,$adress, $mail, $sujet, $content){
+        $contactManager = new \Project\Models\ContactManager;
+        // Removing all illegal characters from email
+        $mail = filter_var($mail, FILTER_SANITIZE_EMAIL);
+
+        $errors = array();
+
+        if(!empty($mail) && filter_var($mail, FILTER_VALIDATE_EMAIL) == false) {
+            $errors["invalid_email"] = "The e-mail is invalid";
+        }
+        if(empty($lastname)){
+            $errors["required_name"] = "The name is required";
+        }
+        if(empty($firstname)){
+            $errors["required_fisrtname"] = "The firstname is required";
+        }
+        if(empty($mail)){
+            $errors["required_email"] = "The e-mail is required";
+        }
+        if(empty($adress)){
+            $errors["required_adress"] = "The adress is required";  
+        }
+        if(empty($sujet)){
+            $errors["required_sujet"] = "The subject is required";  
+        }
+        if(empty($content)){
+            $errors["required_content"] =   "The message is required";
+        }
+
+        if(strlen($content) > 300){
+            $errors["too_long_message"] = 'Message is too long ! 300 characters maximum are allowed';
+        } 
+
+        
+        if(!empty($lastname) && (!empty($firstname) && (!empty($mail) && (!empty($sujet) && (!empty($content)))))) {
+            if(empty($errors)) {
+                $contactUserMail = $contactManager->mail($lastname, $firstname,$adress, $mail, $sujet, $content);
+                $aLaUne = new \Project\Models\ImagesManager();
+                $allALaUne = $aLaUne->getALaUne(); 
+                require "app/Views/front/contact.php";
+            }
+        } else{
+            $this->contact($errors);
+        }
+    }
 }
 /*function inscription(){
         require "app/Views/front/inscription.php";
