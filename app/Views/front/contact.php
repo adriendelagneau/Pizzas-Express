@@ -57,7 +57,7 @@
             <?php if(isset($errors["too_long_message"])){echo $errors["too_long_message"];}?>
             </span>
 
-            <label for="cguAccept">en validant vous accepter les C.G.U</label>
+            <label for="cguAccept">en validant vous acceptez les C.G.U</label>
             <input type="checkbox" id="cguAccept" name="cguAccept">
 
             <input id="submit" type="submit" value="envoyer" desabled>

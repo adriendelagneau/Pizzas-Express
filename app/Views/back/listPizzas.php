@@ -1,5 +1,5 @@
 <?php ob_start();?>
-<main class="pizzas">
+
 <h1> Liste des pizzas</h1>
 <section>
     <div class="article_about">
@@ -11,21 +11,21 @@
                 <div class="card_content">Ingrédients : <?= $pizza["productDescription"] ?></div>
                 <div class="card_content">Prix M : <?= $pizza["prixMoyenne"] ?>€</div>
                 <div class="card_content">Prix L : <?= $pizza["prixLarge"] ?>€</div>             
-                <button>
+              <div>  <button>
                     <a class="btn_update" href="indexAdmin.php?action=selectPizza&id=<?= $pizza['id'] ?>"> update
-                        article</a>
+                        pizza</a>
                 </button>
                 <button class="btn_gestion">
                     <a class="btn_delete" href="indexAdmin.php?action=deletePizzas&id=<?= $pizza['id'] ?>"> supprimer
-                        cette pizzas</a>
-                </button><br>
+                        cette pizza</a>
+                </button>
             </div>
-
+            </div>
             <?php   } ?>
         </div>
     </div>
 </section>
-    <div class="newPizzas">
+    <div class="newOne">
         <h2>Créez votre nouvelle pizzas</h2>
         <form action="indexAdmin.php?action=addPizzas" method="POST">
       
@@ -55,6 +55,6 @@
 
         </form>
     </div>
-</main>
+
 <?php $content = ob_get_clean()?>
 <?php require 'templates/template.php'?>

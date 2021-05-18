@@ -6,8 +6,8 @@
         <label for="pseudo">Prenom : </label>
         <input type="text" placeholder="pseudo" name="pseudo" id="pseudo">
 
-        <label for="pwd">Mot de passe : </label>
-        <input type="text" placeholder="votre mot de passe" name="pwd" id="pwd">
+        <label for="pwd">Password: </label>
+        <input type="text" placeholder="P W D" name="pwd" id="pwd">
 
         <input type="submit" name="OK">
 

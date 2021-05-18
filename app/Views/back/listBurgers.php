@@ -1,5 +1,5 @@
 <?php ob_start();?>
-<main class="pizzas">
+
     <h1> Liste des Burgers</h1>
     <section>
         <div class="article_about">
@@ -10,23 +10,23 @@
                     <div class="card_title">Nom : <?= $burgers["productName"] ?></div>
                     <div class="card_content">Ingrédients : <?= $burgers["productDescription"] ?></div>
                     <div class="card_content">Prix : <?= $burgers["prix"] ?>€</div>
-                    <button>
+                   <div> <button>
                         <a class="btn_update" href="indexAdmin.php?action=selectBurger&id=<?= $burgers['id'] ?>"> update
-                            article</a>
+                            burger</a>
                     </button>
                     <button class="btn_gestion">
                         <a class="btn_delete" href="indexAdmin.php?action=deleteBurger&id=<?= $burgers['id'] ?>">
                             supprimer
-                            cette boisson</a>
+                            ce burger</a>
                     </button><br>
                 </div>
-                
+                </div>
                 <?php   } ?>
             </div>
         </div>
     </section>
-    <section>
-        <div class="newPizzas">
+   
+        <div class="newOne">
             <h2>Créez votre nouveau Burger </h2>
             <form action="indexAdmin.php?action=addBurger" method="POST">
 
@@ -45,7 +45,6 @@
 
             </form>
         </div>
-    </section>
-</main>
+    
 <?php $content = ob_get_clean()?>
 <?php require 'templates/template.php'?>

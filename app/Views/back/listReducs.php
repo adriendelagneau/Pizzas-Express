@@ -1,5 +1,5 @@
 <?php ob_start();?>
-<main class="pizzas">
+
     <h1> Liste des Reducs</h1>
     <section>
         <div class="article_about">
@@ -12,7 +12,7 @@
                     <div class="card_content">Condition 1 :<?= $reducs["condition1"] ?></div>
                     <div class="card_content">Condition 2 :<?= $reducs["condition2"] ?></div>
                     <div class="card_content">Validité : <?= $reducs["validite"] ?></div>
-                    <button>
+                   <div> <button>
                         <a class="btn_update" href="indexAdmin.php?action=selectReduc&id=<?= $reducs['id'] ?>"> update
                             article</a>
                     </button>
@@ -20,15 +20,16 @@
                         <a class="btn_delete" href="indexAdmin.php?action=deleteReduc&id=<?= $reducs['id'] ?>">
                             supprimer
                             cette boisson</a>
-                    </button><br>
+                    </button>
+                </div>
                 </div>
 
                 <?php   } ?>
             </div>
         </div>
     </section>
-    <section>
-        <div class="newPizzas">
+   
+        <div >
             <h2>Créez votre reduction</h2>
             <form action="indexAdmin.php?action=addReduc" method="POST">
 
@@ -53,7 +54,7 @@
 
             </form>
         </div>
-    </section>
-</main>
+    
+
 <?php $content = ob_get_clean()?>
 <?php require 'templates/template.php'?>

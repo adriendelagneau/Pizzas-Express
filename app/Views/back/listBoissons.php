@@ -10,10 +10,10 @@
                     <div class="card_title">Nom : <?= $boissons["productName"] ?></div>
                     <div class="card_content">Description<?= $boissons["productDescription"] ?></div>
                     <div class="card_content">Prix : <?= $boissons["prix"] ?>€</div>
-                    <button>
+                  <div>  <button>
                         <a class="btn_update" href="indexAdmin.php?action=selectBoisson&id=<?= $boissons['id'] ?>">
                             update
-                            article</a>
+                            boisson</a>
                     </button>
                     <button class="btn_gestion">
                         <a class="btn_delete" href="indexAdmin.php?action=deleteBoisson&id=<?= $boissons['id'] ?>">
@@ -21,7 +21,7 @@
                             cette boisson</a>
                     </button><br>
                 </div>
-
+                </div>
                 <?php   } ?>
             </div>
         </div>

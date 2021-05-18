@@ -1,20 +1,20 @@
 <?php ob_start(); ?>
 <h1>gestion slider</h1>
-<section class="slider">
+<section>
     <?php foreach($allSlides as $slides){ ?>
 
     <div class="card_articles">
         <p><?= $slides["title"] ?></p>
-        <img src="<?= $slides["imgAdress"] ?>" alt="<?= $slides['title'] ?>">
+        <p><img src="<?= $slides["imgAdress"] ?>" alt="<?= $slides['title'] ?>"></p>
         <button class="btn_gestion">
             <a class="btn_delete" href="indexAdmin.php?action=deleteSlide&id=<?= $slides['id'] ?>"> supprimer cette
-                image</a>
-        </button><br>
+                slide</a>
+        </button>
     </div>
 
     <?php   } ?>
 </section>
-<div class="newImg">
+<div class="newOne">
     <h3>Creer une image</h3>
     <p>taille de l image : 666px * 333px (respecter les dimensions)</p>
     <form action="indexAdmin.php?action=creatSlide" method="post" enctype="multipart/form-data" class="formImg">

@@ -468,7 +468,20 @@ footer {
 /*********************** 404 *******************************/
 
 #trito {
-    font-size: 4em;
+    width:100vw;
+    
+    background-color: black;
+   
+    text-align: center;
+}
+#trito h1{
+    margin-top: 60px;
+}
+#trito p{
+    margin-bottom: 30px;
+}
+#trito a{
+    text-decoration: underline;
 }
 
 
