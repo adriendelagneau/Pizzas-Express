@@ -1,8 +1,8 @@
 <?php ob_start(); ?>
 <h1>gestion slider</h1>
-<section>
-    <?php foreach($allSlides as $slides){ ?>
+<section id="slides">
 
+    <?php foreach($allSlides as $slides){ ?>
     <div class="card_articles">
         <p><?= $slides["title"] ?></p>
         <p><img src="<?= $slides["imgAdress"] ?>" alt="<?= $slides['title'] ?>"></p>
@@ -11,12 +11,12 @@
                 slide</a>
         </button>
     </div>
-
     <?php   } ?>
+    
 </section>
 <div class="newOne">
-    <h3>Creer une image</h3>
-    <p>taille de l image : 666px * 333px (respecter les dimensions)</p>
+    <h3>Créer une image</h3>
+    <p>Taille de l'image : 666px * 333px (respecter les dimensions)</p>
     <form action="indexAdmin.php?action=creatSlide" method="post" enctype="multipart/form-data" class="formImg">
         <div class="images_tiltle">
             <label for="title">Titre SEO de votre image</label>

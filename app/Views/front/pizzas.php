@@ -11,6 +11,7 @@
         <p>30cm</p>
     </diV>
     <section>
+
         <?php foreach($allPizzas as $pizzas) { ?>
         <article>
             <div id="line"></div>
@@ -24,17 +25,17 @@
             <p class="card_content"><?= $pizzas["productDescription"] ?></p>
         </article>
         <?php   } ?>
+
     </section>
 </main>
 <aside>
     <h2>pizzas à la une</h2>
-    <?php foreach($allALaUne as $aLaUne){ ?>
 
+    <?php foreach($allALaUne as $aLaUne){ ?>
     <div class="card_articles">
         <p><?= $aLaUne["title"] ?></p>
         <p> <img src="<?= $aLaUne["imgAdress"] ?>" alt="<?= $aLaUne['title'] ?>"> </p>
     </div>
-
     <?php   } ?>
 
 </aside>

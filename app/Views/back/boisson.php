@@ -6,20 +6,17 @@
         <div class="article_about">
             <h2><?= $boisson['productName'] ?></h2>
             <form action="indexAdmin.php?action=updateBoisson&id=<?= $boisson['id'] ?>" method="POST">
-
                 <label for="productName">Nom de la boisson</label>
                 <input type="text" id="productName" name="productName" value="<?= $boisson['productName'] ?>">
-
                 <label for="productDescription">Description : </label>
                 <textarea name="productDescription" id="productDescription" cols="30"
                     rows="10"><?= $boisson['productDescription'] ?></textarea>
-
                 <label for="prix">prix </label>
                 <input type="number" id="prix" name="prix" value="<?= $boisson['prix'] ?>">
-
-                <label for="isAlcool">Alcool</label>
-                <input type="checkbox" id="isAlcool" name="isAlcool">
-
+                <div>
+                    <label for="isAlcool">Alcool</label>
+                    <input type="checkbox" id="isAlcool" name="isAlcool">
+                </div>
                 <div class="subBtn">
                     <button type="submit" class="btn bt-secondary" data-dismiss="modal">Modifier</button>
                 </div>

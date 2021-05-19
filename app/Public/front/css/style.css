@@ -23,9 +23,9 @@ h2,
 h3 {
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 3px;
     color: rgb(177, 72, 58);
-    -webkit-text-stroke: 2px rgb(235, 228, 173);
+    -webkit-text-stroke: 1px rgb(235, 228, 173);
+    letter-spacing: 2px;
 }
 
 h1 {
@@ -39,12 +39,11 @@ h2 {
 
 h3 {
     margin: 40px auto;
-    -webkit-text-stroke: 1px rgb(235, 228, 173);
 }
 
 h4 {
-    margin: 15px;
     font-size: 1.5em;
+    margin: 15px;
     text-decoration: underline;
 }
 
@@ -84,8 +83,8 @@ nav ul {
 }
 
 nav ul li {
-    padding: 15px 0;
     font-size: 1.5em;
+    padding: 15px 0;
     text-transform: uppercase;
 }
 
@@ -123,17 +122,13 @@ nav img:hover {
     width: 100%;
     min-height: 100vh;
     padding-top: 120px;
-    color: white;
     background-color: black;
 }
 
-
-.categories{
+.categories {
     width: 100%;
     display: flex;
-
     font-size: 1.2em;
-
 }
 
 .categories p {
@@ -146,7 +141,6 @@ nav img:hover {
     -moz-border-radius: 3%;
     -ms-border-radius: 3%;
     -o-border-radius: 3%;
-
 }
 
 /*********** menu card *********/
@@ -171,8 +165,8 @@ nav img:hover {
 }
 
 .card_title {
-    margin: 30px 0 30px 10px;
     font-size: 1.3em;
+    margin: 30px 0 30px 10px;
     text-transform: uppercase;
     text-decoration: underline;
 }
@@ -193,10 +187,8 @@ nav img:hover {
 .accueil {
     text-align: center;
 }
-
 .accueil ul {
-    max-width: 90%;
-    padding-bottom: 40%;
+    padding-bottom: 28%;
 }
 
 .accueil li {
@@ -204,6 +196,7 @@ nav img:hover {
     opacity: 0;
     position: absolute;
     left: 50%;
+    padding-bottom: 28%;
 
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
@@ -221,11 +214,11 @@ nav img:hover {
 .accueil img {
     width: 100%;
     border: 2px solid rgb(235, 228, 173);
-    border-radius: 3%;
-    -webkit-border-radius: 3%;
-    -moz-border-radius: 3%;
-    -ms-border-radius: 3%;
-    -o-border-radius: 3%;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
 }
 
 #is-visible {
@@ -315,11 +308,9 @@ nav img:hover {
 
 .form_contact ul li {
     background-color: white;
-
     font-size: 0.7em;
     margin: 3px auto;
     cursor: pointer;
-
 }
 
 #submit {
@@ -334,14 +325,13 @@ nav img:hover {
 
 .display {
     display: none;
-
 }
 
 iframe {
     width: 80%;
     min-width: 350px;
-    margin-bottom: 40px;
     height: 300px;
+    margin-bottom: 40px;
     border-radius: 3%;
     -webkit-border-radius: 3%;
     -moz-border-radius: 3%;
@@ -361,8 +351,8 @@ iframe {
 }
 
 #is-show {
-    position: fixed;
     min-width: 300px;
+    position: fixed;
     text-align: center;
     padding: 35px;
     background-color: rgb(10, 4, 4);
@@ -375,13 +365,16 @@ iframe {
     left: 50%;
     top: 50%;
     transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -moz-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translateY(-50%) translateX(-50%);
+    -o-transform: translateY(-50%) translateX(-50%);
     z-index: 11;
 }
 
 #is-show form {
     display: flex;
     flex-direction: column;
-
 }
 
 #is-show input {
@@ -466,21 +459,22 @@ footer {
 }
 
 /*********************** 404 *******************************/
-
-#trito {
-    width:100vw;
-    
+/**/
+#error {
+    width: 100vw;
     background-color: black;
-   
     text-align: center;
 }
-#trito h1{
+
+#error h1 {
     margin-top: 60px;
 }
-#trito p{
+
+#error p {
     margin-bottom: 30px;
 }
-#trito a{
+
+#error a {
     text-decoration: underline;
 }
 
@@ -516,8 +510,6 @@ footer {
         margin: 15px 50px;
     }
 
-    /********************************/
-
     nav li::after {
         content: "";
         display: block;
@@ -549,13 +541,7 @@ footer {
         display: inline;
     }
 
-    /****************** main ***************/
-
     /**************** accueil **************/
-
-    .accueil ul {
-        padding-bottom: 28%;
-    }
 
     .accueil li {
         width: auto;
@@ -715,6 +701,10 @@ footer {
         ul,
         h3 {
             display: none;
+        }
+
+        .container {
+            padding-top: 10px;
         }
 
     }

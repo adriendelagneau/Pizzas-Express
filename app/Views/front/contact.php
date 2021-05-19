@@ -9,30 +9,22 @@
     <h2>nous laisser un message</h2>
     <div class="form_contact">
         <form action="index.php?action=contactMail" method="post" id="didi">
-
             <label for="name">Nom :</label>
             <input type="text" id="name" name="name" placeholder="Legrand">
-
             <span class="error">
             <?php if(isset($errors["required_name"])){echo $errors["required_name"];} ?>                
             </span>
-
             <label for="firstname">Prenom :</label>
             <input type="text" id="firstname" name="firstname" placeholder="John">
-
-
             <span class="error">
             <?php if(isset($errors["required_fisrtname"])){echo $errors["required_fisrtname"]; }?>
             </span>
-
             <label for="adress">Votre adresse :</label>
             <input type="text" name="adress" id="adress" placeholder="3 rue des peupliers"></input>
-            <div id="item"></div>
-            
+            <div id="item"></div>           
             <span class="error">
             <?php if(isset($errors["required_adress"])){echo $errors["required_adress"]; }?>
             </span>
-
             <label for="Email">Email :</label>
             <input type="mail" id="email" name="mail" placeholder="JohnLegrand@gmx.fr">
             <span class="error">
@@ -41,13 +33,11 @@
             <span class="error">
             <?php if(isset($errors["required_email"])){echo  $errors["required_email"];} ?>
             </span>
-
             <label for="Sujet">Sujet :</label>
             <input type="text" id="sujet" name="sujet" placeholder="L'objet de votre message">
             <span class="error">
             <?php if(isset($errors["required_sujet"])){echo $errors["required_sujet"]; }?>
             </span>
-
             <label for="Message">votre message :</label>
             <textarea id="content" name="content"></textarea>
             <span class="error">
@@ -55,26 +45,21 @@
             </span>
             <span class="error">
             <?php if(isset($errors["too_long_message"])){echo $errors["too_long_message"];}?>
-            </span>
-
-            <label for="cguAccept">en validant vous acceptez les C.G.U</label>
-            <input type="checkbox" id="cguAccept" name="cguAccept">
-
+            </span>   
             <input id="submit" type="submit" value="envoyer" desabled>
-
         </form>
     </div>
 </main>
 <aside>
     <h2>pizzas à la une</h2>
-    <?php foreach($allALaUne as $aLaUne){ ?>
 
+    <?php foreach($allALaUne as $aLaUne){ ?>
     <div class="card_articles">
         <p><?= htmlspecialchars($aLaUne["title"]) ?></p>
         <img src="<?= $aLaUne["imgAdress"] ?>" alt="<?= $aLaUne['title'] ?>">
     </div>
-
     <?php   } ?>
+    
 </aside>
 <?php $content = ob_get_clean(); ?>
 <?php require "templates/template.php"; ?>

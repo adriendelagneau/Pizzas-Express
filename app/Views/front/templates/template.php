@@ -22,7 +22,7 @@
             <ul id="menu_list">
                 <li><a href="index.php"> Accueil</a></li>
                 <li><a href="index.php?action=pizzas"> Pizzas</a></li>
-                <li><a href="index.php?action=burger">burger </a></li>
+                <li><a href="index.php?action=burger">Burgers </a></li>
                 <li><a href="index.php?action=boissons"> Boissons</a></li>
                 <li><a href="index.php?action=contact"> Contact</a></li>
             </ul>
@@ -49,7 +49,7 @@
             <p id="icon_connexion"><img class="bordure" src="app/Public/front/img/bender.png"
                     alt="connexion administrateur"></p>
             <div id="blabla">
-                <p><a href="app/Views/front/mentions.html" target="_blank">Mentions Legales</a></p>
+                <p><a href="mentions.html" target="_blank">Mentions Legales</a></p>
                 <p>Creation du site : <a href="">B166ER</a> </p>
                 <p>Copyright 2021 reproduction interdite</p>
             </div>
@@ -58,7 +58,6 @@
     <script src="app/Public/front/js/app.js"></script>
     <script src="app/Public/front/js/api.js"></script>
     <script src="app/Public/front/js/ajax.js"></script>
-    <script src="app/Public/front/js/test.js"></script>
 </body>
 
 </html>
