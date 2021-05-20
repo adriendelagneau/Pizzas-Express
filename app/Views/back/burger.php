@@ -3,7 +3,7 @@
     <div class="newOne">
         <h4>update bergers</h4>
         <?php $burger = $selectedBurger->fetch() ?>
-        <div class="article_about">
+        <div>
             <h2><?= $burger['productName'] ?></h2>
             <form action="indexAdmin.php?action=updateBurger&id=<?= $burger['id'] ?>" method="POST">
                 <label for="productName">Nom de la boisson</label>
@@ -13,8 +13,8 @@
                     rows="10"><?= $burger['productDescription'] ?></textarea>
                 <label for="prix">prix </label>
                 <input type="number" id="prix" name="prix" value="<?= $burger['prix'] ?>">
-                <div class="subBtn">
-                    <button type="submit" class="btn bt-secondary" data-dismiss="modal">Modifier</button>
+                <div>
+                    <button type="submit" data-dismiss="modal">Modifier</button>
                 </div>
             </form>
         </div>

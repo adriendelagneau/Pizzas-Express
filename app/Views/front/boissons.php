@@ -10,14 +10,12 @@
         <?php foreach($allBoissons as $boissons) { ?>
 
         <article>
-            <div class="menu_name">
-                <p class="card_title"><?= $boissons["productName"] ?></p>
-                <div class="menu_price">
-                    <p><?= $boissons["prix"] ?> €</p>
-                </div>
+            <div class="article_info">
+                <p class="article_title"><?= $boissons["productName"] ?></p>            
+                <p class="article_price"><?= $boissons["prix"] ?> €</p>           
             </div>
-            <p class="card_content"><?= $boissons["productDescription"] ?></p>
-            <div id="line"></div>
+            <p class="article_content"><?= $boissons["productDescription"] ?></p>
+            <div class="line"></div>
         </article>
         <?php   } ?>
 
@@ -27,7 +25,7 @@
     <h2>A la une</h2>
 
     <?php foreach($allALaUne as $aLaUne){ ?>
-    <article class="card_show_on">
+    <article class="article_show_on_on">
         <p><?= $aLaUne["title"] ?></p>
         <p> <img src="<?= $aLaUne["imgAdress"] ?>" alt="<?= $aLaUne['title'] ?>"> </p>
     </article>

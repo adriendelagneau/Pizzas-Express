@@ -4,15 +4,15 @@
 
     <?php foreach($allBurgers as $burgers){ ?>
     <div class="card_articles">
-        <div class="card_title">Nom : <?= $burgers["productName"] ?></div>
-        <div class="card_content">Ingrédients : <?= $burgers["productDescription"] ?></div>
-        <div class="card_content">Prix : <?= $burgers["prix"] ?>€</div>
+        <div class="article_title">Nom : <?= $burgers["productName"] ?></div>
+        <div class="article_content">Ingrédients : <?= $burgers["productDescription"] ?></div>
+        <div class="article_content">Prix : <?= $burgers["prix"] ?>€</div>
         <div> <button>
-                <a class="btn_update" href="indexAdmin.php?action=selectBurger&id=<?= $burgers['id'] ?>"> update
+                <a href="indexAdmin.php?action=selectBurger&id=<?= $burgers['id'] ?>"> update
                     burger</a>
             </button>
-            <button class="btn_gestion">
-                <a class="btn_delete" href="indexAdmin.php?action=deleteBurger&id=<?= $burgers['id'] ?>">
+            <button>
+                <a href="indexAdmin.php?action=deleteBurger&id=<?= $burgers['id'] ?>">
                     supprimer
                     ce burger</a>
             </button><br>
@@ -30,8 +30,8 @@
         <textarea name="productDescription" id="productDescription" cols="30" rows="10"></textarea>
         <label for="prix">Prix : </label>
         <input type="number" id="prix" name="prix">
-        <div class="subBtn">
-            <button type="submit" class="btn bt-secondary" data-dismiss="modal">Créer</button>
+        <div>
+            <button type="submit" data-dismiss="modal">Créer</button>
         </div>
     </form>
 </div>

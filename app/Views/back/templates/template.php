@@ -24,7 +24,7 @@
 
     <footer>
         <div id="mentions">
-            <img class="bordure" src="app/Public/front/img/PizzasExpress.jpg" alt="logo pizzas express">
+            <img class="bordure" src="app/Public/front/img/PizzasExpressLogo.jpg" alt="logo pizzas express">
             <div>
                 <p>Creation du site : <a href="#">B166ER</a> </p>
             </div>

@@ -11,7 +11,7 @@
             <input type="text" placeholder="votre mot de passe" name="pwd" id="pwd">
         </div>
         <div>
-            <input type="submit" name="">
+            <input type="submit" name="submit">
         </div>
     </form>
 </main>

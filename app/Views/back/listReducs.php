@@ -4,17 +4,17 @@
 
     <?php foreach($allReducs as $reducs){ ?>
     <div class="card_articles">
-        <div class="card_title">Titre : <?= $reducs["title"] ?></div>
-        <div class="card_content">Période : <?= $reducs["periode"] ?></div>
-        <div class="card_content">Condition 1 : <?= $reducs["condition1"] ?></div>
-        <div class="card_content">Condition 2 : <?= $reducs["condition2"] ?></div>
-        <div class="card_content">Validité : <?= $reducs["validite"] ?></div>
+        <div class="article_title">Titre : <?= $reducs["title"] ?></div>
+        <div class="article_content">Période : <?= $reducs["periode"] ?></div>
+        <div class="article_content">Condition 1 : <?= $reducs["condition1"] ?></div>
+        <div class="article_content">Condition 2 : <?= $reducs["condition2"] ?></div>
+        <div class="article_content">Validité : <?= $reducs["validite"] ?></div>
         <button>
-            <a class="btn_update" href="indexAdmin.php?action=selectReduc&id=<?= $reducs['id'] ?>"> update
+            <a href="indexAdmin.php?action=selectReduc&id=<?= $reducs['id'] ?>"> update
                 réduc</a>
         </button>
-        <button class="btn_gestion">
-            <a class="btn_delete" href="indexAdmin.php?action=deleteReduc&id=<?= $reducs['id'] ?>">
+        <button>
+            <a href="indexAdmin.php?action=deleteReduc&id=<?= $reducs['id'] ?>">
                 supprimer
                 cette réduc</a>
         </button>
@@ -35,8 +35,8 @@
         <textarea name="condition2" id="condition2" cols="30" rows="1"></textarea>
         <label for="validite">Validité :</label>
         <textarea name="validite" id="validite" cols="30" rows="1"></textarea>
-        <div class="subBtn">
-            <button type="submit" class="btn bt-secondary" data-dismiss="modal">Créer</button>
+        <div>
+            <button type="submit" data-dismiss="modal">Créer</button>
         </div>
     </form>
 </div>

@@ -3,7 +3,7 @@
     <div class="newOne">
         <h4>update boisson</h4>
         <?php $boisson = $selectedBoisson->fetch() ?>
-        <div class="article_about">
+        <div>
             <h2><?= $boisson['productName'] ?></h2>
             <form action="indexAdmin.php?action=updateBoisson&id=<?= $boisson['id'] ?>" method="POST">
                 <label for="productName">Nom de la boisson</label>
@@ -17,8 +17,8 @@
                     <label for="isAlcool">Alcool</label>
                     <input type="checkbox" id="isAlcool" name="isAlcool">
                 </div>
-                <div class="subBtn">
-                    <button type="submit" class="btn bt-secondary" data-dismiss="modal">Modifier</button>
+                <div>
+                    <button type="submit" data-dismiss="modal">Modifier</button>
                 </div>
             </form>
         </div>

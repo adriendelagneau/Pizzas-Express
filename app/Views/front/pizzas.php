@@ -6,23 +6,23 @@
         <p><a href="index.php?action=veg&isVeg=on">veg</a></p>
         <p><a href="index.php?action=pigless&isPigless=on">sans porc </a></p>
     </div>
-    <diV class="size_price">
+    <div class="size_price">
         <p>20cm</p>
         <p>30cm</p>
-    </diV>
+    </div>
     <section>
 
         <?php foreach($allPizzas as $pizzas) { ?>
         <article>
-            <div id="line"></div>
-            <diV class="menu_name">
-                <p class="card_title"><?= $pizzas["productName"] ?></p>
-                <div class="menu_price">
+            <div class="line"></div>
+            <div class="article_info">
+                <p class="article_title"><?= $pizzas["productName"] ?></p>
+                <div class="article_price">
                     <p><?= $pizzas["prixMoyenne"] ?> €</p>
                     <p><?= $pizzas["prixLarge"] ?> €</p>
-                </diV>
+                </div>
             </div>
-            <p class="card_content"><?= $pizzas["productDescription"] ?></p>
+            <p class="article_content"><?= $pizzas["productDescription"] ?></p>
         </article>
         <?php   } ?>
 
@@ -32,7 +32,7 @@
     <h2>A la une</h2>
 
     <?php foreach($allALaUne as $aLaUne){ ?>
-    <article class="card_show_on">
+    <article class="article_show_on_on">
         <p><?= $aLaUne["title"] ?></p>
         <p> <img src="<?= $aLaUne["imgAdress"] ?>" alt="<?= $aLaUne['title'] ?>"> </p>
     </article>

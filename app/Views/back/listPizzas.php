@@ -4,16 +4,16 @@
 
     <?php foreach($allPizzas as $pizza){ ?>
     <div class="card_articles">
-        <div class="card_title">Nom : <?= $pizza["productName"] ?></div>
-        <div class="card_content">Ingrédients : <?= $pizza["productDescription"] ?></div>
-        <div class="card_content">Prix M : <?= $pizza["prixMoyenne"] ?>€</div>
-        <div class="card_content">Prix L : <?= $pizza["prixLarge"] ?>€</div>
+        <div class="article_title">Nom : <?= $pizza["productName"] ?></div>
+        <div class="article_content">Ingrédients : <?= $pizza["productDescription"] ?></div>
+        <div class="article_content">Prix M : <?= $pizza["prixMoyenne"] ?>€</div>
+        <div class="article_content">Prix L : <?= $pizza["prixLarge"] ?>€</div>
         <div> <button>
-                <a class="btn_update" href="indexAdmin.php?action=selectPizza&id=<?= $pizza['id'] ?>"> update
+                <a href="indexAdmin.php?action=selectPizza&id=<?= $pizza['id'] ?>"> update
                     pizza</a>
             </button>
-            <button class="btn_gestion">
-                <a class="btn_delete" href="indexAdmin.php?action=deletePizzas&id=<?= $pizza['id'] ?>"> supprimer
+            <button>
+                <a href="indexAdmin.php?action=deletePizzas&id=<?= $pizza['id'] ?>"> supprimer
                     cette pizza</a>
             </button>
         </div>
@@ -40,8 +40,8 @@
             <lablel for="isPigless">SANS PORC</lablel>
             <input type="checkbox" id="isPigless" name="isPigless">
         </div>
-        <div class="subBtn">
-            <button type="submit" class="btn bt-secondary" data-dismiss="modal">Créer</button>
+        <div>
+            <button type="submit" data-dismiss="modal">Créer</button>
         </div>
     </form>
 </div>

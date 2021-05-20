@@ -54,7 +54,7 @@
     <h2>A la une</h2>
 
     <?php foreach($allALaUne as $aLaUne){ ?>
-    <article class="card_show_on">
+    <article class="article_show_on_on">
         <p><?= $aLaUne["title"] ?></p>
         <p> <img src="<?= $aLaUne["imgAdress"] ?>" alt="<?= $aLaUne['title'] ?>"> </p>
     </article>

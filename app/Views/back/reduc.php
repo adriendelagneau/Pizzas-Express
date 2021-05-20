@@ -2,7 +2,7 @@
 <section>
     <h4>update reducs</h4>
     <?php $reduc = $selectedReduc->fetch() ?>
-    <div class="article_about">
+    <div>
         <h2><?= $reduc['title'] ?></h2>
         <form action="indexAdmin.php?action=updateReduc&id=<?= $reduc['id'] ?>" method="POST">       
             <label for="title">Nom de la reduc</label>
@@ -15,8 +15,8 @@
             <textarea name="condition2" id="condition2" cols="30" rows="1"><?= $reduc["condition2"] ?></textarea>     
             <label for="validite">validite</label>
             <textarea name="validite" id="validite" cols="30" rows="1"><?= $reduc["validite"] ?></textarea>      
-            <div class="subBtn">
-                <button type="submit" class="btn bt-secondary" data-dismiss="modal">Update</button>
+            <div>
+                <button type="submit" data-dismiss="modal">Update</button>
             </div>
         </form>
     </div>

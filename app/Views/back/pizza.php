@@ -3,7 +3,7 @@
     <div class="newOne">
         <h4>update pizza</h4>
         <?php $pizza = $selectedPizza->fetch() ?>
-        <div class="article_about">
+        <div>
             <h2><?= $pizza['productName'] ?></h2>
             <form action="indexAdmin.php?action=updatePizza&id=<?= $pizza['id'] ?>" method="POST">
                 <label for="productName">Nom de la pizza : </label>
@@ -15,8 +15,8 @@
                 <input type="number" id="prixMoyenne" name="prixMoyenne" value="<?= $pizza['prixMoyenne'] ?>">
                 <label for="prixLarge">prix large : </label>
                 <input type="number" id="prixLarge" name="prixLarge" value="<?= $pizza['prixLarge'] ?>">
-                <div class="subBtn">
-                    <button type="submit" class="btn bt-secondary" data-dismiss="modal">Modifier</button>
+                <div>
+                    <button type="submit" data-dismiss="modal">Modifier</button>
                 </div>
                 <div>
                     <label for="isVeg">VEG</label>

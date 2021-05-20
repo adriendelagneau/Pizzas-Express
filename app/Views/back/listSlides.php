@@ -6,8 +6,8 @@
     <div class="card_articles">
         <p><?= $slides["title"] ?></p>
         <p><img src="<?= $slides["imgAdress"] ?>" alt="<?= $slides['title'] ?>"></p>
-        <button class="btn_gestion">
-            <a class="btn_delete" href="indexAdmin.php?action=deleteSlide&id=<?= $slides['id'] ?>"> supprimer cette
+        <button>
+            <a href="indexAdmin.php?action=deleteSlide&id=<?= $slides['id'] ?>"> supprimer cette
                 slide</a>
         </button>
     </div>
@@ -18,14 +18,14 @@
     <h3>Créer une image</h3>
     <p>Taille de l'image : 757px * 212px (respecter les dimensions)</p>
     <form action="indexAdmin.php?action=creatSlide" method="post" enctype="multipart/form-data" class="formImg">
-        <div class="images_tiltle">
+        <div>
             <label for="title">Titre SEO de votre image</label>
             <input type="text" id="title" name="title">
         </div>
-        <div class="images_tiltle">
+        <div>
             <input type="file" name="fileToUpload" class="filesImg">
         </div>
-        <div class="sub_btn">
+        <div>
             <input type="submit" value="ENVOYER" id="upload" class="submit">
         </div>
     </form>

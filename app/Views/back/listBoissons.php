@@ -4,16 +4,16 @@
 
     <?php foreach($allBoissons as $boissons){ ?>
     <div class="card_articles">
-        <div class="card_title">Nom : <?= $boissons["productName"] ?></div>
-        <div class="card_content">Description : <?= $boissons["productDescription"] ?></div>
-        <div class="card_content">Prix : <?= $boissons["prix"] ?>€</div>
+        <div class="article_title">Nom : <?= $boissons["productName"] ?></div>
+        <div class="article_content">Description : <?= $boissons["productDescription"] ?></div>
+        <div class="article_content">Prix : <?= $boissons["prix"] ?>€</div>
         <div>
             <button>
-                <a class="btn_update" href="indexAdmin.php?action=selectBoisson&id=<?= $boissons['id'] ?>">
+                <a href="indexAdmin.php?action=selectBoisson&id=<?= $boissons['id'] ?>">
                     update boisson</a>
             </button>
-            <button class="btn_gestion">
-                <a class="btn_delete" href="indexAdmin.php?action=deleteBoisson&id=<?= $boissons['id'] ?>">
+            <button>
+                <a href="indexAdmin.php?action=deleteBoisson&id=<?= $boissons['id'] ?>">
                     supprimer cette boisson</a>
             </button>
         </div>
@@ -34,8 +34,8 @@
             <label for="isAlcool">Alcool :</label>
             <input type="checkbox" id="isAlcool" name="isAlcool">
         </div>
-        <div class="subBtn">
-            <button type="submit" class="btn bt-secondary" data-dismiss="modal">Créer</button>
+        <div>
+            <button type="submit" data-dismiss="modal">Créer</button>
         </div>
     </form>
 </div>
