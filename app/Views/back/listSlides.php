@@ -16,7 +16,7 @@
 </section>
 <div class="newOne">
     <h3>Créer une image</h3>
-    <p>Taille de l'image : 666px * 333px (respecter les dimensions)</p>
+    <p>Taille de l'image : 757px * 212px (respecter les dimensions)</p>
     <form action="indexAdmin.php?action=creatSlide" method="post" enctype="multipart/form-data" class="formImg">
         <div class="images_tiltle">
             <label for="title">Titre SEO de votre image</label>

@@ -16,7 +16,7 @@
 <body>
     <header>
         <nav>
-            <div id="logo"><a href='index.php'><img src="app/Public/front/img/PizzasExpress.jpg"
+            <div id="logo"><a href='index.php'><img src="app/Public/front/img/PizzasExpressLogo.jpg"
                         alt="logo pizzas express"></a>
             </div>
             <ul id="menu_list">
@@ -27,7 +27,7 @@
                 <li><a href="index.php?action=contact"> Contact</a></li>
             </ul>
             <div id="icons">
-                <p> <img src="app/Public/front/img/PizzasExpress.jpg" alt="logo pizzas express"></p>
+                <p> <img src="app/Public/front/img/PizzasExpressLogo.jpg" alt="logo pizzas express"></p>
                 <div id="burger"><i class="fa fa-bars"></i></div>
             </div>
         </nav>
@@ -46,7 +46,7 @@
             </div>
         </div>
         <div id="mentions">
-            <p id="icon_connexion"><img class="bordure" src="app/Public/front/img/bender.png"
+            <p id="icon_connexion"><img class="bordure" src="app/Public/front/img/benderIcon.png"
                     alt="connexion administrateur"></p>
             <div id="blabla">
                 <p><a href="mentions.html" target="_blank">Mentions Legales</a></p>

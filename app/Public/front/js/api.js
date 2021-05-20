@@ -1,5 +1,7 @@
 /********************** api adress ********************** */
-document.querySelector("#adress").addEventListener("input", function () {
+let adress = document.querySelector("#adress")
+
+adress.addEventListener("input", function () {
     if (this.value.length > 4) {
         let url = `https://api-adresse.data.gouv.fr/search/?q=${this.value}&limit=5`; /* enregistrement de l URL & sa variable */
 

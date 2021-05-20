@@ -30,8 +30,6 @@
             </div>
         </div>
     </footer>
-    <script src="app/Public/front/js/app.js"></script>
-    <script src="app/Public/front/js/app.js"></script>
 </body>
 
 </html>

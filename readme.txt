@@ -21,3 +21,27 @@
 761*216
 757*212
 
+ document.getElementById("inscription").addEventListener("submit",function(){
+       
+        let erreur;
+        var inputs = this.getElementsByTagName("input");
+    
+    for(let i = 0; i < inputs.length; i++){
+        if(!inputs[i].value){
+            erreur = 1;
+        }
+    }
+        if(erreur){
+               
+        }else{
+             let httpRequest = new XMLHttpRequest()
+        document.body.appendChild(p) /* ajout du paragraphe P */
+        httpRequest.onreadystatechange = function () {
+            if (httpRequest.readyState === 4) {
+                p.innerHTML = httpRequest.responseText /* injection du contenu html*/
+            }
+        }
+        httpRequest.open('GET', "app/Views/front/connexion.php", true)
+        httpRequest.send();
+        }  
+    })

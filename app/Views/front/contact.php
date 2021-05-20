@@ -8,7 +8,7 @@
         width="800" height="600" style="border:0;" allowfullscreen="true" loading="lazy"></iframe>
     <h2>nous laisser un message</h2>
     <div class="form_contact">
-        <form action="index.php?action=contactMail" method="post" id="didi">
+        <form action="index.php?action=contactMail" method="post" id="inscription">
             <label for="name">Nom :</label>
             <input type="text" id="name" name="name" placeholder="Legrand">
             <span class="error">
@@ -46,18 +46,18 @@
             <span class="error">
             <?php if(isset($errors["too_long_message"])){echo $errors["too_long_message"];}?>
             </span>   
-            <input id="submit" type="submit" value="envoyer" desabled>
+            <input  id="submit" type="submit" ></input>
         </form>
     </div>
 </main>
 <aside>
-    <h2>pizzas à la une</h2>
+    <h2>A la une</h2>
 
     <?php foreach($allALaUne as $aLaUne){ ?>
-    <div class="card_articles">
-        <p><?= htmlspecialchars($aLaUne["title"]) ?></p>
-        <img src="<?= $aLaUne["imgAdress"] ?>" alt="<?= $aLaUne['title'] ?>">
-    </div>
+    <article class="card_show_on">
+        <p><?= $aLaUne["title"] ?></p>
+        <p> <img src="<?= $aLaUne["imgAdress"] ?>" alt="<?= $aLaUne['title'] ?>"> </p>
+    </article>
     <?php   } ?>
     
 </aside>
