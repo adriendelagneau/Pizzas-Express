@@ -122,6 +122,7 @@ class FrontController{
                 $aLaUne = new \Project\Models\ImagesManager();
                 $allALaUne = $aLaUne->getALaUne(); 
                 require "app/Views/front/contact.php";
+                echo '<script>alert("message envoyé");</script>';
             }
         } else{
             $this->contact($errors);

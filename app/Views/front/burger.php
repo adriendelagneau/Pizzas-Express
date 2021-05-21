@@ -21,7 +21,7 @@
     <section>
     
     <?php foreach($allALaUne as $aLaUne){ ?>
-    <article class="article_show_on_on">
+    <article class="article_show_on">
         <p><?= $aLaUne["title"] ?></p>
         <p> <img src="<?= $aLaUne["imgAdress"] ?>" alt="<?= $aLaUne['title'] ?>"> </p>
     </article>
