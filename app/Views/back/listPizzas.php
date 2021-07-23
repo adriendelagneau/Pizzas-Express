@@ -20,7 +20,7 @@
     </div>
     <?php   } ?>
 
-    </section>
+</section>
 <div class="newOne">
     <h2>Créer votre nouvelle pizzas</h2>
     <form action="indexAdmin.php?action=addPizzas" method="POST">

@@ -11,8 +11,8 @@
 
         <article>
             <div class="article_info">
-                <p class="article_title"><?= $boissons["productName"] ?></p>            
-                <p class="article_price"><?= $boissons["prix"] ?> €</p>           
+                <p class="article_title"><?= $boissons["productName"] ?></p>
+                <p class="article_price"><?= $boissons["prix"] ?> €</p>
             </div>
             <p class="article_content"><?= $boissons["productDescription"] ?></p>
             <div class="line"></div>
@@ -30,7 +30,7 @@
         <p> <img src="<?= $aLaUne["imgAdress"] ?>" alt="<?= $aLaUne['title'] ?>"> </p>
     </article>
     <?php   } ?>
-    
+
 </aside>
 <?php $content = ob_get_clean(); ?>
 <?php require "templates/template.php"; ?>

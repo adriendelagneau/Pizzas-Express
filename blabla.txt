@@ -1,0 +1,5 @@
+-inpute type date ?
+voir eventuel modif pour de case et modif bdd
+
+b166e1518483 Principal
+DESCRIPTION 	b166e1518483 	185.98.131.149

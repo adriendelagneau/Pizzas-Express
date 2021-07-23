@@ -12,7 +12,7 @@
         </button>
     </div>
     <?php   } ?>
-    
+
 </section>
 <div class="newOne">
     <h3>Créer une image</h3>

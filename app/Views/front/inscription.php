@@ -8,7 +8,7 @@
         </div>
         <div>
             <label for="pwd">Mot de passe : </label>
-            <input type="text" placeholder="votre mot de passe" name="pwd" id="pwd">
+            <input type="password" placeholder="votre mot de passe" name="pwd" id="pwd">
         </div>
         <div>
             <input type="submit" name="submit">

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial scale=1.0">
@@ -10,6 +11,7 @@
     <link href="https://fr.allfont.net/allfont.css?fonts=arial-black" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="app/Public/back/css/style.css">
 </head>
+
 <body>
     <header>
         <nav>

@@ -14,6 +14,7 @@ class FrontController{
         $allReducs = $reducs->allReducs();
         require "app/Views/front/accueil.php";
     }
+
     function pizzas(){      
         $pizzas = new \Project\Models\ProduitsManager();
         $allPizzas = $pizzas->allPizzas();
@@ -21,6 +22,7 @@ class FrontController{
         $allALaUne = $aLaUne->getALaUne(); 
         require "app/Views/front/pizzas.php";
     }
+
      function veg($isVeg){
         $pizzas = new \Project\Models\ProduitsManager();
         $allPizzas = $pizzas->pizzasVeg($isVeg);       
@@ -28,6 +30,7 @@ class FrontController{
         $allALaUne = $aLaUne->getALaUne();
         require "app/Views/front/pizzas.php";
     }
+
     function pigless($isPigless){
         $pizzas = new \Project\Models\ProduitsManager();
         $allPizzas = $pizzas->pizzasPigless($isPigless);       
@@ -50,7 +53,8 @@ class FrontController{
         $aLaUne = new \Project\Models\ImagesManager();
         $allALaUne = $aLaUne->getALaUne(); 
         require "app/Views/front/boissons.php";
-    }   
+    }
+
     function alcool($isAlcool){
         $boissons = new \Project\Models\ProduitsManager();
         $allBoissons = $boissons->alcool($isAlcool);       
@@ -58,7 +62,6 @@ class FrontController{
         $allALaUne = $aLaUne->getALaUne();
         require "app/Views/front/boissons.php";
     }
-  
     
     function connexion($pseudo, $mdp){
         $userManager = new \Project\Models\UserManager();
