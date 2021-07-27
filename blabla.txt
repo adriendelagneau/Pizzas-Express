@@ -3,3 +3,57 @@ voir eventuel modif pour de case et modif bdd
 
 b166e1518483 Principal
 DESCRIPTION 	b166e1518483 	185.98.131.149
+
+
+
+
+
+ function inscription($userName, $userFirstname,$userPhone, $userAdress, $userMail, $userPWD){
+        $inscription = new \Project\Models\UserManager;
+        // Removing all illegal characters from email
+        $userMail = filter_var($userMail, FILTER_SANITIZE_EMAIL);
+
+        $errorsx = array();
+
+
+        if(empty($userName)){
+            $errorsx["required_name"] = "The name is required";
+        }
+        
+        if(empty($userFirstname)){
+            $errorsx["required_Firstname"] = "The Firstname is required";
+        }
+        
+        if(empty($userAdress)){
+            $errorsx["required_adress"] = "The adress is required";
+        }
+
+        if(empty($userPhone)){
+            $errorsx["required_Phone"] = "The Phone number is required";
+        }
+
+
+        if(!empty($userMail) && filter_var($userMail, FILTER_VALIDATE_EMAIL) == false) {
+            $errorsx["invalid_email"] = "The e-mail is invalid";
+            }
+
+        if(empty($userMail)){
+            $errorsx["required_email"] = "The e-mail is required";
+        }
+    
+        if(empty($userPWD)){
+            $errorsx["required_PWD"] = "The password is required";
+        }
+        
+        if(!empty($userName)  && (!empty($userFirstname) && (!empty($userAdress) && (!empty($userPhone)  && (!empty($userMail) && (!empty($userPWD) )))))) {
+            if(empty($errorsx)) {
+                $inscription = $userManager->inscription($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD);
+                $aLaUne = new \Project\Models\ImagesManager();
+                $allALaUne = $aLaUne->getALaUne(); 
+                require "app/Views/front/contact.php";
+                echo '<script>alert("message envoyé");</script>';
+            }
+        } else{
+            $this->contact($errorsx);
+        }
+    }

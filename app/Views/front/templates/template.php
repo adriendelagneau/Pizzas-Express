@@ -25,9 +25,10 @@
                 <li><a href="index.php?action=burger">Burgers </a></li>
                 <li><a href="index.php?action=boissons"> Boissons</a></li>
                 <li><a href="index.php?action=contact"> Contact</a></li>
+                <li><a href="index.php?action=inscription"> Inscription</a></li>
             </ul>
             <div id="icons">
-                <p> <img src="app/Public/front/img/PizzasExpressLogo.jpg" alt="logo pizzas express"></p>
+            <div id="userIcon"><i class="fas fa-user"></i></div>
                 <div id="burger"><i class="fa fa-bars"></i></div>
             </div>
         </nav>

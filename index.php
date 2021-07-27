@@ -34,7 +34,25 @@ try{
         else if($_GET["action"] == "contact"){
             $frontController->contact();
         } 
-               
+        else if($_GET["action"] == "inscription"){
+            $frontController->inscription();
+        }   
+        
+
+
+        else if($_GET["action"] == "inscription"){
+
+            $userName = htmlspecialchars($_POST["userName"]);
+            $userFirstname = htmlspecialchars($_POST["userFirstname"]);  
+            $userAdress = htmlspecialchars($_POST["userAdress"]);
+            $userPhone = htmlspecialchars($_POST["userPhone"]);   
+            $userMail = htmlspecialchars($_POST["userMail"]);
+            $userPWD = htmlspecialchars($_POST["userPWD"]);            
+            $frontController->inscription($userName, $userFirstname, $userAdress,$userPhone,$userMail, $userPWD);       
+        }
+
+
+
         else if($_GET["action"] == "contactMail"){
             $lastname = htmlspecialchars($_POST["name"]);
             $mail = htmlspecialchars($_POST["mail"]);  

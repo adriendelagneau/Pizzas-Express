@@ -9,6 +9,14 @@ class UserManager extends Manager{
         $user->execute(array($pseudo, $mdp));
         return $user;
     }
+
+  / public function inscription($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD){
+        $bdd = $this->dbConnect();
+        $userX = $bdd->prepare("INSERT INTO userz(userName, userFirstname, userAdress, userPhone, userMail, userPWD) VALUES (?,?,?,?,?,?)");
+        $userX->execute(array($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD));
+        return $userX;
+    }
+
     public function recupMdp($pseudo, $mdp){
         $bdd = $this->dbConnect();
         $req = $bdd->prepare('SELECT * FROM user WHERE pseudo = ?');
