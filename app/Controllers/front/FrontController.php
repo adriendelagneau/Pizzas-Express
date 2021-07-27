@@ -85,7 +85,7 @@ class FrontController{
         require "app/Views/front/contact.php";
     }
 
-     function contactMail($lastname, $firstname,$adress, $mail, $sujet, $content){
+     function contactMail($lastname, $mail, $sujet, $content){
         $contactManager = new \Project\Models\ContactManager;
         // Removing all illegal characters from email
         $mail = filter_var($mail, FILTER_SANITIZE_EMAIL);
@@ -98,15 +98,11 @@ class FrontController{
         if(empty($lastname)){
             $errors["required_name"] = "The name is required";
         }
-        if(empty($firstname)){
-            $errors["required_fisrtname"] = "The firstname is required";
-        }
+       
         if(empty($mail)){
             $errors["required_email"] = "The e-mail is required";
         }
-        if(empty($adress)){
-            $errors["required_adress"] = "The adress is required";  
-        }
+       
         if(empty($sujet)){
             $errors["required_sujet"] = "The subject is required";  
         }
@@ -119,9 +115,9 @@ class FrontController{
         } 
 
         
-        if(!empty($lastname) && (!empty($firstname) && (!empty($mail) && (!empty($sujet) && (!empty($content)))))) {
+        if(!empty($lastname)  && (!empty($mail) && (!empty($sujet) && (!empty($content))))) {
             if(empty($errors)) {
-                $contactUserMail = $contactManager->mail($lastname, $firstname,$adress, $mail, $sujet, $content);
+                $contactUserMail = $contactManager->mail($lastname, $mail, $sujet, $content);
                 $aLaUne = new \Project\Models\ImagesManager();
                 $allALaUne = $aLaUne->getALaUne(); 
                 require "app/Views/front/contact.php";

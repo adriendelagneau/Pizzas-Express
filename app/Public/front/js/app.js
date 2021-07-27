@@ -12,10 +12,10 @@ burger.addEventListener('click', () => {
 /*******************confirm mail **************/
 
 
-let validationInscription = document.getElementById("inscription");
+/*let validationInscription = document.getElementById("inscription");
 
 if (validationInscription != null) {
     validationInscription.addEventListener('submit', (x) => {
         window.alert("votre message a bien été envoyé");
     })
-}
+}*/
