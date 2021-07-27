@@ -37,12 +37,10 @@ try{
                
         else if($_GET["action"] == "contactMail"){
             $lastname = htmlspecialchars($_POST["name"]);
-            $firstname = htmlspecialchars($_POST["firstname"]);
-            $adress = htmlspecialchars($_POST["adress"]);
             $mail = htmlspecialchars($_POST["mail"]);  
             $sujet = htmlspecialchars($_POST["sujet"]);
             $content = htmlspecialchars($_POST["content"]);           
-            $frontController->contactMail($lastname, $firstname,$adress, $mail, $sujet, $content);       
+            $frontController->contactMail($lastname, $mail, $sujet, $content);       
         }
 
         else if($_GET["action"] == 'connexion'){

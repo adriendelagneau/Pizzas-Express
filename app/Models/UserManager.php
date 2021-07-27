@@ -5,7 +5,7 @@ namespace Project\Models;
 class UserManager extends Manager{
     public function createUser($pseudo, $mdp){
         $bdd = $this->dbConnect();
-        $user = $bdd->prepare("INSERT INTO user(pseudo,  pwd) VALUE (?,?)");
+        $user = $bdd->prepare("INSERT INTO user(pseudo,  pwd) VALUES (?,?)");
         $user->execute(array($pseudo, $mdp));
         return $user;
     }
