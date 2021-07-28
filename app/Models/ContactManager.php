@@ -10,6 +10,8 @@ class ContactManager extends Manager
         $req -> execute(array($lastname, $mail, $sujet, $content));       
         return $req;
     }
+
+    
     public function getMails()
     {
         $bdd = $this->dbConnect();

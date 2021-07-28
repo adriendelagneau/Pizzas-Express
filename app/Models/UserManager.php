@@ -3,18 +3,13 @@
 namespace Project\Models;
 
 class UserManager extends Manager{
-    public function createUser($pseudo, $mdp){
-        $bdd = $this->dbConnect();
-        $user = $bdd->prepare("INSERT INTO user(pseudo,  pwd) VALUES (?,?)");
-        $user->execute(array($pseudo, $mdp));
-        return $user;
-    }
+   
 
-  / public function inscription($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD){
+   public function newUser($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD){
         $bdd = $this->dbConnect();
-        $userX = $bdd->prepare("INSERT INTO userz(userName, userFirstname, userAdress, userPhone, userMail, userPWD) VALUES (?,?,?,?,?,?)");
-        $userX->execute(array($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD));
-        return $userX;
+        $req = $bdd->prepare('INSERT INTO userz(userName, userFirstname, userAdress, userPhone, userMail, userPWD) VALUES (?,?,?,?,?,?)');
+        $req->execute(array($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD));
+        return $req;
     }
 
     public function recupMdp($pseudo, $mdp){

@@ -34,12 +34,10 @@ try{
         else if($_GET["action"] == "contact"){
             $frontController->contact();
         } 
-        else if($_GET["action"] == "inscription"){
-            $frontController->inscription();
-        }   
-        
-
-
+        else if($_GET["action"] == "toto"){
+            $frontController->toto();
+        } 
+     
         else if($_GET["action"] == "inscription"){
 
             $userName = htmlspecialchars($_POST["userName"]);
@@ -50,8 +48,6 @@ try{
             $userPWD = htmlspecialchars($_POST["userPWD"]);            
             $frontController->inscription($userName, $userFirstname, $userAdress,$userPhone,$userMail, $userPWD);       
         }
-
-
 
         else if($_GET["action"] == "contactMail"){
             $lastname = htmlspecialchars($_POST["name"]);
