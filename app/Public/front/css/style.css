@@ -64,7 +64,7 @@ nav {
     display: flex;
     justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.95);
-    position: fixed;
+   position: fixed;
     z-index: 2;
 }
 

@@ -143,14 +143,10 @@ class FrontController{
             $errorsz["required_userName"] = "The name is required";
         }
         
-
-
         if(empty($userFirstname)){
             $errorsz["required_userFirstname"] = "The Firstname is required";
         }
         
-
-
         if(empty($userAdress)){
             $errorsz["required_userAdress"] = "The adress is required";
         }
@@ -158,7 +154,6 @@ class FrontController{
         if(empty($userPhone)){
             $errorsz["required_userPhone"] = "The Phone number is required";
         }
-
 
         if(!empty($userMail) && filter_var($userMail, FILTER_VALIDATE_EMAIL) == false) {
             $errorsz["invalid_userEmail"] = "The e-mail is invalid";
@@ -175,7 +170,8 @@ class FrontController{
             
         if(!empty($userName)  && (!empty($userFirstname) && (!empty($userAdress) && (!empty($userPhone)  && (!empty($userMail) && (!empty($userPWD) )))))) {
             if(empty($errorsz)) {
-                $inscription = $toto->newUser($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD);
+                $cle = rand(1000000, 9000000);   
+                $inscription = $toto->newUser($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD,$cle);
                 $aLaUne = new \Project\Models\ImagesManager();
                 $allALaUne = $aLaUne->getALaUne(); 
                 require "app/Views/front/inscription.php";

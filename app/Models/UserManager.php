@@ -5,10 +5,10 @@ namespace Project\Models;
 class UserManager extends Manager{
    
 
-   public function newUser($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD){
+   public function newUser($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD,$cle){
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('INSERT INTO userz(userName, userFirstname, userAdress, userPhone, userMail, userPWD) VALUES (?,?,?,?,?,?)');
-        $req->execute(array($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD));
+        $req = $bdd->prepare('INSERT INTO userz(userName, userFirstname, userAdress, userPhone, userMail, userPWD,cle) VALUES (?,?,?,?,?,?,?)');
+        $req->execute(array($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD,$cle));
         return $req;
     }
 
