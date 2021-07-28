@@ -63,7 +63,7 @@ class FrontController{
         require "app/Views/front/boissons.php";
     }
     
-    function toto(){     
+    function toto($errorsz=array()){     
         $aLaUne = new \Project\Models\ImagesManager();
         $allALaUne = $aLaUne->getALaUne();
         require "app/Views/front/inscription.php";
@@ -93,8 +93,6 @@ class FrontController{
         require "app/Views/front/contact.php";
     }
 
-    
-
      function contactMail($lastname, $mail, $sujet, $content){
         $contactManager = new \Project\Models\ContactManager;
         // Removing all illegal characters from email
@@ -107,24 +105,20 @@ class FrontController{
         }
         if(empty($lastname)){
             $errors["required_name"] = "The name is required";
-        }
-       
+        }   
         if(empty($mail)){
             $errors["required_email"] = "The e-mail is required";
         }
-       
         if(empty($sujet)){
             $errors["required_sujet"] = "The subject is required";  
         }
         if(empty($content)){
             $errors["required_content"] =   "The message is required";
         }
-
         if(strlen($content) > 300){
             $errors["too_long_message"] = 'Message is too long ! 300 characters maximum are allowed';
         } 
-
-        
+      
         if(!empty($lastname)  && (!empty($mail) && (!empty($sujet) && (!empty($content))))) {
             if(empty($errors)) {
                 $contactUserMail = $contactManager->mail($lastname, $mail, $sujet, $content);
@@ -138,56 +132,57 @@ class FrontController{
         }
     }
 
-
    function inscription($userName, $userFirstname,  $userAdress, $userPhone, $userMail, $userPWD){
             $toto = new \Project\Models\UserManager;
+            // Removing all illegal characters from email
+            $userMail = filter_var($userMail, FILTER_SANITIZE_EMAIL);
 
-            $errorz = array();
-
-
-            $errorsx = array();
-
+            $errorsz = array();
 
         if(empty($userName)){
-            $errorsx["required_name"] = "The name is required";
+            $errorsz["required_userName"] = "The name is required";
         }
         
+
+
         if(empty($userFirstname)){
-            $errorsx["required_Firstname"] = "The Firstname is required";
+            $errorsz["required_userFirstname"] = "The Firstname is required";
         }
         
+
+
         if(empty($userAdress)){
-            $errorsx["required_adress"] = "The adress is required";
+            $errorsz["required_userAdress"] = "The adress is required";
         }
 
         if(empty($userPhone)){
-            $errorsx["required_Phone"] = "The Phone number is required";
+            $errorsz["required_userPhone"] = "The Phone number is required";
         }
 
 
         if(!empty($userMail) && filter_var($userMail, FILTER_VALIDATE_EMAIL) == false) {
-            $errorsx["invalid_email"] = "The e-mail is invalid";
+            $errorsz["invalid_userEmail"] = "The e-mail is invalid";
             }
 
         if(empty($userMail)){
-            $errorsx["required_email"] = "The e-mail is required";
+            $errorsz["required_userEmail"] = "The e-mail is required";
         }
     
         if(empty($userPWD)){
-            $errorsx["required_PWD"] = "The password is required";
+            $errorsz["required_userPWD"] = "The password is required";
         }
     
             
         if(!empty($userName)  && (!empty($userFirstname) && (!empty($userAdress) && (!empty($userPhone)  && (!empty($userMail) && (!empty($userPWD) )))))) {
-            if(empty($errorsx)) {
+            if(empty($errorsz)) {
                 $inscription = $toto->newUser($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD);
                 $aLaUne = new \Project\Models\ImagesManager();
                 $allALaUne = $aLaUne->getALaUne(); 
-                require "app/Views/front/contact.php";
+                require "app/Views/front/inscription.php";
                 echo '<script>alert("message envoyé");</script>';
             }
         } else{
-            $this->contact($errorsx);
+            $this->toto($errorsz);
         }
     }
 
