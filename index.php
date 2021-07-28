@@ -45,8 +45,11 @@ try{
             $userAdress = htmlspecialchars($_POST["userAdress"]);
             $userPhone = htmlspecialchars($_POST["userPhone"]);   
             $userMail = htmlspecialchars($_POST["userMail"]);
-            $userPWD = htmlspecialchars($_POST["userPWD"]);       
-             
+
+            $user1 = htmlspecialchars($_POST["userPWD"]);  
+            
+            
+            $userPWD = password_hash($user1, PASSWORD_DEFAULT);
 
             
             $frontController->inscription($userName, $userFirstname, $userAdress,$userPhone,$userMail, $userPWD);       
