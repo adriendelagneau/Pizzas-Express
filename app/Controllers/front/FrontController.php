@@ -70,6 +70,13 @@ class FrontController{
     }
 
 
+
+
+
+
+
+
+    
     function connexion($pseudo, $mdp){
         $userManager = new \Project\Models\UserManager();
         $connexAdmin = $userManager->recupMdp($pseudo, $mdp);
@@ -86,6 +93,10 @@ class FrontController{
         }
     }  
    
+
+
+
+
 
     function contact($errors=array()){
         $aLaUne = new \Project\Models\ImagesManager();

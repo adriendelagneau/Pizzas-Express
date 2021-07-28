@@ -2,10 +2,10 @@
     <p id="close"><i class="fas fa-times"></i></p>
     <h3>connexion user</h3>
     <form action="index.php?action=connexion" method="post">
-        <label for="pseudo">Prenom : </label>
-        <input type="text" placeholder="pseudo" name="pseudo" id="pseudo">
-        <label for="pwd">Password: </label>
-        <input type="password" placeholder="P W D" name="pwd" id="pwd">
+        <label for="pseudoUser">Prenom : </label>
+        <input type="text" placeholder="pseudoUser" name="pseudoUser" id="pseudoUser">
+        <label for="pwdUser">Password: </label>
+        <input type="password" placeholder="pwdUser" name="pwdUser" id="pwdUser">
         <input type="submit" value="OK">
     </form>
 </div>
