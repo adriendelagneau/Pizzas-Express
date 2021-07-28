@@ -18,6 +18,13 @@ class UserManager extends Manager{
         $req->execute(array($pseudo));
         return $req;
     }
+
+    public function recupMdpUser($pseudoUser, $pwdUser){
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT * FROM userz WHERE userName = ?');
+        $req->execute(array($pseudoUser));
+        return $req;
+    }
  
    
 }

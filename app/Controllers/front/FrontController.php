@@ -76,17 +76,35 @@ class FrontController{
 
 
 
-    
+
     function connexion($pseudo, $mdp){
         $userManager = new \Project\Models\UserManager();
         $connexAdmin = $userManager->recupMdp($pseudo, $mdp);
         $result = $connexAdmin->fetch();
         $isPasswordCorrect = password_verify( $mdp, $result["pwd"]); /* Vérifie que le hachage fourni correspond bien au mot de passe fourni. */
+
         $_SESSION["pseudo"] = $result["pseudo"];
         $_SESSION["pwd"] = $result["pwd"];
 
         if ($isPasswordCorrect){
             require "app/Views/back/tableauDeBord.php";
+        }
+        else {
+            echo "vos identifiants sont incorectes";
+        }
+    }  
+
+    function connexionUser($pseudoUser, $pwdUser){
+        $userManager2 = new \Project\Models\UserManager();
+        $connexAdmin2 = $userManager2->recupMdpUser($pseudoUser, $pwdUser);
+        $result = $connexAdmin2->fetch();
+        $isPasswordCorrect2 = password_verify($pwdUser, $result["userPWD"]); 
+       
+        //$_SESSION["pseudo"] = $result["pseudo"];
+        //$_SESSION["pwd"] = $result["pwd"];
+
+        if ($isPasswordCorrect2){
+            require "app/Views/back/tableauDeBordUser.php";
         }
         else {
             echo "vos identifiants sont incorectes";
@@ -186,7 +204,7 @@ class FrontController{
                 $aLaUne = new \Project\Models\ImagesManager();
                 $allALaUne = $aLaUne->getALaUne(); 
                 require "app/Views/front/inscription.php";
-                echo '<script>alert("message envoyé");</script>';
+                echo '<script>alert("Bravo, vous etes maintenant inscrit");</script>';
             }
         } else{
             $this->toto($errorsz);

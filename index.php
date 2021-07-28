@@ -72,22 +72,25 @@ try{
                 throw new Exception("renseignez tout les champs s.v.p");
             }          
         }  
+
+        else if($_GET["action"] == 'connexionUser'){
+            $userName = $_POST["pseudoUser"];        
+            $userPWD = $_POST["pwdUser"];
+            if(!empty($userName) && !empty($userPWD)){
+                $frontController->connexionUser($userName, $userPWD);
+            }else{
+                throw new Exception("renseignez tous les champs S.V.P");
+            }          
+        }  
+
     }else{
         $frontController->accueil();
         }
+
+        
     }
 catch(Exception $e){
     die("Erreur:" . $e->getMessage());
 };
 
-   /*   
-        else if($_GET["action"] == "inscription"){
-                $frontController->inscription();    
-        }        
-        else  if($_GET["action"] == "createUser"){
-            $pseudo = $_POST["pseudo"];          
-            $pwd = $_POST["pwd"];       
-            $mdp = password_hash($pwd, PASSWORD_DEFAULT); utilisation d une fonction de hashage
-            $frontController->createUser($pseudo, $mdp);
-        }   
-    */           
+  
