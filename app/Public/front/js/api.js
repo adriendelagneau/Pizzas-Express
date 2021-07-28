@@ -1,5 +1,5 @@
 /********************** api adress ********************** */
-let adress = document.querySelector("#adress")
+let adress = document.querySelector("#userAdress")
 
 if (adress != null) {
     adress.addEventListener("input", function () {
@@ -22,7 +22,7 @@ if (adress != null) {
                     item.classList.remove("display"); /* suppression du display */
                     for (var i = 0; i < items.length; i++) {
                         items[i].onclick = function () {
-                            document.querySelector('#adress').value = this.innerHTML; /* au click injection du html dans l élement selectionné */
+                            document.querySelector('#userAdress').value = this.innerHTML; /* au click injection du html dans l élement selectionné */
                             item.classList.add("display");
                         };
                     };

@@ -141,13 +141,55 @@ class FrontController{
 
    function inscription($userName, $userFirstname,  $userAdress, $userPhone, $userMail, $userPWD){
             $toto = new \Project\Models\UserManager;
-            $inscription = $toto->newUser($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD);
-               
+
+            $errorz = array();
+
+
+            $errorsx = array();
+
+
+        if(empty($userName)){
+            $errorsx["required_name"] = "The name is required";
+        }
+        
+        if(empty($userFirstname)){
+            $errorsx["required_Firstname"] = "The Firstname is required";
+        }
+        
+        if(empty($userAdress)){
+            $errorsx["required_adress"] = "The adress is required";
+        }
+
+        if(empty($userPhone)){
+            $errorsx["required_Phone"] = "The Phone number is required";
+        }
+
+
+        if(!empty($userMail) && filter_var($userMail, FILTER_VALIDATE_EMAIL) == false) {
+            $errorsx["invalid_email"] = "The e-mail is invalid";
+            }
+
+        if(empty($userMail)){
+            $errorsx["required_email"] = "The e-mail is required";
+        }
+    
+        if(empty($userPWD)){
+            $errorsx["required_PWD"] = "The password is required";
+        }
+    
+            
+        if(!empty($userName)  && (!empty($userFirstname) && (!empty($userAdress) && (!empty($userPhone)  && (!empty($userMail) && (!empty($userPWD) )))))) {
+            if(empty($errorsx)) {
+                $inscription = $toto->newUser($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD);
                 $aLaUne = new \Project\Models\ImagesManager();
                 $allALaUne = $aLaUne->getALaUne(); 
-                require "app/Views/front/inscription.php";
-                echo '<script>alert("toto envoyé");</script>';
-   }
+                require "app/Views/front/contact.php";
+                echo '<script>alert("message envoyé");</script>';
+            }
+        } else{
+            $this->contact($errorsx);
+        }
+    }
 
 }
 
