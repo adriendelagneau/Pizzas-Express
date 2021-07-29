@@ -12,6 +12,12 @@ class BackController{
       function tdbProducts(){
           require "app/Views/back/tdbProducts.php";
       }
+      function infosUser(){
+        require "app/Views/back/infosUser.php";
+    }
+    function orderList(){
+        require "app/Views/back/orderList.php";
+    }
       function deconnexion(){
           $slides = new \Project\Models\ImagesManager();
           $allSlides = $slides->getSlides(); 

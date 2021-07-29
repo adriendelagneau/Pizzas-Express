@@ -41,6 +41,13 @@ try{
         else if($_GET["action"] == "listEmails"){
             $backController->listEmails();
             }
+            else if($_GET["action"] == "infosUser"){
+                $backController->infosUser();
+                }
+                else if($_GET["action"] == "orderList"){
+                    $backController->orderlist();
+                    }
+
 
 /************* pizzas *************** */       
         elseif($_GET['action'] == 'addPizzas'){              
@@ -175,9 +182,21 @@ try{
             $id = $_GET["id"];
             $backController->deleteEmail($id);
             }
+
+            /************************    user   ************************ */
+
+
+
+
     }else{
         $backController->tableauDeBord();
     }
 }catch (Exception $e){
     die("Erreur : " . $e->getMessage());
+
+
+
+
+
+
 };
