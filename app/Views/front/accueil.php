@@ -8,7 +8,7 @@
         <?php   } ?>
 
     </ul>
-
+<?php  var_dump ($_SESSION)?>
     <h3>Bienvenue</h3>
 
     <p>Toutes nos pizzas et burger sont fait avec les meilleurs ingrédients, vente à emporter et livraison toute la

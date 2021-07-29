@@ -12,7 +12,7 @@ class UserManager extends Manager{
         return $req;
     }
 
-    public function recupMdp($pseudo, $mdp){
+    public function recupMdpAdmin($pseudo, $mdp){
         $bdd = $this->dbConnect();
         $req = $bdd->prepare('SELECT * FROM user WHERE pseudo = ?');
         $req->execute(array($pseudo));

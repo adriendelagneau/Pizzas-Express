@@ -7,7 +7,7 @@ class BackController{
    
 
       function tableauDeBord(){
-          require "app/Views/back/tableauDeBord.php";
+          require "app/Views/back/tableauDeBordAdmin.php";
       }
       function tdbProducts(){
           require "app/Views/back/tdbProducts.php";
@@ -19,6 +19,7 @@ class BackController{
           $allALaUne = $aLaUne->getALaUne();
           $reducs = new \Project\Models\ReducManager();
           $allReducs = $reducs->allReducs(); 
+          
           require "app/Views/front/accueil.php";
       }
 /*************************** pizza ****************************** */

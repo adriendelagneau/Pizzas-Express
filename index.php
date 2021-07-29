@@ -63,11 +63,11 @@ try{
             $frontController->contactMail($lastname, $mail, $sujet, $content);       
         }
 
-        else if($_GET["action"] == 'connexion'){
+        else if($_GET["action"] == 'connexionAdmin'){
             $pseudo = $_POST["pseudo"];        
             $mdp = $_POST["pwd"];
             if(!empty($pseudo) && !empty($mdp)){
-                $frontController->connexion($pseudo, $mdp);
+                $frontController->connexionAdmin($pseudo, $mdp);
             }else{
                 throw new Exception("renseignez tout les champs s.v.p");
             }          

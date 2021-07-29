@@ -17,7 +17,7 @@ bender.addEventListener('click', (x) => {
             })
         }
     }
-    httpRequest.open('GET', "app/Views/front/connexion.php", true)
+    httpRequest.open('GET', "app/Views/front/connexionAdmin.php", true)
     httpRequest.send();
 
 

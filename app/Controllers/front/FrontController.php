@@ -77,17 +77,14 @@ class FrontController{
 
 
 
-    function connexion($pseudo, $mdp){
+    function connexionAdmin($pseudo, $mdp){
         $userManager = new \Project\Models\UserManager();
-        $connexAdmin = $userManager->recupMdp($pseudo, $mdp);
+        $connexAdmin = $userManager->recupMdpAdmin($pseudo, $mdp);
         $result = $connexAdmin->fetch();
         $isPasswordCorrect = password_verify( $mdp, $result["pwd"]); /* Vérifie que le hachage fourni correspond bien au mot de passe fourni. */
 
-        $_SESSION["pseudo"] = $result["pseudo"];
-        $_SESSION["pwd"] = $result["pwd"];
-
         if ($isPasswordCorrect){
-            require "app/Views/back/tableauDeBord.php";
+            require "app/Views/back/tableauDeBordAdmin.php";
         }
         else {
             echo "vos identifiants sont incorectes";
@@ -99,11 +96,18 @@ class FrontController{
         $connexAdmin2 = $userManager2->recupMdpUser($pseudoUser, $pwdUser);
         $result = $connexAdmin2->fetch();
         $isPasswordCorrect2 = password_verify($pwdUser, $result["userPWD"]); 
-       
-        //$_SESSION["pseudo"] = $result["pseudo"];
+        
         //$_SESSION["pwd"] = $result["pwd"];
-
+        
         if ($isPasswordCorrect2){
+            session_unset(); 
+            $_SESSION["userName"] = $result["userName"];
+            $_SESSION["userFirstname"] = $result["userFirstname"];
+            $_SESSION["userPhone"] = $result["userPhone"];
+            $_SESSION["userAdress"] = $result["userAdress"];
+            $_SESSION["userMail"] = $result["userMail"];
+            $_SESSION["userName"] = $result["userName"];
+
             require "app/Views/back/tableauDeBordUser.php";
         }
         else {
@@ -203,7 +207,7 @@ class FrontController{
                 $inscription = $toto->newUser($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD);
                 $aLaUne = new \Project\Models\ImagesManager();
                 $allALaUne = $aLaUne->getALaUne(); 
-                require "app/Views/front/inscription.php";
+                require "app/Views/back/tableauDeBordUser.php";
                 echo '<script>alert("Bravo, vous etes maintenant inscrit");</script>';
             }
         } else{
