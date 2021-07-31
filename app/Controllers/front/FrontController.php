@@ -97,16 +97,18 @@ class FrontController{
         $result = $connexAdmin2->fetch();
         $isPasswordCorrect2 = password_verify($pwdUser, $result["userPWD"]); 
         
-        //$_SESSION["pwd"] = $result["pwd"];
+        
         
         if ($isPasswordCorrect2){
             session_unset(); 
+
+            $_SESSION["userId"] = $result["userId"];
             $_SESSION["userName"] = $result["userName"];
             $_SESSION["userFirstname"] = $result["userFirstname"];
             $_SESSION["userPhone"] = $result["userPhone"];
             $_SESSION["userAdress"] = $result["userAdress"];
             $_SESSION["userMail"] = $result["userMail"];
-            $_SESSION["userName"] = $result["userName"];
+            $_SESSION["userPWD"] = $result["userPWD"];
 
             require "app/Views/back/tableauDeBordUser.php";
         }
@@ -205,6 +207,8 @@ class FrontController{
             if(empty($errorsz)) {
                  
                 $inscription = $toto->newUser($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD);
+
+
                 $aLaUne = new \Project\Models\ImagesManager();
                 $allALaUne = $aLaUne->getALaUne(); 
                 require "app/Views/back/tableauDeBordUser.php";

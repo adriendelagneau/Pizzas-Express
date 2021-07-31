@@ -242,4 +242,12 @@ class BackController{
             header("Location: indexAdmin.php?action=listEmails");
         }   
 
+        /**user*** */
+
+        function updateUser( $userName, $userFirstname, $userAdress, $userPhone, $userMail){
+            $user = new \Project\Models\UserManager();
+            $updateUser = $user->updateUser( $userName, $userFirstname, $userAdress, $userPhone, $userMail);
+
+        }
+
 }

@@ -184,7 +184,15 @@ try{
             }
 
             /************************    user   ************************ */
-
+            elseif($_GET["action"] == "updateUser"){
+          
+                $userName = htmlspecialchars($_POST['userName']);
+                $userFirstname = htmlspecialchars($_POST['userFirstname']);
+                $userAdress = htmlspecialchars($_POST['userAdress']);
+                $userPhone = htmlspecialchars($_POST['userPhone']);
+                $userMail = htmlspecialchars($_POST['userMail']);
+                $backController->updateUser( $userName, $userFirstname, $userAdress, $userPhone, $userMail);
+            } 
 
 
 

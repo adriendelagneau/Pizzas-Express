@@ -26,5 +26,17 @@ class UserManager extends Manager{
         return $req;
     }
  
-   
+    public function updateUser( $userName, $userFirstname, $userAdress, $userPhone, $userMail){
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare("UPDATE userz SET  userName = :userName, userFirstname = :userFirstname,  userAdress = :userAdress, userPhone = :userPhone, userMail = :userMail WHERE userId = :id");//: remplace $ dans requete sql
+        $req->execute([
+        'userName' => $userName,
+        'userFirstname' => $userFirstname,
+        'userAdress' => $userAdress,
+        'userPhone' => $userPhone,
+        'userMail' => $userMail
+          
+                ]);
+        return $req;  
+    }   
 }
