@@ -12,6 +12,9 @@ class BackController{
       function tdbProducts(){
           require "app/Views/back/tdbProducts.php";
       }
+      function tableauDeBordUser(){
+          require "app/Views/back/tableauDeBordUser.php";
+      }
       function infosUser(){
         require "app/Views/back/infosUser.php";
     }
@@ -247,7 +250,7 @@ class BackController{
         function updateUser( $userId,$userName, $userFirstname, $userAdress, $userPhone, $userMail){
             $user = new \Project\Models\UserManager();
             $updateUser = $user->updateUser( $userId,$userName, $userFirstname, $userAdress, $userPhone, $userMail);
-
+            require "app/Views/back/tableauDeBordUser.php";
         }
 
 }

@@ -35,4 +35,4 @@
 
 
 <?php $content = ob_get_clean()?>
-<?php require 'templates/template.php'?>
+<?php require 'templates/templateUser.php'?>

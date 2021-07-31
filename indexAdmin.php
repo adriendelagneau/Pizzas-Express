@@ -16,7 +16,10 @@ try{
             }
         else if($_GET["action"] == "tdbProducts"){
             $backController->tdbProducts();
-            }
+            }    
+        else if($_GET["action"] == "tableauDeBordUser"){
+            $backController->tableauDeBordUser();
+        }
         else if($_GET["action"] == "deconnexion"){
             $backController->deconnexion();
             }
