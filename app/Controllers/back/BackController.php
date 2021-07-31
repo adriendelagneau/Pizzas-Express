@@ -244,9 +244,9 @@ class BackController{
 
         /**user*** */
 
-        function updateUser( $userName, $userFirstname, $userAdress, $userPhone, $userMail){
+        function updateUser( $userId,$userName, $userFirstname, $userAdress, $userPhone, $userMail){
             $user = new \Project\Models\UserManager();
-            $updateUser = $user->updateUser( $userName, $userFirstname, $userAdress, $userPhone, $userMail);
+            $updateUser = $user->updateUser( $userId,$userName, $userFirstname, $userAdress, $userPhone, $userMail);
 
         }
 
