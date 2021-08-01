@@ -22,6 +22,7 @@ class BackController{
         require "app/Views/back/orderList.php";
     }
       function deconnexion(){
+        session_unset(); 
           $slides = new \Project\Models\ImagesManager();
           $allSlides = $slides->getSlides(); 
           $aLaUne = new \Project\Models\ImagesManager();
