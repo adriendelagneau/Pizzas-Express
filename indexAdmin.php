@@ -18,7 +18,7 @@ try{
             $backController->tdbProducts();
             }    
         else if($_GET["action"] == "tableauDeBordUser"){
-            $backController->tableauDeBordUser();
+          
         }
         else if($_GET["action"] == "deconnexion"){
             $backController->deconnexion();
@@ -50,7 +50,9 @@ try{
                 else if($_GET["action"] == "orderList"){
                     $backController->orderlist();
                     }
-
+                    else if($_GET["action"] == "changeMdp"){
+                        $backController->changeMdp();
+                        }
 
 /************* pizzas *************** */       
         elseif($_GET['action'] == 'addPizzas'){              

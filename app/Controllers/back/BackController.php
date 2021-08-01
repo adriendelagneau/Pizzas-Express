@@ -18,6 +18,9 @@ class BackController{
       function infosUser(){
         require "app/Views/back/infosUser.php";
     }
+    function changeMdp(){
+        require "app/Views/back/changePwd.php";
+    }
     function orderList(){
         require "app/Views/back/orderList.php";
     }

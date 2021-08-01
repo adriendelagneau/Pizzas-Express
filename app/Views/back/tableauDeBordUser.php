@@ -3,6 +3,7 @@
 <div id="tdb2">
 
     <div><a href="indexAdmin.php?action=infosUser">gerrer vos infos</a></div>
+    <div><a href="indexAdmin.php?action=changeMdp">modifier votre mdp</a></div>
     <div><a href="indexAdmin.php?action=orderList">historique de vos commandes </a></div>
 
 </div>
