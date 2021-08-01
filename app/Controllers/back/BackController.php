@@ -250,6 +250,13 @@ class BackController{
         function updateUser( $userId,$userName, $userFirstname, $userAdress, $userPhone, $userMail){
             $user = new \Project\Models\UserManager();
             $updateUser = $user->updateUser( $userId,$userName, $userFirstname, $userAdress, $userPhone, $userMail);
+            $_SESSION["userName"] = $userName;
+            $_SESSION["userFirstame"] = $userFirstname;
+            $_SESSION["userPhone"] = $userPhone;
+            $_SESSION["userAdress"] = $userAdress;
+            $_SESSION["userMail"] = $userMail;
+
+            
             require "app/Views/back/tableauDeBordUser.php";
         }
 
