@@ -209,9 +209,14 @@ class FrontController{
                 $inscription = $toto->newUser($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD);
 
 
-                $aLaUne = new \Project\Models\ImagesManager();
-                $allALaUne = $aLaUne->getALaUne(); 
-                require "app/Views/back/tableauDeBordUser.php";
+                $slides = new \Project\Models\ImagesManager();
+        $allSlides = $slides->getSlides(); 
+        $aLaUne = new \Project\Models\ImagesManager();
+        $allALaUne = $aLaUne->getALaUne();         
+        $reducs = new \Project\Models\ReducManager();
+        $allReducs = $reducs->allReducs();
+        require "app/Views/front/accueil.php";
+
                 echo '<script>alert("Bravo, vous etes maintenant inscrit");</script>';
             }
         } else{

@@ -18,7 +18,7 @@ try{
             $backController->tdbProducts();
             }    
         else if($_GET["action"] == "tableauDeBordUser"){
-          
+            $backController->tableauDeBordUser();
         }
         else if($_GET["action"] == "deconnexion"){
             $backController->deconnexion();
@@ -200,6 +200,21 @@ try{
                 $backController->updateUser( $userId, $userName, $userFirstname, $userAdress, $userPhone, $userMail);
             } 
 
+
+            elseif($_GET["action"] == "changementMdpUser"){
+             $pwdUser = $_POST['pwdUser'];
+             $pwdUserc = $_POST['pwdUserc'];
+             $pwdUsercc = $_POST['pwdUsercc'];
+             $user1 = htmlspecialchars($_POST["userPWD"]);  
+             $userPWD = password_hash($user1, PASSWORD_DEFAULT);
+                if(($pwdUser == $_SESSION['userPWD']) && ($pwdUserc ==  $pwdUsercc )){               
+                    $pwdUserf = password_hash($pwdUsercc, PASSWORD_DEFAULT);
+                    $backController->updatePwdUser(  $pwdUserf);
+                }else{
+                    throw new Exception("renseignez tout les champs s.v.p");
+                }          
+            } 
+           
 
 
     }else{

@@ -263,5 +263,18 @@ class BackController{
             
             require "app/Views/back/tableauDeBordUser.php";
         }
+        function updatePwdUser(  $pwdUser, $pwdUserc, $pwdUsercc){
+            $user = new \Project\Models\UserManager();
+            $isPasswordCorrect3 = password_verify($pwdUser, $_SESSION["userPWD"]);
+            if (($isPasswordCorrect2) && ($pwdUserc == $pwdUsercc)){
+            $updateUser = $user->updateUser(  $pwdUsercc);
+           
 
+            
+            require "app/Views/back/tableauDeBordUser.php";
+            }else{
+                echo "new error";
+            }
+
+}
 }
