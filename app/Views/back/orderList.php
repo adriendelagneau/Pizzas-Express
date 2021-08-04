@@ -2,7 +2,7 @@
 <h1> Liste des commandes</h1>
 <section>
 
-    <?php foreach($allOrder as $order){ ?>
+    <?php foreach($allOrder as $order) { ?>
     <div class="card_articles">
         <div class="article_title">numero de commande : <?= $order["id"] ?></div>
         <div class="article_content">date : <?= $order["date"] ?></div>

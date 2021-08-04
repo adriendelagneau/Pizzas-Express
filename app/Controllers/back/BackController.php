@@ -267,7 +267,9 @@ class BackController{
 
        function listOrder(){
         $order = new \Project\Models\OrderManager();
-        $allOrder = $order->getOrderList(); 
+        $id = $_SESSION['userId'];
+        $allOrder = $order->getOrderList($id); 
+       
         require "app/Views/back/orderList.php";
     }
 }
