@@ -69,14 +69,6 @@ class FrontController{
         require "app/Views/front/inscription.php";
     }
 
-
-
-
-
-
-
-
-
     function connexionAdmin($pseudo, $mdp){
         $userManager = new \Project\Models\UserManager();
         $connexAdmin = $userManager->recupMdpAdmin($pseudo, $mdp);
@@ -97,8 +89,6 @@ class FrontController{
         $result = $connexAdmin2->fetch();
         $isPasswordCorrect2 = password_verify($pwdUser, $result["userPWD"]); 
         
-        
-        
         if ($isPasswordCorrect2){
             session_unset(); 
 
@@ -117,11 +107,6 @@ class FrontController{
         }
     }  
    
-
-
-
-
-
     function contact($errors=array()){
         $aLaUne = new \Project\Models\ImagesManager();
         $allALaUne = $aLaUne->getALaUne(); 
@@ -202,20 +187,17 @@ class FrontController{
             $errorsz["required_userPWD"] = "The password is required";
         }
     
-            
         if(!empty($userName)  && (!empty($userFirstname) && (!empty($userAdress) && (!empty($userPhone)  && (!empty($userMail) && (!empty($userPWD) )))))) {
             if(empty($errorsz)) {
                  
                 $inscription = $toto->newUser($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD);
-
-
                 $slides = new \Project\Models\ImagesManager();
-        $allSlides = $slides->getSlides(); 
-        $aLaUne = new \Project\Models\ImagesManager();
-        $allALaUne = $aLaUne->getALaUne();         
-        $reducs = new \Project\Models\ReducManager();
-        $allReducs = $reducs->allReducs();
-        require "app/Views/front/accueil.php";
+                $allSlides = $slides->getSlides(); 
+                $aLaUne = new \Project\Models\ImagesManager();
+                $allALaUne = $aLaUne->getALaUne();         
+                $reducs = new \Project\Models\ReducManager();
+                $allReducs = $reducs->allReducs();
+                require "app/Views/front/accueil.php";
 
                 echo '<script>alert("Bravo, vous etes maintenant inscrit");</script>';
             }

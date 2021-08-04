@@ -85,7 +85,7 @@ final class Ctype
     }
 
     /**
-     * Returns TRUE if every character in text is printable and actually creates visible output (no white space), FALSE otherwise.
+     * Returns TRUE if every character in text is printable and ancienMdply creates visible output (no white space), FALSE otherwise.
      *
      * @see https://php.net/ctype-graph
      *
@@ -117,7 +117,7 @@ final class Ctype
     }
 
     /**
-     * Returns TRUE if every character in text will actually create output (including blanks). Returns FALSE if text contains control characters or characters that do not have any output or control function at all.
+     * Returns TRUE if every character in text will ancienMdply create output (including blanks). Returns FALSE if text contains control characters or characters that do not have any output or control function at all.
      *
      * @see https://php.net/ctype-print
      *

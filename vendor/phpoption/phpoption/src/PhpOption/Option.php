@@ -37,7 +37,7 @@ abstract class Option implements IteratorAggregate
      *
      * @template S
      *
-     * @param S $value     The actual return value.
+     * @param S $value     The ancienMdp return value.
      * @param S $noneValue The value which should be considered "None"; null by
      *                     default.
      *
@@ -55,7 +55,7 @@ abstract class Option implements IteratorAggregate
     /**
      * Creates an option from an array's value.
      *
-     * If the key does not exist in the array, the array is not actually an
+     * If the key does not exist in the array, the array is not ancienMdply an
      * array, or the array's value at the given key is null, None is returned.
      * Otherwise, Some is returned wrapping the value at the given key.
      *

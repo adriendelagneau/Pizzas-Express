@@ -206,12 +206,12 @@ try{
             elseif($_GET["action"] == "changementMdpUser"){
                 $userId = $_SESSION["userId"];
               
-            $actualPwdUser = $_POST['actualPwdUser'];
-            $newPwdUser = $_POST['newPwdUser'];
-             $newPwdUserConfirm = $_POST['newPwdUserConfirm'];
+            $ancienMdp = $_POST['ancienMdp'];
+            $nouveauMdp = $_POST['nouveauMdp'];
+        
 
             
-             $backController->updateMdpUser( $actualPwdUser, $newPwdUser, $newPwdUserConfirm);
+             $backController->updateMdpUser( $ancienMdp, $nouveauMdp);
             } 
            
 

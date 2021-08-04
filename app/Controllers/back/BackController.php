@@ -259,11 +259,24 @@ class BackController{
             $_SESSION["userPhone"] = $userPhone;
             $_SESSION["userAdress"] = $userAdress;
             $_SESSION["userMail"] = $userMail;
-
-            
+  
             require "app/Views/back/tableauDeBordUser.php";
         }
-       /*** order  */
+
+        function updateMdpUser($ancienMdp,$nouveauMdp){
+            
+            $isPasswordCorrect3 = password_verify($ancienMdp, $_SESSION["userPWD"]);
+            if ($isPasswordCorrect3 == true){
+                
+                require "app/Views/back/tableauDeBordUser.php";
+            } else{
+                echo "mot de passe incorect";
+            }
+            
+           
+        }
+
+/*** order  */
 
        function listOrder(){
         $order = new \Project\Models\OrderManager();
