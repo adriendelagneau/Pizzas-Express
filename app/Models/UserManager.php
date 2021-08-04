@@ -40,11 +40,11 @@ class UserManager extends Manager{
                 ]);
         return $req;  
     }   
-    public function updatePwdUser($pwdUserf){
+    public function updatePwdUser($pwdUserc){
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare("UPDATE userz SET  userPWD = :pwdUserf WHERE userId = :userId");//: remplace $ dans requete sql
+        $req = $bdd->prepare("UPDATE userz SET  userPWD = :pwdUserc WHERE userId = :userId");//: remplace $ dans requete sql
         $req->execute([
-        'userPWD' => $pwdUserf
+        'userPWD' => $pwdUserc
         
                 ]);
         return $req;  

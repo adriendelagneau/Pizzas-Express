@@ -44,15 +44,15 @@ try{
         else if($_GET["action"] == "listEmails"){
             $backController->listEmails();
             }
-            else if($_GET["action"] == "infosUser"){
-                $backController->infosUser();
-                }
-                else if($_GET["action"] == "orderList"){
-                    $backController->orderlist();
-                    }
-                    else if($_GET["action"] == "changeMdp"){
-                        $backController->changeMdp();
-                        }
+        else if($_GET["action"] == "infosUser"){
+            $backController->infosUser();
+            }
+        else if($_GET["action"] == "orderList"){
+            $backController->listOrder();
+            }
+        else if($_GET["action"] == "changeMdp"){
+            $backController->changeMdp();
+            }
 
 /************* pizzas *************** */       
         elseif($_GET['action'] == 'addPizzas'){              
@@ -201,18 +201,17 @@ try{
             } 
 
 
+
+
             elseif($_GET["action"] == "changementMdpUser"){
-             $pwdUser = $_POST['pwdUser'];
-             $pwdUserc = $_POST['pwdUserc'];
-             $pwdUsercc = $_POST['pwdUsercc'];
-             $user1 = htmlspecialchars($_POST["userPWD"]);  
-             $userPWD = password_hash($user1, PASSWORD_DEFAULT);
-                if(($pwdUser == $_SESSION['userPWD']) && ($pwdUserc ==  $pwdUsercc )){               
-                    $pwdUserf = password_hash($pwdUsercc, PASSWORD_DEFAULT);
-                    $backController->updatePwdUser(  $pwdUserf);
-                }else{
-                    throw new Exception("renseignez tout les champs s.v.p");
-                }          
+                $userId = $_SESSION["userId"];
+              
+            $actualPwdUser = $_POST['actualPwdUser'];
+            $newPwdUser = $_POST['newPwdUser'];
+             $newPwdUserConfirm = $_POST['newPwdUserConfirm'];
+
+            
+             $backController->updateMdpUser( $actualPwdUser, $newPwdUser, $newPwdUserConfirm);
             } 
            
 

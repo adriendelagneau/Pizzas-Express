@@ -5,14 +5,14 @@
 
 <form action="index.php?action=changementMdpUser" method="post">
 
-        <label for="pwdUser">password : </label>
-        <input type="text" placeholder="pwdUser" name="pwdUser" id="pwdUser">
+        <label for="actualPwdUser">password : </label>
+        <input type="password" placeholder="actualPwdUser" name="actualPwdUser" id="actualPwdUser">
 
-        <label for="pwdUserc">new Password: </label>
-        <input type="password" placeholder="pwdUserc" name="pwdUserc" id="pwdUserc">
+        <label for="newPwdUser">new Password: </label>
+        <input type="password" placeholder="newPwdUser" name="newPwdUser" id="newPwdUser">
 
-        <label for="pwdUsercc">new Password: </label>
-        <input type="password" placeholder="pwdUsercc" name="pwdUsercc" id="pwdUsercc">
+        <label for="newPwdUserConfirm">new Password: </label>
+        <input type="password" placeholder="newPwdUserConfirm" name="newPwdUserConfirm" id="newPwdUserConfirm">
 
         <input type="submit" value="OK">
      <!--  <p action ="index.php?action=deconnexionUser">deconnexion user</p> -->
