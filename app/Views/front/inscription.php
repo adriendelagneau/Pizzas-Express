@@ -30,7 +30,7 @@
                     <label for="userAdress">Votre adresse :</label>
                     <input type="text" name="userAdress" id="userAdress" placeholder="3 rue des peupliers"></input>
                     <div id="item"></div>
-                  <span class="error">
+                    <span class="error">
                         <?php if(isset($errorsz["required_userAdress"])){echo $errorsz["required_userAdress"];} ?>
                     </span>
 
@@ -42,13 +42,13 @@
 
                     <label for="userEmail">Email :</label>
                     <input type="email" id="userEmail" name="userMail" placeholder="JohnLegrand@gmx.fr">
-                                 <span class="error">
+                    <span class="error">
                         <?php if(isset($errorsz["required_userEmail"])){echo $errorsz["required_userEmail"];} ?>
                     </span>   
 
                     <label for="userPWD">Mot De Passe</label>
                     <input type="password" id="userPWD" name="userPWD" placeholder="John"><!-- type pwd -->
-                   <span class="error">
+                    <span class="error">
                         <?php if(isset($errorsz["required_userPWD"])){echo $errorsz["required_userPWD"];} ?>
                     </span>
 

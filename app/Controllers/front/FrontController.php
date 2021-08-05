@@ -63,18 +63,13 @@ class FrontController{
         require "app/Views/front/boissons.php";
     }
     
-    function toto($errorsz=array()){     
-        $aLaUne = new \Project\Models\ImagesManager();
-        $allALaUne = $aLaUne->getALaUne();
-        require "app/Views/front/inscription.php";
-    }
-
+    
     function connexionAdmin($pseudo, $mdp){
         $userManager = new \Project\Models\UserManager();
         $connexAdmin = $userManager->recupMdpAdmin($pseudo, $mdp);
         $result = $connexAdmin->fetch();
         $isPasswordCorrect = password_verify( $mdp, $result["pwd"]); /* Vérifie que le hachage fourni correspond bien au mot de passe fourni. */
-
+        
         if ($isPasswordCorrect){
             require "app/Views/back/tableauDeBordAdmin.php";
         }
@@ -82,12 +77,19 @@ class FrontController{
             echo "vos identifiants sont incorectes";
         }
     }  
-
+    
+    function toto($errorsz=array()){     
+        $aLaUne = new \Project\Models\ImagesManager();
+        $allALaUne = $aLaUne->getALaUne();
+        require "app/Views/front/inscription.php";
+    }
     function connexionUser($pseudoUser, $pwdUser){
         $userManager2 = new \Project\Models\UserManager();
         $connexAdmin2 = $userManager2->recupMdpUser($pseudoUser, $pwdUser);
         $result = $connexAdmin2->fetch();
+
         $isPasswordCorrect2 = password_verify($pwdUser, $result["userPWD"]); 
+        
         
         if ($isPasswordCorrect2){
             session_unset(); 
@@ -101,9 +103,9 @@ class FrontController{
             $_SESSION["userPWD"] = $result["userPWD"];
 
             require "app/Views/back/tableauDeBordUser.php";
-        }
-        else {
-            echo "vos identifiants sont incorectes";
+        }else {
+            echo '<script>alert("Vos identifiants sont incorrects");</script>';
+            require "app/Views/front/accueil.php";
         }
     }  
    
@@ -121,22 +123,22 @@ class FrontController{
         $errors = array();
 
         if(!empty($mail) && filter_var($mail, FILTER_VALIDATE_EMAIL) == false) {
-            $errors["invalid_email"] = "The e-mail is invalid";
+            $errors["invalid_email"] = "Votre Email n'est pas valide";
         }
         if(empty($lastname)){
-            $errors["required_name"] = "The name is required";
+            $errors["required_name"] = "Votre nom est requis";
         }   
         if(empty($mail)){
-            $errors["required_email"] = "The e-mail is required";
+            $errors["required_email"] = "Votre Email est requis";
         }
         if(empty($sujet)){
-            $errors["required_sujet"] = "The subject is required";  
+            $errors["required_sujet"] = "Un sujet  est requis";  
         }
         if(empty($content)){
-            $errors["required_content"] =   "The message is required";
+            $errors["required_content"] =   "Un message est requis";
         }
         if(strlen($content) > 300){
-            $errors["too_long_message"] = 'Message is too long ! 300 characters maximum are allowed';
+            $errors["too_long_message"] = 'Votre message est trop long ... 300 caractères maximum';
         } 
       
         if(!empty($lastname)  && (!empty($mail) && (!empty($sujet) && (!empty($content))))) {
@@ -160,31 +162,31 @@ class FrontController{
             $errorsz = array();
 
         if(empty($userName)){
-            $errorsz["required_userName"] = "The name is required";
+            $errorsz["required_userName"] = "Votre nom est requis";
         }
         
         if(empty($userFirstname)){
-            $errorsz["required_userFirstname"] = "The Firstname is required";
+            $errorsz["required_userFirstname"] = "Votre prénom est requis";
         }
         
         if(empty($userAdress)){
-            $errorsz["required_userAdress"] = "The adress is required";
+            $errorsz["required_userAdress"] = "Votre adresse est requise";
         }
 
         if(empty($userPhone)){
-            $errorsz["required_userPhone"] = "The Phone number is required";
+            $errorsz["required_userPhone"] = "Votre numero de téléphone est requis";
         }
 
         if(!empty($userMail) && filter_var($userMail, FILTER_VALIDATE_EMAIL) == false) {
-            $errorsz["invalid_userEmail"] = "The e-mail is invalid";
+            $errorsz["invalid_userEmail"] = "Votre Email est incorrect";
             }
 
         if(empty($userMail)){
-            $errorsz["required_userEmail"] = "The e-mail is required";
+            $errorsz["required_userEmail"] = "Votre Email est requis";
         }
     
         if(empty($userPWD)){
-            $errorsz["required_userPWD"] = "The password is required";
+            $errorsz["required_userPWD"] = "Votre mot de passe est requis";
         }
     
         if(!empty($userName)  && (!empty($userFirstname) && (!empty($userAdress) && (!empty($userPhone)  && (!empty($userMail) && (!empty($userPWD) )))))) {
