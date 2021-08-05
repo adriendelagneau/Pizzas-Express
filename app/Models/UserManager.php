@@ -40,10 +40,17 @@ class UserManager extends Manager{
                 ]);
         return $req;  
     }   
-    public function updateMdpUser($userId,$nouveauMdpCrypte){
+    public function updateMdpUser($nouveauMdpCrypte){
         $bdd = $this->dbConnect();
         $req = $bdd->prepare("UPDATE userz SET  userPWD = ? WHERE userId = ?");//: remplace $ dans requete sql
         $req->execute(array($nouveauMdpCrypte, $_SESSION['userId']));
         return $req;  
-    }   
+    } 
+    
+    public function deleteUser(){
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare("DELETE FROM userz WHERE userId = ?");
+        $req->execute(array($_SESSION['userId']));
+        return $req;
+    }
 }

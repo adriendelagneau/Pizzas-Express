@@ -53,7 +53,9 @@ try{
         else if($_GET["action"] == "changeMdp"){
             $backController->changeMdp();
             }
-
+        else if($_GET["action"] == "desinscription"){
+            $backController->desinscription();
+            }
 /************* pizzas *************** */       
         elseif($_GET['action'] == 'addPizzas'){              
             $productName = htmlspecialchars($_POST['productName']);
@@ -200,12 +202,8 @@ try{
                 $backController->updateUser( $userId, $userName, $userFirstname, $userAdress, $userPhone, $userMail);
             } 
 
-
-
-
             elseif($_GET["action"] == "changementMdpUser"){
-                $userId = $_SESSION["userId"];
-              
+                      
             $ancienMdp = $_POST['ancienMdp'];
            // $ancienMdpCrypte = password_hash($ancienMdp , PASSWORD_DEFAULT);
 
@@ -214,10 +212,14 @@ try{
 
             $nouveauMdpConfirm = $_POST['nouveauMdpConfirm'];
             $nouveauMdpConfirmCrypte = password_hash($nouveauMdpConfirm, PASSWORD_DEFAULT);
-
-            
-             $backController->updateMdpUser( $userId, $ancienMdp, $nouveauMdpCrypte, $nouveauMdpConfirmCrypte);
+          
+             $backController->updateMdpUser( $ancienMdp, $nouveauMdpCrypte, $nouveauMdpConfirmCrypte);
             } 
+
+            elseif($_GET["action"] == "deleteUser"){
+               $userId = $_SESSION['userId'];
+                $backController->deleteUser();
+            }
            
 
 

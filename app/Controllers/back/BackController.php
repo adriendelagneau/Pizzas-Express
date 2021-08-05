@@ -24,6 +24,9 @@ class BackController{
     function orderList(){
         require "app/Views/back/orderList.php";
     }
+    function desinscription(){
+        require "app/Views/back/desinscription.php";
+    }
       function deconnexion(){
         session_unset(); 
           $slides = new \Project\Models\ImagesManager();
@@ -263,23 +266,25 @@ class BackController{
             require "app/Views/back/tableauDeBordUser.php";
         }
 
-        function updateMdpUser($userId,$ancienMdp,$nouveauMdpCrypte,$nouveauMdpConfirmCrypte){
+        function updateMdpUser($ancienMdp,$nouveauMdpCrypte,$nouveauMdpConfirmCrypte){
             
             $isPasswordCorrect3 = password_verify($ancienMdp, $_SESSION["userPWD"]);
             if (($isPasswordCorrect3 == true)){
                 
                 $mdp =  new \Project\Models\UserManager();
-                $newMdp = $mdp->updateMdpUser($userId,$nouveauMdpCrypte);
-
+                $newMdp = $mdp->updateMdpUser($nouveauMdpCrypte);
 
                 require "app/Views/back/tableauDeBordUser.php";
             } else{
                 echo "mot de passe incorect";
-            }
-            
-           
+            }       
         }
 
+function deleteUser(){
+    $user = new \Project\Models\UserManager();
+    $deleteUser = $user->deleteUser();
+    
+}
 /*** order  */
 
        function listOrder(){
