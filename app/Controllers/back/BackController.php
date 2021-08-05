@@ -263,7 +263,7 @@ class BackController{
             require "app/Views/back/tableauDeBordUser.php";
         }
 
-        function updateMdpUser($ancienMdp,$nouveauMdp){
+        function updateMdpUser($ancienMdp,$nouveauMdp,$nouveauMdpConfirm){
             
             $isPasswordCorrect3 = password_verify($ancienMdp, $_SESSION["userPWD"]);
             if ($isPasswordCorrect3 == true){

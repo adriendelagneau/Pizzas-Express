@@ -208,10 +208,10 @@ try{
               
             $ancienMdp = $_POST['ancienMdp'];
             $nouveauMdp = $_POST['nouveauMdp'];
-        
+            $nouveauMdpConfirm = $_POST['nouveauMdpConfirm'];
 
             
-             $backController->updateMdpUser( $ancienMdp, $nouveauMdp);
+             $backController->updateMdpUser( $ancienMdp, $nouveauMdp, $nouveauMdpConfirm);
             } 
            
 
