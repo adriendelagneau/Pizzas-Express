@@ -84,27 +84,38 @@ class FrontController{
         require "app/Views/front/inscription.php";
     }
     function connexionUser($pseudoUser, $pwdUser){
-        $userManager2 = new \Project\Models\UserManager();
-        $connexAdmin2 = $userManager2->recupMdpUser($pseudoUser, $pwdUser);
-        $result = $connexAdmin2->fetch();
+        if( ($pseudoUser != "") && ($pwdUser != "")){
+            $userManager2 = new \Project\Models\UserManager();
+            $connexAdmin2 = $userManager2->recupMdpUser($pseudoUser, $pwdUser);
+            $result = $connexAdmin2->fetch();
 
-        $isPasswordCorrect2 = password_verify($pwdUser, $result["userPWD"]); 
-        
-        
-        if ($isPasswordCorrect2){
-            session_unset(); 
+            $isPasswordCorrect2 = password_verify($pwdUser, $result["userPWD"]); 
+            
+            
+            if ($isPasswordCorrect2){
+                session_unset(); 
 
-            $_SESSION["userId"] = $result["userId"];
-            $_SESSION["userName"] = $result["userName"];
-            $_SESSION["userFirstname"] = $result["userFirstname"];
-            $_SESSION["userPhone"] = $result["userPhone"];
-            $_SESSION["userAdress"] = $result["userAdress"];
-            $_SESSION["userMail"] = $result["userMail"];
-            $_SESSION["userPWD"] = $result["userPWD"];
+                $_SESSION["userId"] = $result["userId"];
+                $_SESSION["userName"] = $result["userName"];
+                $_SESSION["userFirstname"] = $result["userFirstname"];
+                $_SESSION["userPhone"] = $result["userPhone"];
+                $_SESSION["userAdress"] = $result["userAdress"];
+                $_SESSION["userMail"] = $result["userMail"];
+                $_SESSION["userPWD"] = $result["userPWD"];
 
-            require "app/Views/back/tableauDeBordUser.php";
+                require "app/Views/back/tableauDeBordUser.php";
+            }else {
+                require "app/Views/front/accueil.php";
+                echo '<script>alert("Vos identifiants sont incorrects");</script>';
+            }
         }else {
-            echo '<script>alert("Vos identifiants sont incorrects");</script>';
+            echo '<script>alert("Vous n avez pas rempli les champs !");</script>';
+            $slides = new \Project\Models\ImagesManager();
+            $allSlides = $slides->getSlides(); 
+            $aLaUne = new \Project\Models\ImagesManager();
+            $allALaUne = $aLaUne->getALaUne();         
+            $reducs = new \Project\Models\ReducManager();
+            $allReducs = $reducs->allReducs();
             require "app/Views/front/accueil.php";
         }
     }  

@@ -73,20 +73,16 @@ try{
         else if($_GET["action"] == 'connexionUser'){
             $userName = $_POST["pseudoUser"];        
             $userPWD = $_POST["pwdUser"];
-            if(!empty($userName) && !empty($userPWD)){
+            
                 $frontController->connexionUser($userName, $userPWD);
-            }else{
-                throw new Exception("renseignez tous les champs S.V.P");
-            }          
+                   
         }  
 
     }else{
         $frontController->accueil();
         }
-
         
-    }
-catch(Exception $e){
+}catch(Exception $e){
     die("Erreur:" . $e->getMessage());
 };
 
