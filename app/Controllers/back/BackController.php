@@ -263,11 +263,15 @@ class BackController{
             require "app/Views/back/tableauDeBordUser.php";
         }
 
-        function updateMdpUser($ancienMdp,$nouveauMdp,$nouveauMdpConfirm){
+        function updateMdpUser($userId,$ancienMdp,$nouveauMdpCrypte,$nouveauMdpConfirmCrypte){
             
             $isPasswordCorrect3 = password_verify($ancienMdp, $_SESSION["userPWD"]);
-            if ($isPasswordCorrect3 == true){
+            if (($isPasswordCorrect3 == true)){
                 
+                $mdp =  new \Project\Models\UserManager();
+                $newMdp = $mdp->updateMdpUser($userId,$nouveauMdpCrypte);
+
+
                 require "app/Views/back/tableauDeBordUser.php";
             } else{
                 echo "mot de passe incorect";

@@ -207,11 +207,16 @@ try{
                 $userId = $_SESSION["userId"];
               
             $ancienMdp = $_POST['ancienMdp'];
+           // $ancienMdpCrypte = password_hash($ancienMdp , PASSWORD_DEFAULT);
+
             $nouveauMdp = $_POST['nouveauMdp'];
+            $nouveauMdpCrypte = password_hash($nouveauMdp , PASSWORD_DEFAULT);
+
             $nouveauMdpConfirm = $_POST['nouveauMdpConfirm'];
+            $nouveauMdpConfirmCrypte = password_hash($nouveauMdpConfirm, PASSWORD_DEFAULT);
 
             
-             $backController->updateMdpUser( $ancienMdp, $nouveauMdp, $nouveauMdpConfirm);
+             $backController->updateMdpUser( $userId, $ancienMdp, $nouveauMdpCrypte, $nouveauMdpConfirmCrypte);
             } 
            
 

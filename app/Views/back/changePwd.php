@@ -11,8 +11,8 @@
         <label for="nouveauMdp">new Password: </label>
         <input type="password" placeholder="nouveauMdp" name="nouveauMdp" id="nouveauMdp">
 
-        <label for="toto">new Password: </label>
-        <input type="password" placeholder="confirmer votre mot de passe " name="toto" id="toto">
+        <label for="nouveauMdpConfirm">new Password: </label>
+        <input type="password" placeholder="confirmer votre mot de passe " name="nouveauMdpConfirm" id="nouveauMdpConfirm">
 
 
         <input type="submit" value="OK">
