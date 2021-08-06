@@ -61,21 +61,23 @@ try{
         }
 
         else if($_GET["action"] == 'connexionAdmin'){
-            $pseudo = $_POST["pseudo"];        
-            $mdp = $_POST["pwd"];
+            $pseudo = htmlspecialchars($_POST["pseudo"]);        
+            $mdp = htmlspecialchars($_POST["pwd"]);
             if(!empty($pseudo) && !empty($mdp)){
                 $frontController->connexionAdmin($pseudo, $mdp);
             }else{
-                throw new Exception("renseignez tout les champs s.v.p");
+                $frontController->erreurChampsVides();
             }          
         }  
 
         else if($_GET["action"] == 'connexionUser'){
-            $userName = $_POST["pseudoUser"];        
-            $userPWD = $_POST["pwdUser"];
-            
+            $userName = htmlspecialchars($_POST["pseudoUser"]);        
+            $userPWD = htmlspecialchars($_POST["pwdUser"]);
+            if(!empty($userName) && !empty($userPWD)){
                 $frontController->connexionUser($userName, $userPWD);
-                   
+            }else{
+                $frontController->erreurChampsVides();
+            }
         }  
 
     }else{

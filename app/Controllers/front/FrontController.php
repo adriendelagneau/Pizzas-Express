@@ -15,6 +15,17 @@ class FrontController{
         require "app/Views/front/accueil.php";
     }
 
+    function erreurChampsVides(){
+        $slides = new \Project\Models\ImagesManager();
+        $allSlides = $slides->getSlides(); 
+        $aLaUne = new \Project\Models\ImagesManager();
+        $allALaUne = $aLaUne->getALaUne();         
+        $reducs = new \Project\Models\ReducManager();
+        $allReducs = $reducs->allReducs();
+        require "app/Views/front/accueil.php";
+        echo '<script>alert("Vous n avez pas rempli les champs !");</script>';
+    }
+
     function pizzas(){      
         $pizzas = new \Project\Models\ProduitsManager();
         $allPizzas = $pizzas->allPizzas();
