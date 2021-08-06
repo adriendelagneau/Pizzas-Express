@@ -105,8 +105,15 @@ class FrontController{
 
                 require "app/Views/back/tableauDeBordUser.php";
             }else {
-                require "app/Views/front/accueil.php";
+               
                 echo '<script>alert("Vos identifiants sont incorrects");</script>';
+                $slides = new \Project\Models\ImagesManager();
+            $allSlides = $slides->getSlides(); 
+            $aLaUne = new \Project\Models\ImagesManager();
+            $allALaUne = $aLaUne->getALaUne();         
+            $reducs = new \Project\Models\ReducManager();
+            $allReducs = $reducs->allReducs();
+            require "app/Views/front/accueil.php";
             }
         }else {
             echo '<script>alert("Vous n avez pas rempli les champs !");</script>';

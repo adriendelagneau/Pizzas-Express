@@ -14,3 +14,5 @@ class Manager
         }
     }
 }
+
+//$bdd = new \PDO("mysql:host=185.98.131.149;dbname=b166e1518483;charset=utf8","b166e1518483","Tintin56@@@");

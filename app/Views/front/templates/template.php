@@ -28,7 +28,7 @@
                 <li><a href="index.php?action=toto"> Inscription</a></li>
             </ul>
             <div id="icons">
-            <div id="userIcon"><i class="fas fa-user"></i></div>
+                <div id="userIcon"><i class="fas fa-user"></i></div>
                 <div id="burger"><i class="fa fa-bars"></i></div>
             </div>
         </nav>
@@ -59,6 +59,7 @@
     <script src="app/Public/front/js/app.js"></script>
     <script src="app/Public/front/js/api.js"></script>
     <script src="app/Public/front/js/ajax.js"></script>
+    <script src="app/Public/front/js/slider.js"></script>
 </body>
 
 </html>

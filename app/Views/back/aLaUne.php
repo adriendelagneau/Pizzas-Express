@@ -6,10 +6,10 @@
     <div class="card_articles">
         <p><?= $aLaUne["title"] ?></p>
         <p><img src="<?= $aLaUne["imgAdress"] ?>" alt="<?= $aLaUne['title'] ?>"> </p>
-        <button>
+       
             <a href="indexAdmin.php?action=deleteALaUne&id=<?= $aLaUne['id'] ?>"> supprimer cette
                 image</a>
-        </button>
+        
     </div>
     <?php   } ?>
 

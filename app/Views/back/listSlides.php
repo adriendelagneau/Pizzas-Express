@@ -6,10 +6,8 @@
     <div class="card_articles">
         <p><?= $slides["title"] ?></p>
         <p><img src="<?= $slides["imgAdress"] ?>" alt="<?= $slides['title'] ?>"></p>
-        <button>
             <a href="indexAdmin.php?action=deleteSlide&id=<?= $slides['id'] ?>"> supprimer cette
                 slide</a>
-        </button>
     </div>
     <?php   } ?>
 
@@ -32,4 +30,3 @@
 </div>
 <?php $content = ob_get_clean(); ?>
 <?php require 'templates/template.php'; ?>
-</section>

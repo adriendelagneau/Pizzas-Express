@@ -7,15 +7,14 @@
         <div class="article_title">Nom : <?= $burgers["productName"] ?></div>
         <div class="article_content">Ingrédients : <?= $burgers["productDescription"] ?></div>
         <div class="article_content">Prix : <?= $burgers["prix"] ?>€</div>
-        <div> <button>
+        <div> 
                 <a href="indexAdmin.php?action=selectBurger&id=<?= $burgers['id'] ?>"> update
                     burger</a>
-            </button>
-            <button>
+            
                 <a href="indexAdmin.php?action=deleteBurger&id=<?= $burgers['id'] ?>">
                     supprimer
                     ce burger</a>
-            </button><br>
+            <br>
         </div>
     </div>
     <?php   } ?>

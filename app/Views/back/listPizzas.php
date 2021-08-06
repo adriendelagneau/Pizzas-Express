@@ -8,14 +8,13 @@
         <div class="article_content">Ingrédients : <?= $pizza["productDescription"] ?></div>
         <div class="article_content">Prix M : <?= $pizza["prixMoyenne"] ?>€</div>
         <div class="article_content">Prix L : <?= $pizza["prixLarge"] ?>€</div>
-        <div> <button>
+        <div> 
                 <a href="indexAdmin.php?action=selectPizza&id=<?= $pizza['id'] ?>"> update
                     pizza</a>
-            </button>
-            <button>
+       
                 <a href="indexAdmin.php?action=deletePizzas&id=<?= $pizza['id'] ?>"> supprimer
                     cette pizza</a>
-            </button>
+           
         </div>
     </div>
     <?php   } ?>
@@ -32,14 +31,17 @@
         <input type="number" id="prixMoyenne" name="prixMoyenne">
         <label for="prixLarge">Prix large :</label>
         <input type="number" id="prixLarge" name="prixLarge">
+
         <div>
             <label for="isVeg">VEG</label>
             <input type="checkbox" id="isVeg" name="isVeg">
         </div>
+
         <div>
-            <lablel for="isPigless">SANS PORC</lablel>
+            <label for="isPigless">SANS PORC</label>
             <input type="checkbox" id="isPigless" name="isPigless">
         </div>
+
         <div>
             <button type="submit" data-dismiss="modal">Créer</button>
         </div>

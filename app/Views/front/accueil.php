@@ -45,4 +45,3 @@
 </aside>
 <?php $content = ob_get_clean(); ?>
 <?php require "templates/template.php"; ?>
-<script src="app/Public/front/js/slider.js"></script>

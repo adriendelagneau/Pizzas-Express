@@ -8,14 +8,13 @@
         <div class="article_content">Description : <?= $boissons["productDescription"] ?></div>
         <div class="article_content">Prix : <?= $boissons["prix"] ?>€</div>
         <div>
-            <button>
+          
                 <a href="indexAdmin.php?action=selectBoisson&id=<?= $boissons['id'] ?>">
                     update boisson</a>
-            </button>
-            <button>
+            
                 <a href="indexAdmin.php?action=deleteBoisson&id=<?= $boissons['id'] ?>">
                     supprimer cette boisson</a>
-            </button>
+            
         </div>
     </div>
     <?php   } ?>
@@ -30,6 +29,7 @@
         <textarea name="productDescription" id="productDescription" cols="30" rows="10"></textarea>
         <label for="prix">Prix :</label>
         <input type="number" id="prix" name="prix">
+
         <div>
             <label for="isAlcool">Alcool :</label>
             <input type="checkbox" id="isAlcool" name="isAlcool">
@@ -37,6 +37,7 @@
         <div>
             <button type="submit" data-dismiss="modal">Créer</button>
         </div>
+        
     </form>
 </div>
 <?php $content = ob_get_clean()?>

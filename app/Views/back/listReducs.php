@@ -9,15 +9,14 @@
         <div class="article_content">Condition 1 : <?= $reducs["condition1"] ?></div>
         <div class="article_content">Condition 2 : <?= $reducs["condition2"] ?></div>
         <div class="article_content">Validité : <?= $reducs["validite"] ?></div>
-        <button>
+        
             <a href="indexAdmin.php?action=selectReduc&id=<?= $reducs['id'] ?>"> update
                 réduc</a>
-        </button>
-        <button>
+       
             <a href="indexAdmin.php?action=deleteReduc&id=<?= $reducs['id'] ?>">
                 supprimer
                 cette réduc</a>
-        </button>
+        
     </div>
     <?php   } ?>
 
