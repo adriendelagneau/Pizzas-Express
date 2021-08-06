@@ -78,15 +78,26 @@ class FrontController{
     function connexionAdmin($pseudo, $mdp){
         $userManager = new \Project\Models\UserManager();
         $connexAdmin = $userManager->recupMdpAdmin($pseudo, $mdp);
+
         $result = $connexAdmin->fetch();
-        $isPasswordCorrect = password_verify( $mdp, $result["pwd"]); /* Vérifie que le hachage fourni correspond bien au mot de passe fourni. */
         
-        if ($isPasswordCorrect){
-            require "app/Views/back/tableauDeBordAdmin.php";
+        if($result != false){
+
+            $isPasswordCorrect = password_verify( $mdp, $result["pwd"]); /* Vérifie que le hachage fourni correspond bien au mot de passe fourni. */
+            if ($isPasswordCorrect){
+                 require "app/Views/back/tableauDeBordAdmin.php";
+             }
+        }else{
+            echo '<script>alert("Vos identifiants sont incorrects");</script>';
+            $slides = new \Project\Models\ImagesManager();
+        $allSlides = $slides->getSlides(); 
+        $aLaUne = new \Project\Models\ImagesManager();
+        $allALaUne = $aLaUne->getALaUne();         
+        $reducs = new \Project\Models\ReducManager();
+        $allReducs = $reducs->allReducs();
+        require "app/Views/front/accueil.php";
         }
-        else {
-            echo "vos identifiants sont incorectes";
-        }
+        
     }  
     
     function toto($errorsz=array()){     
@@ -95,7 +106,7 @@ class FrontController{
         require "app/Views/front/inscription.php";
     }
     function connexionUser($pseudoUser, $pwdUser){
-        if( ($pseudoUser != "") && ($pwdUser != "")){
+        
             $userManager2 = new \Project\Models\UserManager();
             $connexAdmin2 = $userManager2->recupMdpUser($pseudoUser, $pwdUser);
             $result = $connexAdmin2->fetch();
@@ -103,7 +114,7 @@ class FrontController{
             $isPasswordCorrect2 = password_verify($pwdUser, $result["userPWD"]); 
             
             
-            if ($isPasswordCorrect2){
+           /* if ($isPasswordCorrect2){
                 session_unset(); 
 
                 $_SESSION["userId"] = $result["userId"];
@@ -125,18 +136,9 @@ class FrontController{
             $reducs = new \Project\Models\ReducManager();
             $allReducs = $reducs->allReducs();
             require "app/Views/front/accueil.php";
-            }
-        }else {
-            echo '<script>alert("Vous n avez pas rempli les champs !");</script>';
-            $slides = new \Project\Models\ImagesManager();
-            $allSlides = $slides->getSlides(); 
-            $aLaUne = new \Project\Models\ImagesManager();
-            $allALaUne = $aLaUne->getALaUne();         
-            $reducs = new \Project\Models\ReducManager();
-            $allReducs = $reducs->allReducs();
-            require "app/Views/front/accueil.php";
+            }*/
         }
-    }  
+    
    
     function contact($errors=array()){
         $aLaUne = new \Project\Models\ImagesManager();
