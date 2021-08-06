@@ -111,35 +111,41 @@ class FrontController{
             $connexAdmin2 = $userManager2->recupMdpUser($pseudoUser, $pwdUser);
             $result = $connexAdmin2->fetch();
 
-            $isPasswordCorrect2 = password_verify($pwdUser, $result["userPWD"]); 
-            
-            
-           /* if ($isPasswordCorrect2){
-                session_unset(); 
 
-                $_SESSION["userId"] = $result["userId"];
-                $_SESSION["userName"] = $result["userName"];
-                $_SESSION["userFirstname"] = $result["userFirstname"];
-                $_SESSION["userPhone"] = $result["userPhone"];
-                $_SESSION["userAdress"] = $result["userAdress"];
-                $_SESSION["userMail"] = $result["userMail"];
-                $_SESSION["userPWD"] = $result["userPWD"];
+            if($result != false){
 
-                require "app/Views/back/tableauDeBordUser.php";
-            }else {
-               
-                echo '<script>alert("Vos identifiants sont incorrects");</script>';
-                $slides = new \Project\Models\ImagesManager();
-            $allSlides = $slides->getSlides(); 
-            $aLaUne = new \Project\Models\ImagesManager();
-            $allALaUne = $aLaUne->getALaUne();         
-            $reducs = new \Project\Models\ReducManager();
-            $allReducs = $reducs->allReducs();
-            require "app/Views/front/accueil.php";
-            }*/
-        }
+                $isPasswordCorrect2 = password_verify($pwdUser, $result["userPWD"]); 
+                
+                
+               if ($isPasswordCorrect2){
+                    session_unset(); 
     
-   
+                    $_SESSION["userId"] = $result["userId"];
+                    $_SESSION["userName"] = $result["userName"];
+                    $_SESSION["userFirstname"] = $result["userFirstname"];
+                    $_SESSION["userPhone"] = $result["userPhone"];
+                    $_SESSION["userAdress"] = $result["userAdress"];
+                    $_SESSION["userMail"] = $result["userMail"];
+                    $_SESSION["userPWD"] = $result["userPWD"];
+    
+                    require "app/Views/back/tableauDeBordUser.php";
+            }
+            
+               
+            
+        }else{
+            echo '<script>alert("Vos identifiants sont incorrects");</script>';
+            $slides = new \Project\Models\ImagesManager();
+        $allSlides = $slides->getSlides(); 
+        $aLaUne = new \Project\Models\ImagesManager();
+        $allALaUne = $aLaUne->getALaUne();         
+        $reducs = new \Project\Models\ReducManager();
+        $allReducs = $reducs->allReducs();
+        require "app/Views/front/accueil.php";
+
+        }
+      }
+
     function contact($errors=array()){
         $aLaUne = new \Project\Models\ImagesManager();
         $allALaUne = $aLaUne->getALaUne(); 
