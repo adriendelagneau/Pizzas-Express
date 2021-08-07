@@ -44,6 +44,9 @@ try{
         else if($_GET["action"] == "listEmails"){
             $backController->listEmails();
             }
+        else if($_GET["action"] == "listUser"){
+            $backController->listUser();
+            }  
         else if($_GET["action"] == "infosUser"){
             $backController->infosUser();
             }

@@ -3,7 +3,13 @@
 namespace Project\Models;
 
 class UserManager extends Manager{
-   
+
+
+    public function allUser(){
+        $bdd = $this->dbConnect();
+        $req = $bdd->query("SELECT * FROM userz");
+        return $req;
+    }
 
    public function newUser($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD){
         $bdd = $this->dbConnect();

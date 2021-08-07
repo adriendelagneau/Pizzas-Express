@@ -280,11 +280,17 @@ class BackController{
             }       
         }
 
-function deleteUser(){
-    $user = new \Project\Models\UserManager();
-    $deleteUser = $user->deleteUser();
-    
-}
+        function deleteUser(){
+            $user = new \Project\Models\UserManager();
+            $deleteUser = $user->deleteUser();
+            
+        }
+        function listUser(){
+            $user = new \Project\Models\UserManager();
+            $allUser = $user->allUser();
+            require "app/Views/back/listUsers.php";
+            
+        }
 /*** order  */
 
        function listOrder(){
