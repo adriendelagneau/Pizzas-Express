@@ -4,9 +4,10 @@
 
     <?php foreach($bestUser as  $user){ ?>
     <div class="card_articles">
+        <p><?= $user["userId"] ?></p>
         <p><?= $user["userName"] ?></p>
-        <p><?= $user["userFirstname"] ?></p>
-        <p><?= $user["userMail"] ?></p>
+        <p><?= $user["order_date"] ?></p>
+        <p><?= $user["order_price"] ?></p>
        
   
     </div>

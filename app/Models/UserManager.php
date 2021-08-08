@@ -7,9 +7,17 @@ class UserManager extends Manager{
 
     public function userOrder(){
         $bdd = $this->dbConnect();
-        $req = $bdd->query("SELECT * FROM userz INNER JOIN orderList
+
+        $req = $bdd->query("SELECT * FROM userz 
+        INNER JOIN orderList
         ON userz.userId = orderList.user_id");
         return $req;
+        /*
+        SELECT champ, COUNT(*) AS nbr_doublon
+        FROM table
+        GROUP BY champ
+        HAVING COUNT(*) > 1
+        ORDER BY nbr_doublon DESC */
     }
 
    public function newUser($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD){
