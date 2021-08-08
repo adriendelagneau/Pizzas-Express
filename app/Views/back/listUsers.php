@@ -2,7 +2,7 @@
 <h1>gestion des users</h1>
 <section>
 
-    <?php foreach($allUser as $user){ ?>
+    <?php foreach($bestUser as  $user){ ?>
     <div class="card_articles">
         <p><?= $user["userName"] ?></p>
         <p><?= $user["userFirstname"] ?></p>

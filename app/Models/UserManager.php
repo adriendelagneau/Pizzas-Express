@@ -5,9 +5,10 @@ namespace Project\Models;
 class UserManager extends Manager{
 
 
-    public function allUser(){
+    public function userOrder(){
         $bdd = $this->dbConnect();
-        $req = $bdd->query("SELECT * FROM userz");
+        $req = $bdd->query("SELECT * FROM userz INNER JOIN orderList
+        ON userz.userId = orderList.user_id");
         return $req;
     }
 

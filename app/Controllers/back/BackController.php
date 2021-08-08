@@ -285,9 +285,9 @@ class BackController{
             $deleteUser = $user->deleteUser();
             
         }
-        function listUser(){
+        function listUserOrder(){
             $user = new \Project\Models\UserManager();
-            $allUser = $user->allUser();
+            $bestUser = $user->userOrder();
             require "app/Views/back/listUsers.php";
             
         }
