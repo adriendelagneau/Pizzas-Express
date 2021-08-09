@@ -2,11 +2,11 @@
 <h1> Liste des commandes</h1>
 <section>
 
+<?php var_dump($allOrder) ?>
     <?php foreach($allOrder as $order) { ?>
     <div class="card_articles">
-        <div class="article_title">numero de commande : <?= $order["order_id"] ?></div>
-        <div class="article_content">date : <?= $order["order_date"] ?></div>
-        <div class="article_content">prix total : <?= $order["order_price"] ?>€</div>
+        <div class="article_title">date de commande : <?= $order["order_date"] ?></div>
+        
         <div>
           
         </div>
