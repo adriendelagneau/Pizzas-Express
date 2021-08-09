@@ -7,13 +7,18 @@ class BackController{
    
 
       function tableauDeBord(){
-          require "app/Views/back/tableauDeBordAdmin.php";
+        if(isset($_SESSION["pseudo"])){
+            require "app/Views/back/tableauDeBordAdmin.php";
+        }else     echo "grrrrrrrrrrr";   
       }
       function tdbProducts(){
           require "app/Views/back/tdbProducts.php";
       }
       function tableauDeBordUser(){
-          require "app/Views/back/tableauDeBordUser.php";
+          if(isset($_SESSION["userAdress"])){
+              require "app/Views/back/tableauDeBordUser.php";
+
+          }else     echo "grrrrrrrrrrr";  
       }
       function infosUser(){
         require "app/Views/back/infosUser.php";

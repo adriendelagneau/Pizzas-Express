@@ -14,6 +14,9 @@ try{
         if($_GET["action"] == "tableauDeBord"){        
             $backController->tableauDeBord();  
             }
+
+
+            
         else if($_GET["action"] == "tdbProducts"){
             $backController->tdbProducts();
             }    

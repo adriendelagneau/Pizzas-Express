@@ -1,6 +1,7 @@
 <?php ob_start(); ?>
 <main class="accueil">
     <h1>pizzas express</h1>
+    <?php var_dump($_SESSION);?>
     <ul id="slider">
 
         <?php foreach($allSlides as $Image){ ?>

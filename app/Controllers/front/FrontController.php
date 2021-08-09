@@ -85,7 +85,8 @@ class FrontController{
 
             $isPasswordCorrect = password_verify( $mdp, $result["pwd"]); /* Vérifie que le hachage fourni correspond bien au mot de passe fourni. */
             if ($isPasswordCorrect){
-                 require "app/Views/back/tableauDeBordAdmin.php";
+                  $_SESSION['pseudo'] = $pseudo;
+                  header("Location: indexAdmin.php?action=tableauDeBord");   
              }
         }else{
             echo '<script>alert("Vos identifiants sont incorrects");</script>';
@@ -130,9 +131,7 @@ class FrontController{
     
                     require "app/Views/back/tableauDeBordUser.php";
             }
-            
-               
-            
+                 
         }else{
             echo '<script>alert("Vos identifiants sont incorrects");</script>';
             $slides = new \Project\Models\ImagesManager();

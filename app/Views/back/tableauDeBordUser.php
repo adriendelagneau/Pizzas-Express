@@ -8,5 +8,6 @@
     <div><a href="indexAdmin.php?action=desinscription">desinscription</a></div>
   
 </div>
+
 <?php $content = ob_get_clean(); ?>
 <?php require 'templates/templateUser.php'; ?>
