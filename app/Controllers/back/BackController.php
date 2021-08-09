@@ -12,12 +12,14 @@ class BackController{
         }else     echo "grrrrrrrrrrr";   
       }
       function tdbProducts(){
-          require "app/Views/back/tdbProducts.php";
+        if(isset($_SESSION["pseudo"])){
+            require "app/Views/back/tdbProducts.php";
+        }else     echo "grrrrrrrrrrr";  
+          
       }
       function tableauDeBordUser(){
           if(isset($_SESSION["userAdress"])){
               require "app/Views/back/tableauDeBordUser.php";
-
           }else     echo "grrrrrrrrrrr";  
       }
       function infosUser(){
