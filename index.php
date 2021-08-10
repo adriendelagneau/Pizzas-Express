@@ -12,7 +12,10 @@ try{
 
          if($_GET["action"] == "pizzas"){
             $frontController->pizzas();
-        }     
+        }  
+        else if($_GET["action"] == "accueil"){
+            $frontController->accueil();
+        }  
         else if($_GET["action"] == "veg"){
             $isVeg = $_GET["isVeg"];
             $frontController->veg($isVeg);

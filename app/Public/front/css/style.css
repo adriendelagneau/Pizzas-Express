@@ -111,6 +111,10 @@ nav img:hover {
     cursor: pointer;
     font-size: 0.9em;
 }
+#userIcon img{
+    width: 50px;
+    color: aliceblue;
+}
 .switch {
     top: 93px;
 }

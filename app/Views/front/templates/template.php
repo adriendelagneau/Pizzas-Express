@@ -30,7 +30,7 @@
                 <li><a href="index.php?action=toto"> Inscription</a></li>
             </ul>
             <div id="icons">
-                <div id="userIcon"><i class="fas fa-user"></i></div>
+                <div id="userIcon"><img src="app/Public/front/img/user-solid.svg"></div>
                 <div id="burger"><i class="fa fa-bars"></i></div>
             </div>
         </nav>
