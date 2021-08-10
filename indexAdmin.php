@@ -11,9 +11,11 @@ try{
 
     if(isset($_GET["action"])){
       
-        if($_GET["action"] == "tableauDeBord"){        
-            $backController->tableauDeBord();  
-            }
+        if($_GET["action"] == "tableauDeBord"){    
+            if($_SESSION != []){
+                $backController->tableauDeBord();  
+            }else{ echo "grrrrr";}  
+        }
 
 
             

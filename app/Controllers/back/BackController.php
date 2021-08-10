@@ -6,22 +6,20 @@ namespace Project\Controllers\Back;
 class BackController{
    
 
-      function tableauDeBord(){
-        if(isset($_SESSION["pseudo"])){
-            require "app/Views/back/tableauDeBordAdmin.php";
-        }else     echo "grrrrrrrrrrr";   
-      }
-      function tdbProducts(){
-        if(isset($_SESSION["pseudo"])){
-            require "app/Views/back/tdbProducts.php";
-        }else     echo "grrrrrrrrrrr";  
-          
-      }
-      function tableauDeBordUser(){
-          if(isset($_SESSION["userAdress"])){
-              require "app/Views/back/tableauDeBordUser.php";
-          }else     echo "grrrrrrrrrrr";  
-      }
+
+    function tableauDeBord(){
+
+ 
+
+       require "app/Views/back/tableauDeBordAdmin.php";
+   
+
+   
+}
+    function tdbProducts(){require "app/Views/back/tdbProducts.php";}
+
+    function tableauDeBordUser(){require "app/Views/back/tableauDeBordUser.php";}
+
       function infosUser(){
         require "app/Views/back/infosUser.php";
     }
@@ -35,14 +33,14 @@ class BackController{
         require "app/Views/back/desinscription.php";
     }
       function deconnexion(){
-        session_unset(); 
+   
+      $_SESSION = [];
           $slides = new \Project\Models\ImagesManager();
           $allSlides = $slides->getSlides(); 
           $aLaUne = new \Project\Models\ImagesManager();
           $allALaUne = $aLaUne->getALaUne();
           $reducs = new \Project\Models\ReducManager();
           $allReducs = $reducs->allReducs(); 
-          
           require "app/Views/front/accueil.php";
       }
 /*************************** pizza ****************************** */
