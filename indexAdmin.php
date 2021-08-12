@@ -47,8 +47,11 @@ try{
                 $backController->listEmails();
                 }
             else if($_GET["action"] == "listUserOrder"){
-                $backController->listUserOrder();
+                $backController->listOrderAdmin();
                 }  
+                else if ($_GET["action"] == "listLivreur"){
+                    $backController->listLivreur();
+                }
             else if($_GET["action"] == "infosUser"){
                 $backController->infosUser();
                 }
@@ -97,14 +100,17 @@ try{
                 $prix = htmlspecialchars($_POST['prix']);
                 $backController->addBurger($productName, $productDescription, $prix);
             }
+
             elseif($_GET["action"] == "deleteBurger"){
                 $id = $_GET["id"];
                 $backController->deleteBurger($id);
             }
+
             elseif($_GET["action"] == "selectBurger"){
                 $id = $_GET["id"];
                 $backController->selectBurger($id);
-            }       
+            }    
+
             elseif($_GET["action"] == "updateBurger"){
                 $id = $_GET["id"];
                 $productName = htmlspecialchars($_POST["productName"]);
@@ -225,7 +231,39 @@ try{
                 $userId = $_SESSION['userId'];
                     $backController->deleteUser();
                 }
-    
+    /** livreur******************************************************* */
+    elseif($_GET['action'] == 'addLivreur'){              
+        $livreurName = htmlspecialchars($_POST['livreurName']);
+        $livreurPhone = htmlspecialchars($_POST['livreurPhone']);
+        $livreurEmail= htmlspecialchars($_POST['livreurEmail']);
+
+        $backController->addLivreur($livreurName, $livreurPhone ,$livreurEmail);
+    }
+    elseif($_GET["action"] == "deleteLivreur"){
+        $id = $_GET["id"];
+        $backController->deleteLivreur($id);
+    }
+    elseif($_GET["action"] == "selectLivreur"){
+        $id = $_GET["id"];
+        $backController->selectLivreur($id);
+    }      
+    elseif($_GET["action"] == "updateLivreur"){
+        $id = $_GET["id"];
+        $livreurName = htmlspecialchars($_POST['livreurName']);
+        $livreurPhone = htmlspecialchars($_POST['livreurPhone']);
+        $livreurEmail= htmlspecialchars($_POST['livreurEmail']);
+
+        $backController->updateLivreur($id, $livreurName, $livreurPhone ,$livreurEmail);
+    }  
+
+    elseif($_GET["action"] == "deleteHistory"){
+        $id = $_SESSION['userId'];
+        $backController->deleteHistory($id);
+    }  
+        
+
+
+
             }else{
                 
                 $backController->deconnexion();

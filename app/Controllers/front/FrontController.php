@@ -76,8 +76,8 @@ class FrontController{
     
     
     function connexionAdmin($pseudo, $mdp){
-        $userManager = new \Project\Models\UserManager();
-        $connexAdmin = $userManager->recupMdpAdmin($pseudo, $mdp);
+        $adminManager = new \Project\Models\UserManager();
+        $connexAdmin = $adminManager->recupMdpAdmin($pseudo, $mdp);
 
         $result = $connexAdmin->fetch();
         
@@ -128,7 +128,7 @@ class FrontController{
                 
                 
                if ($isPasswordCorrect2){
-                    session_unset(); 
+                   
     
                     $_SESSION["userId"] = $result["userId"];
                     $_SESSION["userName"] = $result["userName"];

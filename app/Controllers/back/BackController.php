@@ -208,9 +208,9 @@ class BackController{
           require "app/Views/back/listSlides.php";
       }
       function deleteSlide($id){
-          $slide = new \Project\Models\ImagesManager();
-          $deleteArticle = $slide->deleteSlide($id);
-          header("Location: indexAdmin.php?action=listSlides");   
+        $slide = new \Project\Models\ImagesManager();
+        $deleteArticle = $slide->deleteSlide($id);
+        header("Location: indexAdmin.php?action=listSlides");   
       }
       function creatSlide($title){  
           $target_dir = "app/Public/back/img/slides/";//spécifie le répertoire où le fichier va être placé
@@ -290,11 +290,16 @@ class BackController{
             $deleteUser = $user->deleteUser();
             
         }
-        function listUserOrder(){
-            $user = new \Project\Models\UserManager();
-            $bestUser = $user->userOrder();
+        function listOrderAdmin(){
+            $user = new \Project\Models\OrderManager();
+            $bestUser = $user->adminOrder();
             require "app/Views/back/listUsers.php";
             
+        }
+        function deleteHistory($id){
+            $history = new \Project\Models\UserManager();
+            $deleteHistory = $history->deleteHistory($id);
+            require "app/Views/back/tableauDeBordUser.php";
         }
 /*** order  */
 
@@ -304,5 +309,33 @@ class BackController{
         $allOrder = $order->getOrderList($id); 
        
         require "app/Views/back/orderList.php";
+    }
+    /**livreur */
+
+    function listLivreur(){
+        $livreur = new \Project\Models\LivreurManager();
+        $listLivreur = $livreur->listLivreur();
+        require "app/Views/back/listLivreurs.php";
+    }
+
+    function addLivreur($livreurName, $livreurPhone, $livreurEmail){
+        $livreur = new \Project\Models\LivreurManager();
+        $addLivreur = $livreur->addLivreur($livreurName, $livreurPhone,$livreurEmail );
+        header("Location: indexAdmin.php?action=listLivreur");        
+    }   
+    function deleteLivreur($id){
+        $livreur = new \Project\Models\LivreurManager();
+        $deleteLivreur = $livreur->deleteLivreur($id);
+        header("Location: indexAdmin.php?action=listLivreur");   
+  }
+    function selectLivreur($id){
+        $livreur = new \Project\Models\LivreurManager();
+        $selectedLivreur = $livreur->selectLivreur($id);
+        require "app/Views/back/livreur.php";
+    }     
+    function updateLivreur($id, $livreurName, $livreurPhone,$livreurEmail ){
+        $livreur = new \Project\Models\LivreurManager();
+        $updateLivreur = $livreur->updateLivreur($id,$livreurName, $livreurPhone,$livreurEmail);
+        header("Location: indexAdmin.php?action=listLivreur");
     }
 }

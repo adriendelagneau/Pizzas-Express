@@ -11,8 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="shortcut icon" type="image/png" href="app/Public/front/img/favicon.png">
     <link rel="stylesheet" href="app/Public/front/css/style.css">
-  
- 
 </head>
 
 <body>
@@ -30,7 +28,7 @@
                 <li><a href="index.php?action=toto"> Inscription</a></li>
             </ul>
             <div id="icons">
-                <div id="userIcon"><img src="app/Public/front/img/user-solid.svg"></div>
+                <div id="userIcon"><i class="fas fa-user"></i></div>
                 <div id="burger"><i class="fa fa-bars"></i></div>
             </div>
         </nav>
@@ -58,10 +56,12 @@
             </div>
         </div>
     </footer>
+
     <script src="app/Public/front/js/app.js"></script>
     <script src="app/Public/front/js/api.js"></script>
     <script src="app/Public/front/js/ajax.js"></script>
     <script src="app/Public/front/js/slider.js"></script>
+    
 </body>
 
 </html>

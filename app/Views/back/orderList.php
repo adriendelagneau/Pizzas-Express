@@ -1,5 +1,5 @@
 <?php ob_start();?>
-<h1> Liste des commandes</h1>
+<h1> Liste de vos commandes</h1>
 <section>
 
     <?php foreach($allOrder as $order) { ?>
@@ -14,6 +14,11 @@
     <?php   } ?>
 
 </section>
+
+<form action="indexAdmin.php?action=deleteHistory" method="post">
+      <input type="submit" value="supprimer votre historique">
+   </form>
+
 <?php $content = ob_get_clean()?>
 <?php require 'templates/templateUser.php'?>
 

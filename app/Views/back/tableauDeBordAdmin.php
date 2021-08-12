@@ -7,6 +7,7 @@
     <div><a href="indexAdmin.php?action=listReducs">gestion reducs</a></div>
     <div><a href="indexAdmin.php?action=listEmails">gestion Emails</a></div>
     <div><a href="indexAdmin.php?action=listUserOrder">gestion user</a></div>
+    <div><a href="indexAdmin.php?action=listLivreur">gestion livreur</a></div>
 </div>
 
 <?php $content = ob_get_clean(); ?>

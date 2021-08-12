@@ -2,7 +2,6 @@
 
 <main class="accueil">
     <h1>pizzas express</h1>
-    <?php var_dump($_SESSION);?>
     <ul id="slider">
 
         <?php foreach($allSlides as $Image){ ?>
@@ -17,22 +16,24 @@
         semaine de 11h à 14h et de 19h à 23h.</p>
     <p>Commander au 02 97 27 12 **<p>
 
-            <h2> offres spéciale</h2>
-            <section id="reductions">
+    <h2> offres spéciale</h2>
+    <section id="reductions">
 
-                <?php foreach($allReducs as $reducs){ ?>
-                <article>
-                    <h4><?= $reducs["title"] ?></h4>
-                    <p><?= $reducs["periode"] ?></p>
-                    <p><?= $reducs["condition1"] ?></p>
-                    <p><?= $reducs["condition2"] ?></p>
-                    <p>Ofrre non cumulable</p>
-                    <p>Valable jusqu'au <?= $reducs["validite"] ?></p>
-                    <p>Sur présentation de ce coupon</p>
-                </article>
-                <?php } ?>
+        <?php foreach($allReducs as $reducs){ ?>
 
-            </section>
+            <article>
+                <h4><?= $reducs["title"] ?></h4>
+                <p><?= $reducs["periode"] ?></p>
+                <p><?= $reducs["condition1"] ?></p>
+                <p><?= $reducs["condition2"] ?></p>
+                <p>Ofrre non cumulable</p>
+                <p>Valable jusqu'au <?= $reducs["validite"] ?></p>
+                <p>Sur présentation de ce coupon</p>
+            </article>
+
+        <?php } ?>
+
+    </section>
 </main>
 <aside>
     <h2>A la une</h2>

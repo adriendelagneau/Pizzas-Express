@@ -1,7 +1,6 @@
 <?php ob_start();?>
+
 <h1> change pwd</h1>
-
-
 
 <form action="indexAdmin.php?action=changementMdpUser" method="post">
 
@@ -19,7 +18,6 @@
     
     </form>
   
-
 <?php $content = ob_get_clean()?>
 <?php require 'templates/templateUser.php'?>
 

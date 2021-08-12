@@ -4,10 +4,12 @@
 
     <?php foreach($bestUser as  $user){ ?>
     <div class="card_articles">
-        <p><?= $user["userId"] ?></p>
-        <p><?= $user["userName"] ?></p>
-        <p><?= $user["order_date"] ?></p>
-        <p><?= $user["order_price"] ?></p>
+        <p>numero de commande : <?= $user["userId"] ?></p>
+        <p>faite par : <?= $user["userName"] ?></p>
+        <p>date du : <?= $user["order_date"] ?></p>
+        <p>montant total : <?= $user["order_price"] ?> €</p>
+        <p>livrée par: <?= $user["livreurName"] ?></p>
+
        
   
     </div>
