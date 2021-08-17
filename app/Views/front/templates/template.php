@@ -25,7 +25,7 @@
                 <li><a href="index.php?action=burger">Burgers </a></li>
                 <li><a href="index.php?action=boissons"> Boissons</a></li>
                 <li><a href="index.php?action=contact"> Contact</a></li>
-                <li><a href="index.php?action=toto"> Inscription</a></li>
+                <li><a href="index.php?action=inscriptonUser"> Inscription</a></li>
             </ul>
             <div id="icons">
                 <div id="userIcon"><i class="fas fa-user"></i></div>

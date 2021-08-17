@@ -2,273 +2,277 @@
 
 namespace Project\Controllers\front;
 
-class FrontController{
-
-   
-    function accueil(){
+class FrontController
+{
+    public function accueil()
+    {
+        session_destroy();
         $slides = new \Project\Models\ImagesManager();
-        $allSlides = $slides->getSlides(); 
+        $allSlides = $slides->getSlides();
         $aLaUne = new \Project\Models\ImagesManager();
-        $allALaUne = $aLaUne->getALaUne();         
+        $allALaUne = $aLaUne->getALaUne();
         $reducs = new \Project\Models\ReducManager();
         $allReducs = $reducs->allReducs();
-        require "app/Views/front/accueil.php";
+        require 'app/Views/front/accueil.php';
     }
 
-    function erreurChampsVides(){
+    public function erreurChampsVides()
+    {
         $slides = new \Project\Models\ImagesManager();
-        $allSlides = $slides->getSlides(); 
+        $allSlides = $slides->getSlides();
         $aLaUne = new \Project\Models\ImagesManager();
-        $allALaUne = $aLaUne->getALaUne();         
+        $allALaUne = $aLaUne->getALaUne();
         $reducs = new \Project\Models\ReducManager();
         $allReducs = $reducs->allReducs();
-        require "app/Views/front/accueil.php";
+        require 'app/Views/front/accueil.php';
         echo '<script>alert("Vous n avez pas rempli les champs !");</script>';
     }
 
-    function pizzas(){      
+    public function pizzas()
+    {
+        session_destroy();
         $pizzas = new \Project\Models\ProduitsManager();
         $allPizzas = $pizzas->allPizzas();
         $aLaUne = new \Project\Models\ImagesManager();
-        $allALaUne = $aLaUne->getALaUne(); 
-        require "app/Views/front/pizzas.php";
+        $allALaUne = $aLaUne->getALaUne();
+        require 'app/Views/front/pizzas.php';
     }
 
-     function veg($isVeg){
+    public function veg($isVeg)
+    {
         $pizzas = new \Project\Models\ProduitsManager();
-        $allPizzas = $pizzas->pizzasVeg($isVeg);       
+        $allPizzas = $pizzas->pizzasVeg($isVeg);
         $aLaUne = new \Project\Models\ImagesManager();
         $allALaUne = $aLaUne->getALaUne();
-        require "app/Views/front/pizzas.php";
+        require 'app/Views/front/pizzas.php';
     }
 
-    function pigless($isPigless){
+    public function pigless($isPigless)
+    {
         $pizzas = new \Project\Models\ProduitsManager();
-        $allPizzas = $pizzas->pizzasPigless($isPigless);       
+        $allPizzas = $pizzas->pizzasPigless($isPigless);
         $aLaUne = new \Project\Models\ImagesManager();
         $allALaUne = $aLaUne->getALaUne();
-        require "app/Views/front/pizzas.php";
+        require 'app/Views/front/pizzas.php';
     }
-    
-    function burger(){
+
+    public function burger()
+    {
+        session_destroy();
         $burgers = new \Project\Models\ProduitsManager();
         $allBurgers = $burgers->allBurgers();
         $aLaUne = new \Project\Models\ImagesManager();
-        $allALaUne = $aLaUne->getALaUne(); 
-        require "app/Views/front/burger.php";
+        $allALaUne = $aLaUne->getALaUne();
+        require 'app/Views/front/burger.php';
     }
-   
-    function boissons(){
+
+    public function boissons()
+    {
+        session_destroy();
         $boissons = new \Project\Models\ProduitsManager();
         $allBoissons = $boissons->allBoissons();
         $aLaUne = new \Project\Models\ImagesManager();
-        $allALaUne = $aLaUne->getALaUne(); 
-        require "app/Views/front/boissons.php";
+        $allALaUne = $aLaUne->getALaUne();
+        require 'app/Views/front/boissons.php';
     }
 
-    function alcool($isAlcool){
+    public function alcool($isAlcool)
+    {
         $boissons = new \Project\Models\ProduitsManager();
-        $allBoissons = $boissons->alcool($isAlcool);       
+        $allBoissons = $boissons->alcool($isAlcool);
         $aLaUne = new \Project\Models\ImagesManager();
         $allALaUne = $aLaUne->getALaUne();
-        require "app/Views/front/boissons.php";
+        require 'app/Views/front/boissons.php';
     }
-    
-    
-    function connexionAdmin($pseudo, $mdp){
+
+    /**********************  contact *****************/
+
+    public function contact($errorContact = [])
+    {
+        session_destroy();
+        $aLaUne = new \Project\Models\ImagesManager();
+        $allALaUne = $aLaUne->getALaUne();
+        require 'app/Views/front/contact.php';
+    }
+
+    public function contactMail($lastname, $mail, $sujet, $content)
+    {
+        $contactManager = new \Project\Models\ContactManager();
+        // Removing all illegal characters from email
+        $mail = filter_var($mail, FILTER_SANITIZE_EMAIL);
+
+        $errorContact = [];
+
+        if (!empty($mail) && filter_var($mail, FILTER_VALIDATE_EMAIL) == false) {
+            $errorContact['invalid_email'] = "Votre Email n'est pas valide";
+        }
+        if (empty($lastname)) {
+            $errorContact['required_name'] = 'Votre nom est requis';
+        }
+        if (empty($mail)) {
+            $errorContact['required_email'] = 'Votre Email est requis';
+        }
+        if (empty($sujet)) {
+            $errorContact['required_sujet'] = 'Un sujet  est requis';
+        }
+        if (empty($content)) {
+            $errorContact['required_content'] = 'Un message est requis';
+        }
+        if (strlen($content) > 300) {
+            $errorContact['too_long_message'] = 'Votre message est trop long ... 300 caractères maximum';
+        }
+
+        if (!empty($lastname) && (!empty($mail) && (!empty($sujet) && (!empty($content))))) {
+            if (empty($errorContact)) {
+                $contactUserMail = $contactManager->mail($lastname, $mail, $sujet, $content);
+                $aLaUne = new \Project\Models\ImagesManager();
+                $allALaUne = $aLaUne->getALaUne();
+                require 'app/Views/front/contact.php';
+                echo '<script>alert("message envoyé");</script>';
+            }
+        } else {
+            $this->contact($errorContact);
+        }
+    }
+
+    /**********************  inscription user *****************/
+
+    public function inscriptonUser($errorInscription = [])
+    {
+        session_destroy();
+        $aLaUne = new \Project\Models\ImagesManager();
+        $allALaUne = $aLaUne->getALaUne();
+        require 'app/Views/front/inscription.php';
+    }
+
+    public function inscription($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD)
+    {
+        $inscriptonUser = new \Project\Models\UserManager();
+        // Removing all illegal characters from email
+        $userMail = filter_var($userMail, FILTER_SANITIZE_EMAIL);
+
+        $errorInscription = [];
+
+        if (empty($userName)) {
+            $errorInscription['required_userName'] = 'Votre nom est requis';
+        }
+
+        if (empty($userFirstname)) {
+            $errorInscription['required_userFirstname'] = 'Votre prénom est requis';
+        }
+
+        if (empty($userAdress)) {
+            $errorInscription['required_userAdress'] = 'Votre adresse est requise';
+        }
+
+        if (empty($userPhone)) {
+            $errorInscription['required_userPhone'] = 'Votre numero de téléphone est requis';
+        }
+
+        if (!empty($userMail) && filter_var($userMail, FILTER_VALIDATE_EMAIL) == false) {
+            $errorInscription['invalid_userEmail'] = 'Votre Email est incorrect';
+        }
+
+        if (empty($userMail)) {
+            $errorInscription['required_userEmail'] = 'Votre Email est requis';
+        }
+
+        if (empty($userPWD)) {
+            $errorInscription['required_userPWD'] = 'Votre mot de passe est requis';
+        }
+
+        if (!empty($userName) && (!empty($userFirstname) && (!empty($userAdress) && (!empty($userPhone) && (!empty($userMail) && (!empty($userPWD))))))) {
+            if (empty($errorInscription)) {
+                $inscription = $inscriptonUser->newUser($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD);
+                $slides = new \Project\Models\ImagesManager();
+                $allSlides = $slides->getSlides();
+                $aLaUne = new \Project\Models\ImagesManager();
+                $allALaUne = $aLaUne->getALaUne();
+                $reducs = new \Project\Models\ReducManager();
+                $allReducs = $reducs->allReducs();
+                require 'app/Views/front/accueil.php';
+
+                echo '<script>alert("Bravo, vous etes maintenant inscrit");</script>';
+            }
+        } else {
+            $this->inscriptonUser($errorInscription);
+        }
+    }
+
+    /**********************  connexion *****************/
+
+    public function connexionAdmin($pseudo, $mdp)
+    {
         $adminManager = new \Project\Models\UserManager();
         $connexAdmin = $adminManager->recupMdpAdmin($pseudo, $mdp);
 
         $result = $connexAdmin->fetch();
-        
-        if($result != false){
 
-            $isPasswordCorrect = password_verify( $mdp, $result["pwd"]); /* Vérifie que le hachage fourni correspond bien au mot de passe fourni. */
-            if ($isPasswordCorrect){
-                  $_SESSION['pseudo'] = $pseudo;
-                  header("Location: indexAdmin.php?action=tableauDeBord");   
-             }else{
+        if ($result != false) {
+            $isPasswordCorrect = password_verify($mdp, $result['pwd']); /* Vérifie que le hachage fourni correspond bien au mot de passe fourni. */
+            if ($isPasswordCorrect) {
+                $_SESSION['pseudo'] = $pseudo;
+                header('Location: indexAdmin.php?action=tableauDeBord');
+            } else {
                 echo '<script>alert("Vos identifiants sont incorrects");</script>';
                 $slides = new \Project\Models\ImagesManager();
-            $allSlides = $slides->getSlides(); 
-            $aLaUne = new \Project\Models\ImagesManager();
-            $allALaUne = $aLaUne->getALaUne();         
-            $reducs = new \Project\Models\ReducManager();
-            $allReducs = $reducs->allReducs();
-            require "app/Views/front/accueil.php"; 
-                }
-        }else{
-            echo '<script>alert("Vos identifiants sont incorrects");</script>';
-            $slides = new \Project\Models\ImagesManager();
-        $allSlides = $slides->getSlides(); 
-        $aLaUne = new \Project\Models\ImagesManager();
-        $allALaUne = $aLaUne->getALaUne();         
-        $reducs = new \Project\Models\ReducManager();
-        $allReducs = $reducs->allReducs();
-        require "app/Views/front/accueil.php";
-        }
-        
-    }  
-    
-    function toto($errorsz=array()){     
-        $aLaUne = new \Project\Models\ImagesManager();
-        $allALaUne = $aLaUne->getALaUne();
-        require "app/Views/front/inscription.php";
-    }
-    function connexionUser($pseudoUser, $pwdUser){
-        
-            $userManager2 = new \Project\Models\UserManager();
-            $connexAdmin2 = $userManager2->recupMdpUser($pseudoUser, $pwdUser);
-            $result = $connexAdmin2->fetch();
-
-
-            if($result != false){
-
-                $isPasswordCorrect2 = password_verify($pwdUser, $result["userPWD"]); 
-                
-                
-               if ($isPasswordCorrect2){
-                   
-    
-                    $_SESSION["userId"] = $result["userId"];
-                    $_SESSION["userName"] = $result["userName"];
-                    $_SESSION["userFirstname"] = $result["userFirstname"];
-                    $_SESSION["userPhone"] = $result["userPhone"];
-                    $_SESSION["userAdress"] = $result["userAdress"];
-                    $_SESSION["userMail"] = $result["userMail"];
-                    $_SESSION["userPWD"] = $result["userPWD"];
-    
-                    require "app/Views/back/tableauDeBordUser.php";
-            }else{
-                echo '<script>alert("Vos identifiants sont incorrects");</script>';
-                $slides = new \Project\Models\ImagesManager();
-            $allSlides = $slides->getSlides(); 
-            $aLaUne = new \Project\Models\ImagesManager();
-            $allALaUne = $aLaUne->getALaUne();         
-            $reducs = new \Project\Models\ReducManager();
-            $allReducs = $reducs->allReducs();
-            require "app/Views/front/accueil.php";
-            }
-                 
-        }else{
-            echo '<script>alert("Vos identifiants sont incorrects");</script>';
-            $slides = new \Project\Models\ImagesManager();
-        $allSlides = $slides->getSlides(); 
-        $aLaUne = new \Project\Models\ImagesManager();
-        $allALaUne = $aLaUne->getALaUne();         
-        $reducs = new \Project\Models\ReducManager();
-        $allReducs = $reducs->allReducs();
-        require "app/Views/front/accueil.php";
-
-        }
-      }
-
-    function contact($errors=array()){
-        $aLaUne = new \Project\Models\ImagesManager();
-        $allALaUne = $aLaUne->getALaUne(); 
-        require "app/Views/front/contact.php";
-    }
-
-     function contactMail($lastname, $mail, $sujet, $content){
-        $contactManager = new \Project\Models\ContactManager;
-        // Removing all illegal characters from email
-        $mail = filter_var($mail, FILTER_SANITIZE_EMAIL);
-
-        $errors = array();
-
-        if(!empty($mail) && filter_var($mail, FILTER_VALIDATE_EMAIL) == false) {
-            $errors["invalid_email"] = "Votre Email n'est pas valide";
-        }
-        if(empty($lastname)){
-            $errors["required_name"] = "Votre nom est requis";
-        }   
-        if(empty($mail)){
-            $errors["required_email"] = "Votre Email est requis";
-        }
-        if(empty($sujet)){
-            $errors["required_sujet"] = "Un sujet  est requis";  
-        }
-        if(empty($content)){
-            $errors["required_content"] =   "Un message est requis";
-        }
-        if(strlen($content) > 300){
-            $errors["too_long_message"] = 'Votre message est trop long ... 300 caractères maximum';
-        } 
-      
-        if(!empty($lastname)  && (!empty($mail) && (!empty($sujet) && (!empty($content))))) {
-            if(empty($errors)) {
-                $contactUserMail = $contactManager->mail($lastname, $mail, $sujet, $content);
+                $allSlides = $slides->getSlides();
                 $aLaUne = new \Project\Models\ImagesManager();
-                $allALaUne = $aLaUne->getALaUne(); 
-                require "app/Views/front/contact.php";
-                echo '<script>alert("message envoyé");</script>';
-            }
-        } else{
-            $this->contact($errors);
-        }
-    }
-
-   function inscription($userName, $userFirstname,  $userAdress, $userPhone, $userMail, $userPWD){
-            $toto = new \Project\Models\UserManager;
-            // Removing all illegal characters from email
-            $userMail = filter_var($userMail, FILTER_SANITIZE_EMAIL);
-
-            $errorsz = array();
-
-        if(empty($userName)){
-            $errorsz["required_userName"] = "Votre nom est requis";
-        }
-        
-        if(empty($userFirstname)){
-            $errorsz["required_userFirstname"] = "Votre prénom est requis";
-        }
-        
-        if(empty($userAdress)){
-            $errorsz["required_userAdress"] = "Votre adresse est requise";
-        }
-
-        if(empty($userPhone)){
-            $errorsz["required_userPhone"] = "Votre numero de téléphone est requis";
-        }
-
-        if(!empty($userMail) && filter_var($userMail, FILTER_VALIDATE_EMAIL) == false) {
-            $errorsz["invalid_userEmail"] = "Votre Email est incorrect";
-            }
-
-        if(empty($userMail)){
-            $errorsz["required_userEmail"] = "Votre Email est requis";
-        }
-    
-        if(empty($userPWD)){
-            $errorsz["required_userPWD"] = "Votre mot de passe est requis";
-        }
-    
-        if(!empty($userName)  && (!empty($userFirstname) && (!empty($userAdress) && (!empty($userPhone)  && (!empty($userMail) && (!empty($userPWD) )))))) {
-            if(empty($errorsz)) {
-                 
-                $inscription = $toto->newUser($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD);
-                $slides = new \Project\Models\ImagesManager();
-                $allSlides = $slides->getSlides(); 
-                $aLaUne = new \Project\Models\ImagesManager();
-                $allALaUne = $aLaUne->getALaUne();         
+                $allALaUne = $aLaUne->getALaUne();
                 $reducs = new \Project\Models\ReducManager();
                 $allReducs = $reducs->allReducs();
-                require "app/Views/front/accueil.php";
-
-                echo '<script>alert("Bravo, vous etes maintenant inscrit");</script>';
+                require 'app/Views/front/accueil.php';
             }
-        } else{
-            $this->toto($errorsz);
+        } else {
+            echo '<script>alert("Vos identifiants sont incorrects");</script>';
+            $slides = new \Project\Models\ImagesManager();
+            $allSlides = $slides->getSlides();
+            $aLaUne = new \Project\Models\ImagesManager();
+            $allALaUne = $aLaUne->getALaUne();
+            $reducs = new \Project\Models\ReducManager();
+            $allReducs = $reducs->allReducs();
+            require 'app/Views/front/accueil.php';
         }
     }
 
-}
+    public function connexionUser($pseudoUser, $pwdUser)
+    {
+        $userManager2 = new \Project\Models\UserManager();
+        $connexAdmin2 = $userManager2->recupMdpUser($pseudoUser, $pwdUser);
+        $result = $connexAdmin2->fetch();
 
-/*function inscription(){
-        require "app/Views/front/inscription.php";
+        if ($result != false) {
+            $isPasswordCorrect2 = password_verify($pwdUser, $result['userPWD']);
+
+            if ($isPasswordCorrect2) {
+                $_SESSION['userId'] = $result['userId'];
+                $_SESSION['userName'] = $result['userName'];
+                $_SESSION['userFirstname'] = $result['userFirstname'];
+                $_SESSION['userPhone'] = $result['userPhone'];
+                $_SESSION['userAdress'] = $result['userAdress'];
+                $_SESSION['userMail'] = $result['userMail'];
+                $_SESSION['userPWD'] = $result['userPWD'];
+
+                require 'app/Views/back/tableauDeBordUser.php';
+            } else {
+                echo '<script>alert("Vos identifiants sont incorrects");</script>';
+                $slides = new \Project\Models\ImagesManager();
+                $allSlides = $slides->getSlides();
+                $aLaUne = new \Project\Models\ImagesManager();
+                $allALaUne = $aLaUne->getALaUne();
+                $reducs = new \Project\Models\ReducManager();
+                $allReducs = $reducs->allReducs();
+                require 'app/Views/front/accueil.php';
+            }
+        } else {
+            echo '<script>alert("Vos identifiants sont incorrects");</script>';
+            $slides = new \Project\Models\ImagesManager();
+            $allSlides = $slides->getSlides();
+            $aLaUne = new \Project\Models\ImagesManager();
+            $allALaUne = $aLaUne->getALaUne();
+            $reducs = new \Project\Models\ReducManager();
+            $allReducs = $reducs->allReducs();
+            require 'app/Views/front/accueil.php';
+        }
     }
-    function createUser($pseudo,$mdp){
-        $userAdmin = new \Project\Models\UserManager();
-        $user = $userAdmin->createUser($pseudo ,$mdp);
-        header("Location: indexAdmin.php?action=tableauDeBord");
-    }*/
+}

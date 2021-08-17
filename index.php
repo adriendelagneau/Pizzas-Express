@@ -2,93 +2,84 @@
 
 session_start();
 
-require_once __DIR__ . "/vendor/autoload.php";
+require_once __DIR__.'/vendor/autoload.php';
 
-try{
-
+try {
     $frontController = new Project\Controllers\front\FrontController();
 
-    if(isset ($_GET["action"])){
-
-         if($_GET["action"] == "pizzas"){
+    if (isset($_GET['action'])) {
+        if ($_GET['action'] == 'pizzas') {
             $frontController->pizzas();
-        }  
-        else if($_GET["action"] == "accueil"){
+        } 
+        elseif ($_GET['action'] == 'accueil') {
             $frontController->accueil();
-        }  
-        else if($_GET["action"] == "veg"){
-            $isVeg = $_GET["isVeg"];
+        } 
+        elseif ($_GET['action'] == 'veg') {
+            $isVeg = $_GET['isVeg'];
             $frontController->veg($isVeg);
         } 
-        else if($_GET["action"] == "pigless"){
-            $isPigless = $_GET["isPigless"];
+        elseif ($_GET['action'] == 'pigless') {
+            $isPigless = $_GET['isPigless'];
             $frontController->pigless($isPigless);
         } 
-        else if($_GET["action"] == "burger"){
+        elseif ($_GET['action'] == 'burger') {
             $frontController->burger();
-        }  
-        else if($_GET["action"] == "boissons"){
+        } 
+        elseif ($_GET['action'] == 'boissons') {
             $frontController->boissons();
-        }
-        else if($_GET["action"] == "alcool"){
-            $isAlcool = $_GET["isAlcool"];
+        } 
+        elseif ($_GET['action'] == 'alcool') {
+            $isAlcool = $_GET['isAlcool'];
             $frontController->alcool($isAlcool);
-        }
-        else if($_GET["action"] == "contact"){
+        } 
+        elseif ($_GET['action'] == 'contact') {
             $frontController->contact();
         } 
-        else if($_GET["action"] == "toto"){
-            $frontController->toto();
+        elseif ($_GET['action'] == 'inscriptonUser') {
+            $frontController->inscriptonUser();
         } 
-     
-        else if($_GET["action"] == "inscription"){
-
-            $userName = htmlspecialchars($_POST["userName"]);
-            $userFirstname = htmlspecialchars($_POST["userFirstname"]);  
-            $userAdress = htmlspecialchars($_POST["userAdress"]);
-            $userPhone = htmlspecialchars($_POST["userPhone"]);   
-            $userMail = htmlspecialchars($_POST["userMail"]);
-
-            $user1 = htmlspecialchars($_POST["userPWD"]);  
+        elseif ($_GET['action'] == 'inscription') {
+            $userName = htmlspecialchars($_POST['userName']);
+            $userFirstname = htmlspecialchars($_POST['userFirstname']);
+            $userAdress = htmlspecialchars($_POST['userAdress']);
+            $userPhone = htmlspecialchars($_POST['userPhone']);
+            $userMail = htmlspecialchars($_POST['userMail']);
+            $user1 = htmlspecialchars($_POST['userPWD']);
             $userPWD = password_hash($user1, PASSWORD_DEFAULT);
 
-            $frontController->inscription($userName, $userFirstname, $userAdress,$userPhone,$userMail, $userPWD);       
-        }
+            $frontController->inscription($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD);
+        } 
+        elseif ($_GET['action'] == 'contactMail') {
+            $lastname = htmlspecialchars($_POST['name']);
+            $mail = htmlspecialchars($_POST['mail']);
+            $sujet = htmlspecialchars($_POST['sujet']);
+            $content = htmlspecialchars($_POST['content']);
 
-        else if($_GET["action"] == "contactMail"){
-            $lastname = htmlspecialchars($_POST["name"]);
-            $mail = htmlspecialchars($_POST["mail"]);  
-            $sujet = htmlspecialchars($_POST["sujet"]);
-            $content = htmlspecialchars($_POST["content"]);           
-            $frontController->contactMail($lastname, $mail, $sujet, $content);       
-        }
+            $frontController->contactMail($lastname, $mail, $sujet, $content);
+        } 
+        elseif ($_GET['action'] == 'connexionAdmin') {
+            $pseudo = htmlspecialchars($_POST['pseudo']);
+            $mdp = htmlspecialchars($_POST['pwd']);
 
-        else if($_GET["action"] == 'connexionAdmin'){
-            $pseudo = htmlspecialchars($_POST["pseudo"]);        
-            $mdp = htmlspecialchars($_POST["pwd"]);
-            if(!empty($pseudo) && !empty($mdp)){
+            if (!empty($pseudo) && !empty($mdp)) {
                 $frontController->connexionAdmin($pseudo, $mdp);
-            }else{
-                $frontController->erreurChampsVides();
-            }          
-        }  
-
-        else if($_GET["action"] == 'connexionUser'){
-            $userName = htmlspecialchars($_POST["pseudoUser"]);        
-            $userPWD = htmlspecialchars($_POST["pwdUser"]);
-            if(!empty($userName) && !empty($userPWD)){
-                $frontController->connexionUser($userName, $userPWD);
-            }else{
+            } else {
                 $frontController->erreurChampsVides();
             }
-        }  
+        } 
+        elseif ($_GET['action'] == 'connexionUser') {
+            $userName = htmlspecialchars($_POST['pseudoUser']);
+            $userPWD = htmlspecialchars($_POST['pwdUser']);
 
-    }else{
-        $frontController->accueil();
+            if (!empty($userName) && !empty($userPWD)) {
+                $frontController->connexionUser($userName, $userPWD);
+            } else {
+                $frontController->erreurChampsVides();
+            }
         }
-        
-}catch(Exception $e){
-    die("Erreur:" . $e->getMessage());
-};
-
-  
+    } else {
+        $frontController->accueil();
+    }
+} catch (Exception $e) {
+    die('Erreur:'.$e->getMessage());
+}

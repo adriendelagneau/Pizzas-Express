@@ -17,31 +17,31 @@
             <label for="name">Nom :</label>
             <input type="text" id="name" name="name" placeholder="Legrand">
             <span class="error">
-            <?php if(isset($errors["required_name"])){echo $errors["required_name"];} ?>
+            <?php if(isset($errorContact["required_name"])){echo $errorContact["required_name"];} ?>
             </span>
                  
             <label for="email">Email :</label>
             <input type="email" id="email" name="mail" placeholder="JohnLegrand@gmx.fr">
             <span class="error">
-                <?php if(isset($errors["invalid_email"])){ echo  $errors["invalid_email"];} ?>
+                <?php if(isset($errorContact["invalid_email"])){ echo  $errorContact["invalid_email"];} ?>
             </span>
             <span class="error">
-                <?php if(isset($errors["required_email"])){echo  $errors["required_email"];} ?>
+                <?php if(isset($errorContact["required_email"])){echo  $errorContact["required_email"];} ?>
             </span>
 
             <label for="sujet">Sujet :</label>
             <input type="text" id="sujet" name="sujet" placeholder="L'objet de votre message">
             <span class="error">
-                <?php if(isset($errors["required_sujet"])){echo $errors["required_sujet"]; }?>
+                <?php if(isset($errorContact["required_sujet"])){echo $errorContact["required_sujet"]; }?>
             </span>
 
             <label for="message">votre message :</label>
             <textarea id="message" name="content"></textarea>
             <span class="error">
-                <?php if(isset($errors["required_content"])){echo  $errors["required_content"]; }?>
+                <?php if(isset($errorContact["required_content"])){echo  $errorContact["required_content"]; }?>
             </span>
             <span class="error">
-                <?php if(isset($errors["too_long_message"])){echo $errors["too_long_message"];}?>
+                <?php if(isset($errorContact["too_long_message"])){echo $errorContact["too_long_message"];}?>
             </span>
 
             <input id="submit" type="submit" value="Envoyer">
