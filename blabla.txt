@@ -57,3 +57,5 @@ DESCRIPTION 	b166e1518483 	185.98.131.149
             $this->contact($errorsx);
         }
     }
+
+    http://127.0.0.1/pizzas-express5/indexAdmin.php?action=deleteBoisson&id=%3Cbr%20/%3E%3Cb%3ENotice%3C/b%3E:%20%20Undefined%20variable:%20boisson%20in%20%3Cb%3E/var/www/html/pizzas-express5/app/Views/back/listBoissons.php%3C/b%3E%20on%20line%20%3Cb%3E16%3C/b%3E%3Cbr%20/%3E%3Cbr%20/%3E%3Cb%3ENotice%3C/b%3E:%20%20Trying%20to%20access%20array%20offset%20on%20value%20of%20type%20null%20in%20%3Cb%3E/var/www/html/pizzas-express5/app/Views/back/listBoissons.php%3C/b%3E%20on%20line%20%3Cb%3E16%3C/b%3E%3Cbr%20/%3E

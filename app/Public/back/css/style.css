@@ -41,8 +41,23 @@ h3 {
     background-color: black;
 }
 
-/*************** card******************/
 
+.btn_a{
+    width: 340px;
+    display:flex;
+}
+
+.btn_a input{
+    width:100px;
+    }
+
+/*************** card******************/
+section{
+    width:100%;
+    display:flex;
+   flex-direction: column;
+  
+}
 .card_articles {
     width: auto;
     min-width: 350px;
@@ -52,10 +67,6 @@ h3 {
 .card_articles p {
     margin: 20px auto;
     font-size: 1.7em;
-}
-
-.card_articles button {
-    margin: 20px auto;
 }
 
 .card_articles a {
@@ -120,7 +131,7 @@ header {
 }
 
 /************ tableau de bord ***********/
-#tdb {
+.tdb {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -129,7 +140,7 @@ header {
     padding: 40px 0;
 }
 
-#tdb div {
+.tdb div {
     width: 300px;
     text-align: center;
     background-color: rgb(177, 72, 58);

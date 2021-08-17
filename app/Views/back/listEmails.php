@@ -7,15 +7,18 @@
 
     <div class="card_articles">
 
-        <div class="article_title">Nom : <?= $email["firstname"] ?></div>
+       
         <div class="article_content">Prénom : <?= $email["lastname"] ?></div>
-        <div class="article_content">Adresse : <?= $email["adress"] ?></div>
+    
         <div class="article_content">Email : <?= $email["mail"] ?></div>
         <div class="article_content">Sujet : <?= $email["sujet"] ?></div>
         <div class="article_content">Contenu :<?= $email["content"] ?></div>
         
-       <a href="indexAdmin.php?action=deleteEmail&id=<?= $email['id'] ?>"> supprimer ce mail</a>
-        
+        <div class=btn_a>
+            <form action="indexAdmin.php?action=deleteEmail&id=<?= $email['id'] ?>"method="post">
+                <input type="submit" value="supprimer">
+            </form>
+        </div>
     </div>
     <?php   } ?>
 

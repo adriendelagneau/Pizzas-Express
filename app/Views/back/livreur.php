@@ -16,7 +16,7 @@
                 <input type="text" id="livreurPhone" name="livreurPhone" value="<?= $livreur['livreurPhone'] ?>">
                 
                 <label for="livreurEmail">Nom de la boisson</label>
-                <input type="text" id="livreurEmail" name="livreurEmail" value="<?= $livreur['livreurEmail'] ?>">
+                <input type="email" id="livreurEmail" name="livreurEmail" value="<?= $livreur['livreurEmail'] ?>">
 
 
                 <div>

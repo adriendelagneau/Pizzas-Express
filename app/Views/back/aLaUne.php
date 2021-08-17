@@ -8,7 +8,10 @@
         <div class="card_articles">
             <p><?= $aLaUne["title"] ?></p>
             <p><img src="<?= $aLaUne["imgAdress"] ?>" alt="<?= $aLaUne['title'] ?>"> </p>
-            <a href="indexAdmin.php?action=deleteALaUne&id=<?= $aLaUne['id'] ?>"> supprimer cette image</a>
+      
+            <form action="indexAdmin.php?action=deleteALaUne&id=<?= $aLaUne['id'] ?>" method="post">
+                <input type="submit" value="supprimer">
+            </form>
         </div>
 
     <?php   } ?>

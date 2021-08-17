@@ -9,12 +9,15 @@
             <div class="article_title">Nom : <?= $boissons["productName"] ?></div>
             <div class="article_content">Description : <?= $boissons["productDescription"] ?></div>
             <div class="article_content">Prix : <?= $boissons["prix"] ?>€</div>
-            <div>
-                <a href="indexAdmin.php?action=selectBoisson&id=<?= $boissons['id'] ?>">update boisson</a>
-                <a href="indexAdmin.php?action=deleteBoisson&id=<?= $boissons['id'] ?>">supprimer cette boisson</a>
+            <div class=btn_a>
+                <form action="indexAdmin.php?action=selectBoisson&id=<?= $boissons['id'] ?>" method="post">
+                    <input type="submit" value="mofifier">
+                </form>
+                <form action="indexAdmin.php?action=deleteBoisson&id=<?= $boissons['id'] ?>"method="post">
+                    <input type="submit" value="supprimer">
+                </form>
             </div>
         </div>
-
     <?php   } ?>
 
 </section>

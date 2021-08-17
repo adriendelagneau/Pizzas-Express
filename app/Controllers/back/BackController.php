@@ -9,16 +9,15 @@ class BackController{
 
     function tableauDeBord(){
 
- 
+       require "app/Views/back/tableauDeBordAdmin.php"; 
+    }
+    function tdbProducts(){
+        require "app/Views/back/tdbProducts.php";
+    }
 
-       require "app/Views/back/tableauDeBordAdmin.php";
-   
-
-   
-}
-    function tdbProducts(){require "app/Views/back/tdbProducts.php";}
-
-    function tableauDeBordUser(){require "app/Views/back/tableauDeBordUser.php";}
+    function tableauDeBordUser(){
+        require "app/Views/back/tableauDeBordUser.php";
+    }
 
       function infosUser(){
         require "app/Views/back/infosUser.php";
@@ -34,7 +33,8 @@ class BackController{
     }
       function deconnexion(){
    
-      $_SESSION = [];
+     
+     session_destroy();
           $slides = new \Project\Models\ImagesManager();
           $allSlides = $slides->getSlides(); 
           $aLaUne = new \Project\Models\ImagesManager();

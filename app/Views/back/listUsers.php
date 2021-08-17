@@ -1,14 +1,14 @@
 <?php ob_start(); ?>
-<h1>gestion des users</h1>
+<h1>gestion des commandes</h1>
 <section>
 
     <?php foreach($bestUser as  $user){ ?>
     <div class="card_articles">
-        <p>numero de commande : <?= $user["userId"] ?></p>
-        <p>faite par : <?= $user["userName"] ?></p>
-        <p>date du : <?= $user["order_date"] ?></p>
-        <p>montant total : <?= $user["order_price"] ?> €</p>
-        <p>livrée par: <?= $user["livreurName"] ?></p>
+        <div class="article_content">numero de commande : <?= $user["userId"] ?></div>
+        <div>faite par : <?= $user["userName"] ?></div>
+        <div>date du : <?= $user["order_date"] ?></div>
+        <div>montant total : <?= $user["order_price"] ?> €</div>
+        <div>livrée par: <?= $user["livreurName"] ?></div>
 
        
   

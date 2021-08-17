@@ -76,7 +76,7 @@ class ProduitsManager extends Manager{
     } 
     public function deleteBoisson($id){
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare("DELETE FROM boissons WHERE id= ? ORDER BY prix ASC");
+        $req = $bdd->prepare("DELETE FROM boissons WHERE id= ? ");
         $req->execute(array($id));
         return $req;
     }

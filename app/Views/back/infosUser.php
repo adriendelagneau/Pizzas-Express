@@ -16,7 +16,9 @@
         <input type="text" id="userAdress" name="userAdress" value="<?= $_SESSION['userAdress'] ?>">
 
         <label for="userPhone">votre numero de telephone : </label>
-        <input type="number" id="userPhone" name="userPhone" value="<?= $_SESSION['userPhone'] ?>">
+        <input type="text" id="userPhone" name="userPhone" value="<?= $_SESSION['userPhone'] ?>">
+        
+        <!-- type text pour les espaces dans le numero... varchar en bdd-->
 
         <label for="userMail">votre adresse mail : </label>
         <input type="email" id="userMail" name="userMail" value="<?= $_SESSION['userMail'] ?>">

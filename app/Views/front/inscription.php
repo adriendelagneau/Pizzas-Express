@@ -23,14 +23,14 @@
             </span>      
 
             <label for="userAdress">Votre adresse :</label>
-            <input type="text" name="userAdress" id="userAdress" placeholder="3 rue des peupliers"></input>
+            <input type="text" name="userAdress" id="userAdress" placeholder="3 rue des peupliers">
             <div id="item"></div>
             <span class="error">
                 <?php if(isset($errorsz["required_userAdress"])){echo $errorsz["required_userAdress"];} ?>
             </span>
 
             <label for="userPhone">Téléphone:</label>
-            <input type="number" id="userPhone" name="userPhone" placeholder="06 10 10 47 **">
+            <input type="text" id="userPhone" name="userPhone" placeholder="06 10 10 47 **">
             <span class="error">
                 <?php if(isset($errorsz["required_userPhone"])){echo $errorsz["required_userPhone"];} ?>
             </span>

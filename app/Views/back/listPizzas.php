@@ -1,7 +1,7 @@
 <?php ob_start();?>
 
 <h1> Liste des pizzas</h1>
-<section>
+<section >
 
     <?php foreach($allPizzas as $pizza){ ?>
 
@@ -10,15 +10,17 @@
             <div class="article_content">Ingrédients : <?= $pizza["productDescription"] ?></div>
             <div class="article_content">Prix M : <?= $pizza["prixMoyenne"] ?>€</div>
             <div class="article_content">Prix L : <?= $pizza["prixLarge"] ?>€</div>
-            <div>
-                <a href="indexAdmin.php?action=selectPizza&id=<?= $pizza['id'] ?>"> update
-                    pizza</a>
-
-                <a href="indexAdmin.php?action=deletePizzas&id=<?= $pizza['id'] ?>"> supprimer
-                    cette pizza</a>
-
+           <div class=btn_a>
+                <form action="indexAdmin.php?action=selectPizza&id=<?= $pizza['id'] ?>" method="post">
+                    <input type="submit" value="mofifier">
+                </form>
+                <form action="indexAdmin.php?action=deletePizzas&id=<?= $pizza['id'] ?>"method="post">
+                    <input type="submit" value="supprimer">
+                </form>
             </div>
         </div>
+
+        
 
     <?php   } ?>
 

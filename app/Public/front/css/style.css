@@ -505,7 +505,8 @@ footer {
     }
 
     nav ul li {
-        margin: 15px 50px;
+        font-size: 1.1em;
+        margin: 15px 40px;
     }
 
     nav li::after {
@@ -711,3 +712,13 @@ footer {
 
     }
 }
+
+@media screen and (min-width:1400px) {
+    nav ul li {
+        font-size: 1.5em;
+        margin: 15px 40px;
+    }
+
+}
+
+

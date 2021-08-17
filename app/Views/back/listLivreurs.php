@@ -9,9 +9,13 @@
             <div class="article_title">Nom : <?= $livreur["livreurName"] ?></div>
             <div class="article_content">Tel : <?= $livreur["livreurPhone"] ?></div>
             <div class="article_content">Mail: <?= $livreur["livreurEmail"] ?></div>
-            <div>
-                <a href="indexAdmin.php?action=selectLivreur&id=<?= $livreur['id'] ?>">update livreur</a>
-                <a href="indexAdmin.php?action=deleteLivreur&id=<?= $livreur['id'] ?>">supprimer ce livreur</a>
+            <div class=btn_a>
+            <form action="indexAdmin.php?action=selectLivreur&id=<?= $livreur['id'] ?>" method="post">
+                    <input type="submit" value="mofifier">
+                </form>
+                <form action="indexAdmin.php?action=deleteLivreur&id=<?= $livreur['id'] ?>"method="post">
+                    <input type="submit" value="supprimer">
+                </form>
             </div>
         </div>
 
@@ -31,7 +35,7 @@
         <input type="text" id="livreurPhone" name="livreurPhone">
 
         <label for="livreurEmail">mail du livreur :</label>
-        <input type="text" id="livreurEmail" name="livreurEmail">
+        <input type="email" id="livreurEmail" name="livreurEmail">
 
 
         <div>

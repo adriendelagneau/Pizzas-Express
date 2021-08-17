@@ -9,15 +9,19 @@
             <div class="article_title">Nom : <?= $burgers["productName"] ?></div>
             <div class="article_content">Ingrédients : <?= $burgers["productDescription"] ?></div>
             <div class="article_content">Prix : <?= $burgers["prix"] ?>€</div>
-            <div> 
-                <a href="indexAdmin.php?action=selectBurger&id=<?= $burgers['id'] ?>"> update burger</a>
-                <a href="indexAdmin.php?action=deleteBurger&id=<?= $burgers['id'] ?>">supprimer ce burger</a>
-                <br>
+            <div class=btn_a>
+                <form action="indexAdmin.php?action=selectBurger&id=<?= $burgers['id'] ?>" method="post">
+                    <input type="submit" value="mofifier">
+                </form>
+                <form action="indexAdmin.php?action=deleteBurger&id=<?= $burgers['id'] ?>"method="post">
+                    <input type="submit" value="supprimer">
+                </form>
             </div>
         </div>
 
     <?php   } ?>
-
+   
+              
 </section>
 
 <div class="newOne">
