@@ -1,14 +1,15 @@
 <?php ob_start(); ?>
 <main class="boissons">
     <h1>boissons</h1>
+
     <div class="categories">
         <p><a href="index.php?action=boissons">toutes</a></p>
         <p><a href="index.php?action=alcool&isAlcool=on">alcool</a></p>
         <p><a href="index.php?action=alcool&isAlcool=">sans alcool </a></p>
     </div>
+
     <section>
         <?php foreach($allBoissons as $boissons) { ?>
-
         <article>
             <div class="article_info">
                 <p class="article_title"><?= $boissons["productName"] ?></p>
@@ -18,9 +19,10 @@
             <div class="line"></div>
         </article>
         <?php   } ?>
-
     </section>
+    
 </main>
+
 <aside>
     <h2>A la une</h2>
 
@@ -32,5 +34,6 @@
     <?php   } ?>
 
 </aside>
+
 <?php $content = ob_get_clean(); ?>
 <?php require "templates/template.php"; ?>

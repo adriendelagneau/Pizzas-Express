@@ -42,7 +42,7 @@ try {
             elseif ($_GET['action'] == 'listEmails') {
                 $backController->listEmails();
             } 
-            elseif ($_GET['action'] == 'listUserOrder') {
+            elseif ($_GET['action'] == 'listOrderAdmin') {
                 $backController->listOrderAdmin();
             } 
             elseif ($_GET['action'] == 'listLivreur') {

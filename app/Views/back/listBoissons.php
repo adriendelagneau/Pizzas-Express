@@ -1,14 +1,15 @@
 <?php ob_start();?>
 
 <h1> Liste des boissons</h1>
+
 <section>
-
     <?php foreach($allBoissons as $boissons){ ?>
-
         <div class="card_articles">
+
             <div class="article_title">Nom : <?= $boissons["productName"] ?></div>
             <div class="article_content">Description : <?= $boissons["productDescription"] ?></div>
             <div class="article_content">Prix : <?= $boissons["prix"] ?>€</div>
+
             <div class=btn_a>
                 <form action="indexAdmin.php?action=selectBoisson&id=<?= $boissons['id'] ?>" method="post">
                     <input type="submit" value="mofifier">
@@ -17,9 +18,9 @@
                     <input type="submit" value="supprimer">
                 </form>
             </div>
+            
         </div>
     <?php   } ?>
-
 </section>
 
 <div class="newOne">

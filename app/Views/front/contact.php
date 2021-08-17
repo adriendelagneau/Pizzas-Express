@@ -17,9 +17,9 @@
             <label for="name">Nom :</label>
             <input type="text" id="name" name="name" placeholder="Legrand">
             <span class="error">
-            <?php if(isset($errorContact["required_name"])){echo $errorContact["required_name"];} ?>
+                <?php if(isset($errorContact["required_name"])){echo $errorContact["required_name"];} ?>
             </span>
-                 
+
             <label for="email">Email :</label>
             <input type="email" id="email" name="mail" placeholder="JohnLegrand@gmx.fr">
             <span class="error">
@@ -56,12 +56,10 @@
     <h2>A la une</h2>
 
     <?php foreach($allALaUne as $aLaUne){ ?>
-
     <article class="article_show_on">
         <p><?= $aLaUne["title"] ?></p>
         <p> <img src="<?= $aLaUne["imgAdress"] ?>" alt="<?= $aLaUne['title'] ?>"> </p>
     </article>
-
     <?php   } ?>
 
 </aside>

@@ -1,8 +1,9 @@
 <?php ob_start(); ?>
+
 <main class="burger">
     <h1>burger</h1>
-    <section>
 
+    <section>
         <?php foreach($allBurgers as $burgers) { ?>
         <article>
             <div class="article_info">
@@ -13,21 +14,23 @@
             <div class="line"></div>
         </article>
         <?php   } ?>
-
     </section>
+
 </main>
+
 <aside>
     <h2>pizzas à la une</h2>
-    <section>
 
+    <section>
         <?php foreach($allALaUne as $aLaUne){ ?>
         <article class="article_show_on">
             <p><?= $aLaUne["title"] ?></p>
             <p> <img src="<?= $aLaUne["imgAdress"] ?>" alt="<?= $aLaUne['title'] ?>"> </p>
         </article>
         <?php   } ?>
-
     </section>
+    
 </aside>
+
 <?php $content = ob_get_clean(); ?>
 <?php require "templates/template.php"; ?>

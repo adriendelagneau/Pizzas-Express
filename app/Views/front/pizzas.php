@@ -3,6 +3,7 @@
 <main class="pizzas">
 
     <h1>Pizzas</h1>
+
     <div class="categories">
         <p><a href="index.php?action=pizzas">toutes</a></p>
         <p><a href="index.php?action=veg&isVeg=on">veg</a></p>
@@ -14,9 +15,7 @@
     </div>
 
     <section>
-
         <?php foreach($allPizzas as $pizzas) { ?>
-
         <article>
             <div class="line"></div>
             <div class="article_info">
@@ -28,9 +27,7 @@
             </div>
             <p class="article_content"><?= $pizzas["productDescription"] ?></p>
         </article>
-
         <?php   } ?>
-
     </section>
 
 </main>
@@ -39,12 +36,10 @@
     <h2>A la une</h2>
 
     <?php foreach($allALaUne as $aLaUne){ ?>
-
     <article class="article_show_on">
         <p><?= $aLaUne["title"] ?></p>
         <p> <img src="<?= $aLaUne["imgAdress"] ?>" alt="<?= $aLaUne['title'] ?>"> </p>
     </article>
-
     <?php   } ?>
 
 </aside>

@@ -3,7 +3,7 @@
 <html lang="fr">
 
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="description" content="vente de pizzas & autres en livraison sur vannes">
     <meta name="viewport" content="width=device-width, initial scale=1.0">
     <title> Pizzas Express</title>
@@ -16,9 +16,11 @@
 <body>
     <header>
         <nav>
+
             <div id="logo"><a href='index.php'><img src="app/Public/front/img/PizzasExpressLogo.jpg"
                         alt="logo pizzas express"></a>
             </div>
+
             <ul id="menu_list">
                 <li><a href="index.php"> Accueil</a></li>
                 <li><a href="index.php?action=pizzas"> Pizzas</a></li>
@@ -27,10 +29,12 @@
                 <li><a href="index.php?action=contact"> Contact</a></li>
                 <li><a href="index.php?action=inscriptonUser"> Inscription</a></li>
             </ul>
+
             <div id="icons">
                 <div id="userIcon"><i class="fas fa-user"></i></div>
                 <div id="burger"><i class="fa fa-bars"></i></div>
             </div>
+
         </nav>
     </header>
 
@@ -46,14 +50,17 @@
                 <a href="#"><i class="fab fa-github"></i></a>
             </div>
         </div>
+
         <div id="mentions">
             <p id="icon_connexion"><img class="bordure" src="app/Public/front/img/benderIcon.png"
                     alt="connexion administrateur"></p>
+
             <div id="infos">
                 <p><a href="mentions.html" target="_blank">Mentions Legales</a></p>
                 <p>Creation du site : <a href="">B166ER</a> </p>
                 <p>Copyright 2021 reproduction interdite</p>
             </div>
+
         </div>
     </footer>
 
@@ -61,7 +68,7 @@
     <script src="app/Public/front/js/api.js"></script>
     <script src="app/Public/front/js/ajax.js"></script>
     <script src="app/Public/front/js/slider.js"></script>
-    
+
 </body>
 
 </html>

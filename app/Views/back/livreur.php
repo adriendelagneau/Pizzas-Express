@@ -4,6 +4,7 @@
     <div class="newOne">
         <h4>update livreur</h4>
         <?php $livreur = $selectedLivreur->fetch() ?>
+
         <div>
             <h2><?= $livreur['livreurName'] ?></h2>
 
@@ -18,7 +19,6 @@
                 <label for="livreurEmail">Nom de la boisson</label>
                 <input type="email" id="livreurEmail" name="livreurEmail" value="<?= $livreur['livreurEmail'] ?>">
 
-
                 <div>
                     <button type="submit" data-dismiss="modal">Modifier</button>
                 </div>
@@ -26,6 +26,7 @@
             </form>
             
         </div>
+        
     </div>
 </section>
 

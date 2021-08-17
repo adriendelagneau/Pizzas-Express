@@ -1,14 +1,16 @@
 <?php ob_start();?>
 
 <h1> Liste des Livreurs</h1>
-<section>
 
+<section>
     <?php foreach($listLivreur as $livreur){ ?>
 
         <div class="card_articles">
+
             <div class="article_title">Nom : <?= $livreur["livreurName"] ?></div>
             <div class="article_content">Tel : <?= $livreur["livreurPhone"] ?></div>
             <div class="article_content">Mail: <?= $livreur["livreurEmail"] ?></div>
+
             <div class=btn_a>
             <form action="indexAdmin.php?action=selectLivreur&id=<?= $livreur['id'] ?>" method="post">
                     <input type="submit" value="mofifier">
@@ -17,10 +19,10 @@
                     <input type="submit" value="supprimer">
                 </form>
             </div>
+
         </div>
 
     <?php   } ?>
-
 </section>
 
 <div class="newOne">
@@ -36,7 +38,6 @@
 
         <label for="livreurEmail">mail du livreur :</label>
         <input type="email" id="livreurEmail" name="livreurEmail">
-
 
         <div>
             <button type="submit" data-dismiss="modal">Créer</button>

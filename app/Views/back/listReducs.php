@@ -1,14 +1,17 @@
 <?php ob_start();?>
 <h1> Liste des Réducs</h1>
-<section>
 
+<section>
     <?php foreach($allReducs as $reducs){ ?>
+
     <div class="card_articles">
+
         <div class="article_title">Titre : <?= $reducs["title"] ?></div>
         <div class="article_content">Période : <?= $reducs["periode"] ?></div>
         <div class="article_content">Condition 1 : <?= $reducs["condition1"] ?></div>
         <div class="article_content">Condition 2 : <?= $reducs["condition2"] ?></div>
         <div class="article_content">Validité : <?= $reducs["validite"] ?></div>
+
         <div class=btn_a>
             <form action="indexAdmin.php?action=selectReduc&id=<?= $reducs['id'] ?>" method="post">
                 <input type="submit" value="mofifier">
@@ -17,10 +20,12 @@
                 <input type="submit" value="supprimer">
             </form>
         </div>
-    </div>
-    <?php   } ?>
 
+    </div>
+
+    <?php   } ?>
 </section>
+
 <div>
     <h2>Créer votre reduction</h2>
     <form action="indexAdmin.php?action=addReduc" method="POST">
@@ -46,5 +51,6 @@
         
     </form>
 </div>
+
 <?php $content = ob_get_clean()?>
 <?php require 'templates/template.php'?>
