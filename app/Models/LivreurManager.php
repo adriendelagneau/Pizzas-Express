@@ -5,30 +5,29 @@ namespace Project\Models;
 class LivreurManager extends Manager{
 
 
-    public function listLivreur(){
+    public function listLivreur()
+    {
         $bdd = $this->dbConnect();
         $req = $bdd->prepare("SELECT * FROM livreur ");         
         $req->execute(array());
         return $req;
-    }       
-  
-    public function deleteLivreur($id){
+    }         
+    public function deleteLivreur($id)
+    {
         $bdd = $this->dbConnect();
         $req = $bdd->prepare("DELETE FROM livreur WHERE id= ?");
         $req->execute(array($id));
         return $req;
     }
-    public function selectLivreur($id){
+    public function selectLivreur($id)
+    {
         $bdd = $this->dbConnect();
         $req = $bdd->prepare("SELECT * FROM livreur WHERE id = ?");
         $req->execute(array($id));
         return $req;
     }
-
-
-
-
-    public function addLivreur($livreurName, $livreurPhone, $livreurEmail){
+    public function addLivreur($livreurName, $livreurPhone, $livreurEmail)
+    {
         $bdd = $this->dbConnect();
         $req =$bdd->prepare ("INSERT INTO `livreur` (`livreurName`, `livreurPhone`, `livreurEmail`) VALUES (?,?,?)");
         $req->execute([
@@ -38,7 +37,8 @@ class LivreurManager extends Manager{
                     ]);  
         return $req;
     } 
-    public function updateLivreur($id,$livreurName, $livreurPhone, $livreurEmail){
+    public function updateLivreur($id,$livreurName, $livreurPhone, $livreurEmail)
+    {
         $bdd = $this->dbConnect();
         $req = $bdd->prepare("UPDATE livreur SET  livreurName = :livreurName,  livreurPhone = :livreurPhone, livreurEmail = :livreurEmail WHERE id = :id");
         $req->execute([
