@@ -328,12 +328,26 @@ class BackController
     {
         $user = new \Project\Models\UserManager();
         $updateUser = $user->updateUser($userId, $userName, $userFirstname, $userAdress, $userPhone, $userMail);
-        $_SESSION['userName'] = $userName;
-        $_SESSION['userFirstame'] = $userFirstname;
-        $_SESSION['userPhone'] = $userPhone;
-        $_SESSION['userAdress'] = $userAdress;
-        $_SESSION['userMail'] = $userMail;
 
+        /* obliger de fetch() pour mettre à jour la variable de session, 
+            un code type    $_SESSION['userName'] = $userName;
+            ne suffisait pas...
+            a approfonfir ...*/
+
+        $user = new \Project\Models\UserManager();
+        $userInfos = $user->selectUser($userId);
+        $result = $userInfos->fetch();
+
+        $_SESSION['userId'] = $result['userId'];
+        $_SESSION['userName'] = $result['userName'];
+        $_SESSION['userFirstname'] = $result['userFirstname'];
+        $_SESSION['userPhone'] = $result['userPhone'];
+        $_SESSION['userAdress'] = $result['userAdress'];
+        $_SESSION['userMail'] = $result['userMail'];
+        $_SESSION['userPWD'] = $result['userPWD'];
+
+
+        echo '<script>alert("infos mofifiées avec succes !");</script>';
         require 'app/Views/back/tableauDeBordUser.php';
     }
 
@@ -344,9 +358,14 @@ class BackController
             $mdp = new \Project\Models\UserManager();
             $newMdp = $mdp->updateMdpUser($nouveauMdpCrypte);
 
+            echo '<script>alert("mot de passe mofifié avec succes !");</script>';
             require 'app/Views/back/tableauDeBordUser.php';
         } else {
-            echo 'mot de passe incorect';
+           
+
+            echo '<script>alert("mot de passe incorect");</script>';
+           
+            require 'app/Views/back/tableauDeBordUser.php';
         }
     }
 
@@ -354,6 +373,7 @@ class BackController
     {
         $user = new \Project\Models\UserManager();
         $deleteUser = $user->deleteUser();
+        header('Location: indexAdmin.php?action=deconnexion');
     }
 
     /*************************** orders ********************************/

@@ -16,7 +16,7 @@
             <form action="indexAdmin.php?action=selectReduc&id=<?= $reducs['id'] ?>" method="post">
                 <input type="submit" value="mofifier">
             </form>
-            <form action="indexAdmin.php?action=Reduc&id=<?= $reducs['id'] ?>"method="post">
+            <form action="indexAdmin.php?action=deleteReduc&id=<?= $reducs['id'] ?>"method="post">
                 <input type="submit" value="supprimer">
             </form>
         </div>

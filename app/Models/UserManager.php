@@ -61,5 +61,12 @@ class UserManager extends Manager{
         $req->execute(array($id));
         return $req;
     }
+    public function selectUser($userId)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare("SELECT *  FROM user WHERE userId = ?");
+        $req->execute(array($userId));
+        return $req;
+    }
     
 }

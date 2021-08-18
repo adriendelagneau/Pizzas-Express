@@ -8,8 +8,11 @@
     
         <p><?= $slides["title"] ?></p>
         <p><img src="<?= $slides["imgAdress"] ?>" alt="<?= $slides['title'] ?>"></p>
-            <a href="indexAdmin.php?action=deleteSlide&id=<?= $slides['id'] ?>"> supprimer cette
-                slide</a>
+
+        <form action="indexAdmin.php?action=deleteSlide&id=<?= $slides['id'] ?>"method="post">
+            <input type="submit" value="supprimer">
+        </form>
+            
     </div>
     <?php   } ?>
 </section>

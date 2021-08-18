@@ -212,6 +212,8 @@ try {
                 $userAdress = htmlspecialchars($_POST['userAdress']);
                 $userPhone = htmlspecialchars($_POST['userPhone']);
                 $userMail = htmlspecialchars($_POST['userMail']);
+
+                
                 $backController->updateUser($userId, $userName, $userFirstname, $userAdress, $userPhone, $userMail);
             } 
             elseif ($_GET['action'] == 'changementMdpUser') {
