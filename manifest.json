@@ -1,0 +1,22 @@
+{
+    "name": "Pizza Express",
+    "short_name": "PIZZA",
+    "start_url": "index.php",
+    "background_color": "black",
+    "theme_color": "black",
+    "orientation": "portrait-primary",
+    "display": "standalone",
+
+    "icons": [ 
+        {
+          "src": "app/Public/front/img/Logo_192.png",
+          "type": "image/png",
+          "sizes": "192x192"
+        },
+        {
+          "src": "app/Public/front/img/Logo_512.png",
+          "type": "image/png",
+          "sizes": "512x512"
+        }
+        ]
+}

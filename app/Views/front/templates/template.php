@@ -5,12 +5,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="description" content="vente de pizzas & autres en livraison sur vannes">
-    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <meta name="viewport" content="width=device-width, initia-scale=1.0">
     <title> Pizzas Express</title>
     <script src="https://kit.fontawesome.com/f964f4d052.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="shortcut icon" type="image/png" href="app/Public/front/img/favicon.png">
     <link rel="stylesheet" href="app/Public/front/css/style.css">
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="app/Public/front/img/Logo_72.png">
+  <meta name="apple-mobile-web-app-status-bar" content="white">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="black">
+
+  
 </head>
 
 <body>
