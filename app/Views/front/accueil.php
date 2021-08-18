@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
 
 <main class="accueil">
-    <h1>pizzas express</h1>
+    <h1>Pizzas express</h1>
     <ul id="slider">
 
         <?php foreach($allSlides as $Image){ ?>
@@ -15,7 +15,7 @@
         semaine de 11h à 14h et de 19h à 23h.</p>
     <p>Commander au 02 97 27 12 **<p>
 
-            <h2> offres spéciale</h2>
+            <h2> Offres spéciale</h2>
             <section id="reductions">
 
                 <?php foreach($allReducs as $reducs){ ?>

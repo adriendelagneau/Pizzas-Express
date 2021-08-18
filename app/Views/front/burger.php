@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
 
 <main class="burger">
-    <h1>burger</h1>
+    <h1>Burgers</h1>
 
     <section>
         <?php foreach($allBurgers as $burgers) { ?>
