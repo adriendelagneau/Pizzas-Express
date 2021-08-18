@@ -373,7 +373,19 @@ class BackController
     {
         $user = new \Project\Models\UserManager();
         $deleteUser = $user->deleteUser();
-        header('Location: indexAdmin.php?action=deconnexion');
+       
+        $slides = new \Project\Models\ImagesManager();
+        $allSlides = $slides->getSlides();
+        $aLaUne = new \Project\Models\ImagesManager();
+        $allALaUne = $aLaUne->getALaUne();
+        $reducs = new \Project\Models\ReducManager();
+        $allReducs = $reducs->allReducs();
+
+        echo '<script>alert(" Au revoir !");</script>';
+        require 'app/Views/front/accueil.php';
+        
+        session_destroy();
+       
     }
 
     /*************************** orders ********************************/

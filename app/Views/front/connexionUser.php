@@ -21,10 +21,10 @@
         <form action="index.php?action=connexionUser" method="post">
 
             <label for="pseudoUser">Prenom : </label>
-            <input type="text" placeholder="pseudoUser" name="pseudoUser" id="pseudoUser">
+            <input type="text" placeholder="joe" name="pseudoUser" id="pseudoUser">
 
-            <label for="pwdUser">Password: </label>
-            <input type="password" placeholder="pwdUser" name="pwdUser" id="pwdUser">
+            <label for="pwdUser">Mot de passe : </label>
+            <input type="password" placeholder="****" name="pwdUser" id="pwdUser">
 
             <input type="submit" value="OK">
             

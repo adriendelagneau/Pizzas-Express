@@ -33,10 +33,10 @@
         <label for="livreurName">Nom du livreur :</label>
         <input type="text" id="livreurName" name="livreurName">
 
-        <label for="livreurPhone">téléphone du livreur :</label>
+        <label for="livreurPhone">Téléphone du livreur :</label>
         <input type="text" id="livreurPhone" name="livreurPhone">
 
-        <label for="livreurEmail">mail du livreur :</label>
+        <label for="livreurEmail">Mail du livreur :</label>
         <input type="email" id="livreurEmail" name="livreurEmail">
 
         <div>

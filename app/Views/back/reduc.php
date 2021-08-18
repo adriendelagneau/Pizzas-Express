@@ -15,17 +15,17 @@
             <label for="periode">periode</label>
             <textarea name="periode" id="periode" cols="30" rows="1"><?= $reduc["periode"] ?></textarea>
 
-            <label for="condition1">condition1</label>
+            <label for="condition1">Condition1</label>
             <textarea name="condition1" id="condition1" cols="30" rows="1"><?= $reduc["condition1"] ?></textarea>
 
-            <label for="condition2">condition2</label>
+            <label for="condition2">Condition2</label>
             <textarea name="condition2" id="condition2" cols="30" rows="1"><?= $reduc["condition2"] ?></textarea>
 
-            <label for="validite">validite</label>
+            <label for="validite">Validite</label>
             <textarea name="validite" id="validite" cols="30" rows="1"><?= $reduc["validite"] ?></textarea>
 
             <div>
-                <button type="submit" data-dismiss="modal">Update</button>
+                <button type="submit" data-dismiss="modal">Modifier</button>
             </div>
 
         </form>

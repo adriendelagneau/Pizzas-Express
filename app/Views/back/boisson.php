@@ -2,7 +2,7 @@
 
 <section>
     <div class="newOne">
-        <h4>update boisson</h4>
+        <h4>Modifier boisson</h4>
         <?php $boisson = $selectedBoisson->fetch() ?>
         <div>
             <h2><?= $boisson['productName'] ?></h2>

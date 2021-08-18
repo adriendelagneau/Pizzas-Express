@@ -1,6 +1,6 @@
 <?php ob_start();?>
 
-<h1> Liste des boissons</h1>
+<h1>Liste des boissons</h1>
 
 <section>
     <?php foreach($allBoissons as $boissons){ ?>

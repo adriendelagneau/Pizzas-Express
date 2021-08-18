@@ -19,7 +19,7 @@
 </main>
 
 <aside>
-    <h2>pizzas à la une</h2>
+    <h2>A la une</h2>
 
     <section>
         <?php foreach($allALaUne as $aLaUne){ ?>

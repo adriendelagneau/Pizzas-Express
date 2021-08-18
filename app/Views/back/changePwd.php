@@ -1,16 +1,16 @@
 <?php ob_start();?>
 
-<h1> change pwd</h1>
+<h1>Changer le mot de passe</h1>
 
 <form action="indexAdmin.php?action=changementMdpUser" method="post">
 
-        <label for="ancienMdp">password : </label>
+        <label for="ancienMdp">M.D.P : </label>
         <input type="password" placeholder="ancienMdp" name="ancienMdp" id="ancienMdp">
 
-        <label for="nouveauMdp">new Password: </label>
+        <label for="nouveauMdp">NEW M.D.P : </label>
         <input type="password" placeholder="nouveauMdp" name="nouveauMdp" id="nouveauMdp">
 
-        <label for="nouveauMdpConfirm">new Password: </label>
+        <label for="nouveauMdpConfirm">NEW M.D.P : </label>
         <input type="password" placeholder="confirmer votre mot de passe " name="nouveauMdpConfirm" id="nouveauMdpConfirm">
 
 

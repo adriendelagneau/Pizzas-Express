@@ -2,17 +2,17 @@
 
 <section>
     <div class="newOne">
-        <h4>update burgers</h4>
+        <h4>Modifier burgers</h4>
         <?php $burger = $selectedBurger->fetch() ?>
         <div>
             <h2><?= $burger['productName'] ?></h2>
 
             <form action="indexAdmin.php?action=updateBurger&id=<?= $burger['id'] ?>" method="POST">
 
-                <label for="productName">Nom de la boisson</label>
+                <label for="productName">Nom du burger : </label>
                 <input type="text" id="productName" name="productName" value="<?= $burger['productName'] ?>">
 
-                <label for="productDescription">Nom de la boisson</label>
+                <label for="productDescription">Description : </label>
                 <textarea name="productDescription" id="productDescription" cols="30"
                     rows="10"><?= $burger['productDescription'] ?></textarea>
 

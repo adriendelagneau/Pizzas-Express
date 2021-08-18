@@ -2,7 +2,7 @@
 
 <section>
     <div class="newOne">
-        <h4>update pizza</h4>
+        <h4>Modifier pizza</h4>
         <?php $pizza = $selectedPizza->fetch() ?>
 
         <div>
@@ -16,10 +16,10 @@
                 <textarea name="productDescription" id="productDescription" cols="30"
                     rows="10"><?= $pizza['productDescription'] ?></textarea>
                 
-                <label for="prixMoyenne">prix medium : </label>
+                <label for="prixMoyenne">Prix medium : </label>
                 <input type="number" id="prixMoyenne" name="prixMoyenne" value="<?= $pizza['prixMoyenne'] ?>">
 
-                <label for="prixLarge">prix large : </label>
+                <label for="prixLarge">Prix large : </label>
                 <input type="number" id="prixLarge" name="prixLarge" value="<?= $pizza['prixLarge'] ?>">
 
                 <div>

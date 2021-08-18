@@ -6,9 +6,9 @@
     <?php foreach($allOrder as $order) { ?>
 
     <div class="card_articles">
-        <div class="article_title">numero de commande : <?= $order["order_id"] ?></div>
-        <div class="article_content">date : <?= $order["order_date"] ?></div>
-        <div class="article_content">prix total : <?= $order["order_price"] ?>€</div> 
+        <div class="article_title">Numero de commande : <?= $order["order_id"] ?></div>
+        <div class="article_content">Date : <?= $order["order_date"] ?></div>
+        <div class="article_content">Prix total : <?= $order["order_price"] ?>€</div> 
     </div>
 
     <?php   } ?>

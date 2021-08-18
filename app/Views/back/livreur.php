@@ -2,7 +2,7 @@
 
 <section>
     <div class="newOne">
-        <h4>update livreur</h4>
+        <h4>Modifier livreur</h4>
         <?php $livreur = $selectedLivreur->fetch() ?>
 
         <div>
@@ -10,13 +10,13 @@
 
             <form action="indexAdmin.php?action=updateLivreur&id=<?= $livreur['id'] ?>" method="POST">
 
-                <label for="livreurName">Nom de la boisson</label>
+                <label for="livreurName">Nom : </label>
                 <input type="text" id="livreurName" name="livreurName" value="<?= $livreur['livreurName'] ?>">
 
-                <label for="livreurPhone">Nom de la boisson</label>
+                <label for="livreurPhone">Téléphone</label>
                 <input type="text" id="livreurPhone" name="livreurPhone" value="<?= $livreur['livreurPhone'] ?>">
                 
-                <label for="livreurEmail">Nom de la boisson</label>
+                <label for="livreurEmail">@mail</label>
                 <input type="email" id="livreurEmail" name="livreurEmail" value="<?= $livreur['livreurEmail'] ?>">
 
                 <div>

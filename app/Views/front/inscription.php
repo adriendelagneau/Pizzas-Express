@@ -2,10 +2,8 @@
 
 <main class="contact">
 
-    <h1>Contacte</h1>
-    <p>Commander au 02 97 27 12 **<p>
-
-    <h3>nous laisser un message</h3>
+    <h1>Inscription</h1>
+    
     <div class="form_contact">
 
         <form action="index.php?action=inscription" method="POST" id="inscriptionUser">

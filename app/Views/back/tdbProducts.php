@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<h1>Tableau de bord :</h1>
+<h1>Tableau de bord </h1>
 
 <div class="tdb">
     <div><a href="indexAdmin.php?action=listPizzas">gestion pizzas</a></div>

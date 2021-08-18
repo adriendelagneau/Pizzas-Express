@@ -1,11 +1,11 @@
 <?php ob_start();?>
 
-<h1> desinscription</h1>
+<h1>Désinscription</h1>
 
 <div id="supUser">
 
-   <p>êtes vous sur de vouloir vous desinscrire, toutes vos informations seront définitivement supprimées.</p>
-   <p>si oui cliquez ci dessous</p>
+   <p>Etes vous sur de vouloir vous désinscrire, toutes vos informations seront définitivement supprimées.</p>
+   <p>Si oui cliquez ci dessous</p>
 
    <form action="indexAdmin.php?action=deleteUser" method="post">
       <input type="submit" value="me desinscrire">

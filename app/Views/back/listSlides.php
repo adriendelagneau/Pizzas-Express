@@ -1,5 +1,6 @@
 <?php ob_start(); ?>
-<h1>gestion slider</h1>
+
+<h1>Gestion slider</h1>
 
 <section id="slides">
     <?php foreach($allSlides as $slides){ ?>
