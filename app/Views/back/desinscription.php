@@ -1,6 +1,6 @@
 <?php ob_start();?>
 
-<h1>Désinscription</h1>
+<h1>Supprimer votr compte</h1>
 
 <div id="supUser">
 
