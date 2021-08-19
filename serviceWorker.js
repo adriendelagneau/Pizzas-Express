@@ -28,3 +28,10 @@ self.addEventListener('fetch', function(event) {
     )
   );
 });
+
+// debut de serviceWorker, suffisant pour pwa (avec le manifest.json et le respect des bonnes pratiques responsive & autres)
+
+// mettre maximum de fichier dans le cache(en priorité les images)
+// voir le fonctionnement hors ligne
+// voir si interessant de stoker infos bdd en cache
+// continuer à developper mon js async..

@@ -35,8 +35,8 @@ try {
         elseif ($_GET['action'] == 'contact') {
             $frontController->contact();
         } 
-        elseif ($_GET['action'] == 'inscriptonUser') {
-            $frontController->inscriptonUser();
+        elseif ($_GET['action'] == 'inscriptionUser') {
+            $frontController->inscriptionUser();
         } 
         elseif ($_GET['action'] == 'inscription') {
             $userName = htmlspecialchars($_POST['userName']);

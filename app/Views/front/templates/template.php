@@ -12,11 +12,12 @@
     <link rel="shortcut icon" type="image/png" href="app/Public/front/img/favicon.png">
     <link rel="stylesheet" href="app/Public/front/css/style.css">
 
+    <!-- P.W.A-->
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="app/Public/front/img/Logo_72.png">
-  <meta name="apple-mobile-web-app-status-bar" content="white">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="theme-color" content="black">
+    <meta name="apple-mobile-web-app-status-bar" content="white">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="black">
 
   
 </head>
@@ -35,7 +36,7 @@
                 <li><a href="index.php?action=burger">Burgers </a></li>
                 <li><a href="index.php?action=boissons"> Boissons</a></li>
                 <li><a href="index.php?action=contact"> Contact</a></li>
-                <li><a href="index.php?action=inscriptonUser"> Inscription</a></li>
+                <li><a href="index.php?action=inscriptionUser"> Inscription</a></li>
             </ul>
 
             <div id="icons">

@@ -137,7 +137,7 @@ class FrontController
 
     /**********************  inscription user *****************/
 
-    public function inscriptonUser($errorInscription = [])
+    public function inscriptionUser($errorInscription = [])
     {
         session_destroy();
         $aLaUne = new \Project\Models\ImagesManager();
@@ -147,7 +147,7 @@ class FrontController
 
     public function inscription($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD)
     {
-        $inscriptonUser = new \Project\Models\UserManager();
+        $inscriptionUser = new \Project\Models\UserManager();
         // Removing all illegal characters from email
         $userMail = filter_var($userMail, FILTER_SANITIZE_EMAIL);
 
@@ -183,7 +183,7 @@ class FrontController
 
         if (!empty($userName) && (!empty($userFirstname) && (!empty($userAdress) && (!empty($userPhone) && (!empty($userMail) && (!empty($userPWD))))))) {
             if (empty($errorInscription)) {
-                $inscription = $inscriptonUser->newUser($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD);
+                $inscription = $inscriptionUser->newUser($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD);
                 $slides = new \Project\Models\ImagesManager();
                 $allSlides = $slides->getSlides();
                 $aLaUne = new \Project\Models\ImagesManager();
@@ -195,7 +195,7 @@ class FrontController
                 echo '<script>alert("Bravo, vous etes maintenant inscrit");</script>';
             }
         } else {
-            $this->inscriptonUser($errorInscription);
+            $this->inscriptionUser($errorInscription);
         }
     }
 

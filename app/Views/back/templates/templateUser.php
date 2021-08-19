@@ -10,6 +10,13 @@
     <link rel="shortcut icon" type="image/png" href="app/Public/front/img/favicon.png">
     <link href="https://fr.allfont.net/allfont.css?fonts=arial-black" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="app/Public/back/css/style.css">
+
+     <!-- P.W.A-->
+     <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="app/Public/front/img/Logo_72.png">
+    <meta name="apple-mobile-web-app-status-bar" content="white">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="black">
 </head>
 
 <body>
