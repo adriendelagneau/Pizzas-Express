@@ -47,9 +47,12 @@ h3 {
     display:flex;
 }
 
-.btn_a input{
+.btn_a input,
+.btn_sup{
     width:100px;
-    }
+}
+
+
 
 /*************** card******************/
 section{
@@ -156,7 +159,7 @@ header {
 }
 
 /************* slides *****************/
-#slides .card_articles {
+.slides .card_articles {
     text-align: center;
 }
 /************** desinscription ***********/

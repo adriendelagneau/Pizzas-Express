@@ -13,15 +13,15 @@ burger.addEventListener('click', () => {
 /******************* p w a  **************/
 
 
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
+window.addEventListener('load', function() {    // on attend la fin du chargement de la page pour eviter d' épuiser le navigator dès le depart
+if ('serviceWorker' in navigator) {     // on verifie la présence d'un "serviceWorker"
       navigator.serviceWorker.register('/serviceWorker.js').then(function(registration) {
-        // Registration was successful
         console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        // enregistrement du "SW" 
       }, function(err) {
-        // registration failed :(
+        // gestion error
         console.log('ServiceWorker registration failed: ', err);
       });
-    });
+    };
   }
-  
+)

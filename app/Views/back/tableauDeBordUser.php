@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<h1>Tableau de bord de  <?php echo $_SESSION["userName"] ?></h1>
+<h1>Tableau de bord de  <?php echo $_SESSION["userFirstname"] ?></h1>
 
 <div class="tdb">
 

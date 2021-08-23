@@ -2,18 +2,19 @@
 
 <h1>Gestion images à la une</h1>
 
-<section>
+<section class="slides">
     <?php foreach($allALaUne as $aLaUne){ ?>
-        <div class="card_articles">
 
-            <p><?= $aLaUne["title"] ?></p>
-            <p><img src="<?= $aLaUne["imgAdress"] ?>" alt="<?= $aLaUne['title'] ?>"> </p>  
+    <div class="card_articles">
 
-            <form action="indexAdmin.php?action=deleteALaUne&id=<?= $aLaUne['id'] ?>" method="post">
-                <input type="submit" value="supprimer">
-            </form>
+        <p><?= $aLaUne["title"] ?></p>
+        <p><img src="<?= $aLaUne["imgAdress"] ?>" alt="<?= $aLaUne['title'] ?>"> </p>  
 
-        </div>
+        <form action="indexAdmin.php?action=deleteALaUne&id=<?= $aLaUne['id'] ?>" method="post">
+            <input type="submit" value="supprimer" class="btn_sup">
+        </form>
+
+    </div>
     <?php   } ?>
 </section>
 

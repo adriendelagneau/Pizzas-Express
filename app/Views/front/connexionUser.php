@@ -20,7 +20,7 @@
 
         <form action="index.php?action=connexionUser" method="post">
 
-            <label for="pseudoUser">Prenom : </label>
+            <label for="pseudoUser">Nom: </label>
             <input type="text" placeholder="joe" name="pseudoUser" id="pseudoUser">
 
             <label for="pwdUser">Mot de passe : </label>

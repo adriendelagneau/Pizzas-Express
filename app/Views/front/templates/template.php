@@ -66,7 +66,7 @@
 
             <div id="infos">
                 <p><a href="mentions.html" target="_blank">Mentions Legales</a></p>
-                <p>Creation du site : <a href="">B166ER</a> </p>
+                <p>Creation du site : <a href="https://mon_futur_site.xyz">B166ER</a> </p>
                 <p>Copyright 2021 reproduction interdite</p>
             </div>
 

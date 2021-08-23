@@ -1,0 +1,73 @@
+Service Worker :
+
+
+Un service worker est un script qui joue le rôle de proxy entre le navigateur et le réseau. 
+
+Le service worker intercepte donc toutes les requêtes web et choisit de laisser passer, de modifier,
+ de mettre en cache ou d’effectuer n’importe quelle opération sur les ressources. 
+
+ Cela offre au développeur la maitrise du comportement du navigateur dans certaines situations.
+
+C’est notamment indispensable pour créer des applications offline,
+ mais pas uniquement.
+
+Un service worker fonctionne comme les autres workers : il s’exécute dans un thread parallèle, 
+est non bloquant et totalement asynchrone. Par conséquence, il n’a donc pas accès au DOM et aux autres interfaces 
+du navigateur (localStorage, etc.). Il existe néanmoins une méthode de communication avec l’API postMessage
+
+Autre contrainte, les service workers fonctionnent uniquement en HTTPS pour des raisons de sécurité.
+
+Les service workers permettent également d’effectuer des actions en arrière-plan, 
+comme l’envoi de notifications en Push, que le site web soit actuellement visible ou non.
+
+
+Utilisation :
+
+
+Un service worker doit d’abord être enregistré. En cas de succès, il passera alors par trois phases :
+
+    -téléchargement du script
+    -installation
+    -activation
+
+Lorsque la page est alors affichée une seconde fois (rafraichissement, nouvelle visite, etc.), c’est alors le service worker qui a la main.
+
+Voici un exemple de service worker qui cache toutes les ressources lors de son installation (première visite), 
+puis retourne toujours les fichiers depuis le cache lors d’une requête (le site web n’a donc plus besoin de réseau)
+
+
+
+// register service worker
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
+
+// sw.js
+
+// install event
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open('nom_du_cache')
+      .then((cache) => {
+        return cache.addAll([
+          './',
+          'index.html',
+          'app.css',
+          'app.js',
+          'manifest.json'
+       ]);
+      })
+      .then(() => {
+        return self.skipWaiting();
+      })
+  );
+});
+
+// fetch event
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      return response || fetch(event.request);
+    })
+  );
+});

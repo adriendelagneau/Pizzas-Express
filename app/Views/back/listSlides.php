@@ -2,7 +2,7 @@
 
 <h1>Gestion slider</h1>
 
-<section id="slides">
+<section class="slides">
     <?php foreach($allSlides as $slides){ ?>
 
     <div class="card_articles">
@@ -11,10 +11,11 @@
         <p><img src="<?= $slides["imgAdress"] ?>" alt="<?= $slides['title'] ?>"></p>
 
         <form action="indexAdmin.php?action=deleteSlide&id=<?= $slides['id'] ?>"method="post">
-            <input type="submit" value="supprimer">
+            <input type="submit" value="supprimer" class="btn_sup">
         </form>
             
     </div>
+
     <?php   } ?>
 </section>
 

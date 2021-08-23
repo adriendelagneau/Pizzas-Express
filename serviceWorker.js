@@ -1,7 +1,24 @@
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
   '/',
-  '/app/Public/front/css/style.css' 
+  '/manifest.json',
+  '/index.php',
+  '/app/Public/front/css/style.css',
+  '/app/Public/back/img/aLaUne/bacon-burger.jpg',
+  '/app/Public/back/img/aLaUne/pizza-mediteraneenne.jpg',
+  '/app/Public/back/img/aLaUne/pizza-peperonni.jpg',
+  '/app/Public/back/img/aLaUne/pizza-veg.jpg',
+  '/app/Public/back/img/aLaUne/rustic-burger.jpg',
+  '/app/Public/back/img/slides/slide-jaune.jpg',
+  '/app/Public/back/img/slides/slide-bleu.jpg',
+  '/app/Public/back/img/slides/slide-violette.jpg',
+  '/app/Views/front/accueil.php',
+  '/app/Views/front/pizzas.php',
+  '/app/Views/front/boissons.php',
+  '/app/Views/front/burger.php',
+  '/app/Controllers/front/FrontController.php'
+  
+
 ];
 
 self.addEventListener('install', function(event) {
@@ -35,3 +52,5 @@ self.addEventListener('fetch', function(event) {
 // voir le fonctionnement hors ligne
 // voir si interessant de stoker infos bdd en cache
 // continuer à developper mon js async..
+
+///voir tuto-sw.txt
