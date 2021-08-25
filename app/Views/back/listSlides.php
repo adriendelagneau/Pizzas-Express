@@ -25,11 +25,12 @@
 
     <form action="indexAdmin.php?action=creatSlide" method="post" enctype="multipart/form-data" class="formImg">
         <div>
-            <label for="title">Titre SEO de votre image</label>
+            <label for="title">Titre SEO de votre image :</label>
             <input type="text" id="title" name="title">
         </div>
         <div>
-            <input type="file" name="fileToUpload" class="filesImg">
+        <label for="img_slide_upload">charger votre fichier :</label>
+            <input type="file" name="fileToUpload"  id="img_slide_upload">
         </div>
         <div>
             <input type="submit" value="ENVOYER" id="upload" class="submit">

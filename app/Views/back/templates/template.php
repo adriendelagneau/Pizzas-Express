@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="vente de pizzas & autres en livraison sur vannes">
     <title>Pizza Express</title>
     <script src="https://kit.fontawesome.com/f964f4d052.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -23,8 +24,8 @@
     <header>
         <nav>
             <div id="icons">
-                <a href="indexAdmin.php?action=deconnexion"><i class="fas fa-times"></i></a>
-                <a href="indexAdmin.php?action=tableauDeBord"><i class="fas fa-arrow-left"></i></a>
+                <a href="indexAdmin.php?action=deconnexion" aria-label="deconnexion"><i class="fas fa-times"></i></a>
+                <a href="indexAdmin.php?action=tableauDeBord" aria-label="tableau de bord"><i class="fas fa-arrow-left"></i></a>
             </div>
         </nav>
     </header>

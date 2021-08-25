@@ -3,6 +3,7 @@ var urlsToCache = [
   '/',
   '/manifest.json',
   '/index.php',
+  '/indexAdmin.php',
   '/app/Public/front/css/style.css',
   '/app/Public/back/img/aLaUne/bacon-burger.jpg',
   '/app/Public/back/img/aLaUne/pizza-mediteraneenne.jpg',
@@ -18,7 +19,7 @@ var urlsToCache = [
   '/app/Views/front/burger.php',
   '/app/Controllers/front/FrontController.php'
   
-
+  
 ];
 
 self.addEventListener('install', function(event) {

@@ -182,7 +182,9 @@ class FrontController
         }
 
         if (!empty($userName) && (!empty($userFirstname) && (!empty($userAdress) && (!empty($userPhone) && (!empty($userMail) && (!empty($userPWD))))))) {
-            if (empty($errorInscription)) {
+            if (empty($errorInscription)) 
+            
+            {
                 $inscription = $inscriptionUser->newUser($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD);
                 $slides = new \Project\Models\ImagesManager();
                 $allSlides = $slides->getSlides();
@@ -194,6 +196,8 @@ class FrontController
 
                 echo '<script>alert("Bravo, vous etes maintenant inscrit");</script>';
             }
+
+            
         } else {
             $this->inscriptionUser($errorInscription);
         }

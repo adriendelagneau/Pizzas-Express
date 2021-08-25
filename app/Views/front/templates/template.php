@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="description" content="vente de pizzas & autres en livraison sur vannes">
-    <meta name="viewport" content="width=device-width, initia-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Pizzas Express</title>
     <script src="https://kit.fontawesome.com/f964f4d052.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -51,12 +51,12 @@
 
     <footer>
         <div id="socials-links">
-            <h3>reseaux sociaux</h3>
+            <h2>reseaux sociaux</h2>
             <div>
-                <a href="#"><i class="fab fa-discord"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fas fa-at"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="discord"><i class="fab fa-discord"></i></a>
+                <a href="#" aria-label="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="email"><i class="fas fa-at"></i></a>
+                <a href="#" aria-label="github"><i class="fab fa-github"></i></a>
             </div>
         </div>
 

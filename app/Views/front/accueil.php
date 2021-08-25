@@ -9,13 +9,13 @@
         <?php   } ?>
 
     </ul>
-    <h3>Bienvenue</h3>
+    <h2>Bienvenue</h2>
 
     <p>Toutes nos pizzas et burger sont fait avec les meilleurs ingrédients, vente à emporter et livraison toute la
         semaine de 11h à 14h et de 19h à 23h.</p>
     <p>Commander au 02 97 27 12 **<p>
 
-            <h2> Offres spéciale</h2>
+            <h3> Offres spéciale</h3>
             <section id="reductions">
 
                 <?php foreach($allReducs as $reducs){ ?>
@@ -36,7 +36,7 @@
 </main>
 
 <aside>
-    <h2>A la une</h2>
+    <h2>A la une</h3>
 
     <?php foreach($allALaUne as $aLaUne){ ?>
     <article class="article_show_on">

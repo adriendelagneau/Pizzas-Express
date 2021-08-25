@@ -26,12 +26,14 @@
     <form action="indexAdmin.php?action=creatALaUne" method="post" enctype="multipart/form-data" class="formImg">
 
         
-            <label for="title">Titre SEO de votre image</label>
+            <label for="title">Titre SEO de votre image :</label>
             <input type="text" id="title" name="title">
         
-            <input type="file" name="fileToUpload" class="filesImg">
+            <label for="img_a_la_une_upload">Charger votre fichier :</label>
+            <input type="file" name="fileToUpload"  id="img_a_la_une_upload">
        
-            <input type="submit" value="ENVOYER" id="upload" class="submit">
+            
+            <input type="submit" value="ENVOYER" id="Btn_envoyer_1" class="submit">
         
 
     </form>
