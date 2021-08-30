@@ -67,6 +67,7 @@ modifications :
 
     je continue  à mettre le code à jour (post dead-line :) , beaucoup de petite modif via lighthouse, 
     travail sur un peu plus de sql et une method "confirm mail" (envoyer mail de verif ).
+    je vais également mettre un "time to live " sur la variable de session ... 
 
     j' ai essayé de tenir compte de vos remarques ,conscient qu' il reste encore beaucoup de choses à améliorer, 
     j éspère que vous y trouvez matière à l'obtention du diplome.
