@@ -24,6 +24,7 @@ modifications :
     - j'ai fait attention à lindentation,
     - j 'ai aérré beaucoup le code surtout les formulaires ( dsl pour le mal de crane provoqué par le code précédent ... )
     - verification de tout les "input" & "textarea", label & type correspondant bien
+    - ajout d' "aria-label"
     - remplacement des boutons type:
                                     <div>
                                         <a>
@@ -62,7 +63,10 @@ modifications :
 
 - FINAL :
 
-    repasser le code avec "LightHHouse" pout test de performance( plutot correct)
+    repasser le code avec "LightHHouse" pout test de performance, j attaque les feux d'artifices ...
+
+    je continue  à mettre le code à jour (post dead-line :) , beaucoup de petite modif via lighthouse, 
+    travail sur un peu plus de sql et une method "confirm mail" (envoyer mail de verif ).
 
     j' ai essayé de tenir compte de vos remarques ,conscient qu' il reste encore beaucoup de choses à améliorer, 
     j éspère que vous y trouvez matière à l'obtention du diplome.
