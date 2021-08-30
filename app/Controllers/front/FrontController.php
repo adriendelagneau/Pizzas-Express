@@ -185,19 +185,26 @@ class FrontController
             if (empty($errorInscription)) 
             
             {
-                $inscription = $inscriptionUser->newUser($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD);
-                $slides = new \Project\Models\ImagesManager();
-                $allSlides = $slides->getSlides();
-                $aLaUne = new \Project\Models\ImagesManager();
-                $allALaUne = $aLaUne->getALaUne();
-                $reducs = new \Project\Models\ReducManager();
-                $allReducs = $reducs->allReducs();
-                require 'app/Views/front/accueil.php';
-
+                $inscriptionUser->newUser($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD);
+              
+               
+                  
+                $userInfos = $inscriptionUser->getUserId($userMail);
+                $result = $userInfos->fetch();
+        
+                $_SESSION['userId'] = $result['userId'];
+                $_SESSION['userName'] = $result['userName'];
+                $_SESSION['userFirstname'] = $result['userFirstname'];
+                $_SESSION['userPhone'] = $result['userPhone'];
+                $_SESSION['userAdress'] = $result['userAdress'];
+                $_SESSION['userMail'] = $result['userMail'];
+                $_SESSION['userPWD'] = $result['userPWD'];
+                
+                require 'app/Views/back/tableauDeBordUser.php';
                 echo '<script>alert("Bravo, vous etes maintenant inscrit");</script>';
             }
 
-            
+
         } else {
             $this->inscriptionUser($errorInscription);
         }

@@ -4,7 +4,7 @@ namespace Project\Models;
 
 class UserManager extends Manager{
 
-
+   
    public function newUser($userName, $userFirstname, $userAdress, $userPhone, $userMail, $userPWD)
    {
         $bdd = $this->dbConnect();
@@ -68,5 +68,17 @@ class UserManager extends Manager{
         $req->execute(array($userId));
         return $req;
     }
-    
+    public function getUserId($userMail)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare("SELECT *  FROM user WHERE userMail = ?");
+        $req->execute(array($userMail));
+        return $req;
+    }
+    public function recupNewUserId($userMail){
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare("SELECT *  FROM user WHERE userId = ?");
+        $req->execute(array($userMail));
+        return $req;
+    }
 }

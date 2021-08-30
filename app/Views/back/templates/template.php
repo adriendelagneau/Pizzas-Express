@@ -9,9 +9,8 @@
     <script src="https://kit.fontawesome.com/f964f4d052.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="shortcut icon" type="image/png" href="app/Public/front/img/favicon.png">
-    <link href="https://fr.allfont.net/allfont.css?fonts=arial-black" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="app/Public/back/css/style.css">
-
+  
+    
      <!-- P.W.A-->
      <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="app/Public/front/img/Logo_72.png">

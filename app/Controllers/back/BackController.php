@@ -334,7 +334,7 @@ class BackController
             ne suffisait pas...
             a approfonfir ...*/
 
-        $user = new \Project\Models\UserManager();
+       // $user = new \Project\Models\UserManager();
         $userInfos = $user->selectUser($userId);
         $result = $userInfos->fetch();
 

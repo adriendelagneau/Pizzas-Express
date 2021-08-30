@@ -3,10 +3,11 @@
 let burger = document.querySelector('#burger')
 let ul = document.querySelector('ul')
 
+if(burger != null){
 burger.addEventListener('click', () => {
     ul.classList.toggle('switch')
 })
-
+}
 
   
 
