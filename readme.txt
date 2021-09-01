@@ -1,3 +1,14 @@
+
+
+1/09 :
+
+en tavaux pour la journee ( travail sur la methode d' envoie mail pour valider l adresse)
+
+
+
+
+
+
 Projet examen developpeur web junior.
 
 Site vitrine pizzeria.
